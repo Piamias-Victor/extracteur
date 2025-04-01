@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Scraper Cicalfate - Leclerc</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+  <div class="max-w-3xl mx-auto py-10 px-6 bg-white shadow-lg rounded-lg mt-10">
+    <h1 class="text-3xl font-bold mb-6 text-blue-700">🛒 Scraper Cicalfate (Leclerc)</h1>
+    
+    <form method="POST" class="mb-8">
+      <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition w-full text-lg">🚀 Lancer le scraping</button>
+    </form>
+
+    {% if results %}
+      <h2 class="text-2xl font-semibold mb-4">📦 Résultats :</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full border text-sm text-left border-gray-300">
+          <thead class="bg-gray-200 text-gray-700">
+            <tr>
+              <th class="px-4 py-2 border">Nom</th>
+              <th class="px-4 py-2 border">EAN</th>
+              <th class="px-4 py-2 border">Prix</th>
+              <th class="px-4 py-2 border">Date</th>
+              <th class="px-4 py-2 border">Lien</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in results %}
+            <tr class="bg-white hover:bg-gray-50">
+              <td class="px-4 py-2 border">{{ item['Nom du produit'] }}</td>
+              <td class="px-4 py-2 border">{{ item['EAN'] }}</td>
+              <td class="px-4 py-2 border">{{ item['Prix'] }}</td>
+              <td class="px-4 py-2 border">{{ item['Date'] }}</td>
+              <td class="px-4 py-2 border">
+                <a href="{{ item['Lien'] }}" class="text-blue-500 underline" target="_blank">Voir</a>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="mt-6">
+        <a href="/download" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition inline-block">📥 Télécharger le CSV</a>
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>
