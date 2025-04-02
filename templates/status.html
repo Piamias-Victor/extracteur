@@ -80,7 +80,7 @@
           <h3 class="text-sm font-medium text-gray-500">Début du scraping</h3>
           <p class="text-lg font-semibold">
             {% if status.start_time %}
-              {{ (status.start_time|int)|timestamp_to_time }}
+              {{ status.start_time|timestamp_to_time }}
             {% else %}
               -
             {% endif %}

@@ -1,2 +1,810 @@
 2025-04-02 12:13:08,823 - WARNING -  * Debugger is active!
 2025-04-02 12:13:08,829 - INFO -  * Debugger PIN: 880-221-942
+2025-04-02 12:25:24,759 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 12:25:24,760 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 12:25:24,761 - INFO -  * Restarting with stat
+2025-04-02 12:25:24,965 - WARNING -  * Debugger is active!
+2025-04-02 12:25:24,972 - INFO -  * Debugger PIN: 880-221-942
+2025-04-02 12:25:28,960 - INFO - 127.0.0.1 - - [02/Apr/2025 12:25:28] "GET / HTTP/1.1" 200 -
+2025-04-02 12:25:37,483 - INFO - ====== WebDriver manager ======
+2025-04-02 12:25:37,484 - INFO - 127.0.0.1 - - [02/Apr/2025 12:25:37] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-04-02 12:25:37,521 - INFO - 127.0.0.1 - - [02/Apr/2025 12:25:37] "[35m[1mGET /status HTTP/1.1[0m" 500 -
+2025-04-02 12:25:37,543 - INFO - 127.0.0.1 - - [02/Apr/2025 12:25:37] "GET /status?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-04-02 12:25:37,543 - INFO - 127.0.0.1 - - [02/Apr/2025 12:25:37] "GET /status?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-04-02 12:25:37,599 - INFO - 127.0.0.1 - - [02/Apr/2025 12:25:37] "GET /status?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-04-02 12:25:37,646 - INFO - 127.0.0.1 - - [02/Apr/2025 12:25:37] "[36mGET /status?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-04-02 12:25:37,657 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-02 12:25:37,771 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-02 12:25:37,852 - INFO - There is no [mac64] chromedriver "134.0.6998.165" for browser google-chrome "134.0.6998" in cache
+2025-04-02 12:25:37,861 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-02 12:25:38,065 - INFO - WebDriver version 134.0.6998.165 selected
+2025-04-02 12:25:38,067 - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/134.0.6998.165/mac-arm64/chromedriver-mac-arm64.zip
+2025-04-02 12:25:38,067 - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/134.0.6998.165/mac-arm64/chromedriver-mac-arm64.zip
+2025-04-02 12:25:38,219 - INFO - Driver downloading response is 200
+2025-04-02 12:25:38,596 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-02 12:25:38,730 - INFO - Driver has been saved in cache [/Users/victorpiamias/.wdm/drivers/chromedriver/mac64/134.0.6998.165]
+2025-04-02 12:26:34,442 - INFO -  * Detected change in '/Users/victorpiamias/Desktop/Apothical/extracteur/app.py', reloading
+2025-04-02 12:26:34,507 - INFO -  * Restarting with stat
+2025-04-02 12:26:34,882 - WARNING -  * Debugger is active!
+2025-04-02 12:26:34,889 - INFO -  * Debugger PIN: 880-221-942
+2025-04-02 12:27:25,235 - INFO -  * Detected change in '/Users/victorpiamias/Desktop/Apothical/extracteur/simplified_category_scraper.py', reloading
+2025-04-02 12:27:25,307 - INFO -  * Restarting with stat
+2025-04-02 12:27:26,052 - WARNING -  * Debugger is active!
+2025-04-02 12:27:26,061 - INFO -  * Debugger PIN: 880-221-942
+2025-04-02 12:27:56,317 - INFO - 127.0.0.1 - - [02/Apr/2025 12:27:56] "GET / HTTP/1.1" 200 -
+2025-04-02 12:28:14,337 - INFO - 127.0.0.1 - - [02/Apr/2025 12:28:14] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-04-02 12:28:14,337 - INFO - Détection de Mac avec processeur ARM (Apple Silicon)
+2025-04-02 12:28:14,338 - ERROR - Erreur lors de l'initialisation du WebDriver: 'DriverCacheManager' object has no attribute 'get_cache_path'
+2025-04-02 12:28:14,338 - INFO - Tentative d'initialisation alternative du WebDriver...
+2025-04-02 12:28:14,338 - INFO - ====== WebDriver manager ======
+2025-04-02 12:28:14,381 - INFO - 127.0.0.1 - - [02/Apr/2025 12:28:14] "[35m[1mGET /status HTTP/1.1[0m" 500 -
+2025-04-02 12:28:14,403 - INFO - 127.0.0.1 - - [02/Apr/2025 12:28:14] "[36mGET /status?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-04-02 12:28:14,404 - INFO - 127.0.0.1 - - [02/Apr/2025 12:28:14] "[36mGET /status?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-04-02 12:28:14,457 - INFO - 127.0.0.1 - - [02/Apr/2025 12:28:14] "[36mGET /status?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-04-02 12:28:14,487 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-02 12:28:14,608 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-02 12:28:14,684 - INFO - Driver [/Users/victorpiamias/.wdm/drivers/chromedriver/mac64/134.0.6998.165/chromedriver-mac-arm64/THIRD_PARTY_NOTICES.chromedriver] found in cache
+2025-04-02 12:28:14,687 - ERROR - Échec de l'initialisation alternative: [Errno 8] Exec format error: '/Users/victorpiamias/.wdm/drivers/chromedriver/mac64/134.0.6998.165/chromedriver-mac-arm64/THIRD_PARTY_NOTICES.chromedriver'
+2025-04-02 12:28:14,688 - ERROR - Erreur lors du scraping de la catégorie: Impossible d'initialiser le WebDriver. Vérifiez que Chrome est installé.
+2025-04-02 12:28:22,918 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 12:28:22,918 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 12:28:22,919 - INFO -  * Restarting with stat
+2025-04-02 12:28:23,124 - WARNING -  * Debugger is active!
+2025-04-02 12:28:23,131 - INFO -  * Debugger PIN: 880-221-942
+2025-04-02 12:28:25,362 - INFO - 127.0.0.1 - - [02/Apr/2025 12:28:25] "GET / HTTP/1.1" 200 -
+2025-04-02 12:28:28,067 - INFO - 127.0.0.1 - - [02/Apr/2025 12:28:28] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-04-02 12:28:28,067 - INFO - Détection de Mac avec processeur ARM (Apple Silicon)
+2025-04-02 12:28:28,071 - ERROR - Erreur lors de l'initialisation du WebDriver: 'DriverCacheManager' object has no attribute 'get_cache_path'
+2025-04-02 12:28:28,071 - INFO - Tentative d'initialisation alternative du WebDriver...
+2025-04-02 12:28:28,072 - INFO - ====== WebDriver manager ======
+2025-04-02 12:28:28,103 - INFO - 127.0.0.1 - - [02/Apr/2025 12:28:28] "[35m[1mGET /status HTTP/1.1[0m" 500 -
+2025-04-02 12:28:28,132 - INFO - 127.0.0.1 - - [02/Apr/2025 12:28:28] "[36mGET /status?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-04-02 12:28:28,133 - INFO - 127.0.0.1 - - [02/Apr/2025 12:28:28] "[36mGET /status?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-04-02 12:28:28,181 - INFO - 127.0.0.1 - - [02/Apr/2025 12:28:28] "[36mGET /status?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-04-02 12:28:28,232 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-02 12:28:28,309 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-02 12:28:28,382 - INFO - Driver [/Users/victorpiamias/.wdm/drivers/chromedriver/mac64/134.0.6998.165/chromedriver-mac-arm64/THIRD_PARTY_NOTICES.chromedriver] found in cache
+2025-04-02 12:28:28,386 - ERROR - Échec de l'initialisation alternative: [Errno 8] Exec format error: '/Users/victorpiamias/.wdm/drivers/chromedriver/mac64/134.0.6998.165/chromedriver-mac-arm64/THIRD_PARTY_NOTICES.chromedriver'
+2025-04-02 12:28:28,386 - ERROR - Erreur lors du scraping de la catégorie: Impossible d'initialiser le WebDriver. Vérifiez que Chrome est installé.
+2025-04-02 12:29:33,643 - INFO -  * Detected change in '/Users/victorpiamias/Desktop/Apothical/extracteur/app.py', reloading
+2025-04-02 12:29:33,872 - INFO -  * Restarting with stat
+2025-04-02 12:29:34,519 - WARNING -  * Debugger is active!
+2025-04-02 12:29:34,530 - INFO -  * Debugger PIN: 880-221-942
+2025-04-02 12:29:54,269 - INFO - 127.0.0.1 - - [02/Apr/2025 12:29:54] "GET / HTTP/1.1" 200 -
+2025-04-02 12:30:20,834 - INFO -  * Detected change in '/Users/victorpiamias/Desktop/Apothical/extracteur/simplified_category_scraper.py', reloading
+2025-04-02 12:30:20,897 - INFO -  * Restarting with stat
+2025-04-02 12:30:21,217 - WARNING -  * Debugger is active!
+2025-04-02 12:30:21,224 - INFO -  * Debugger PIN: 880-221-942
+2025-04-02 12:31:52,922 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 12:31:52,923 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 12:31:52,924 - INFO -  * Restarting with stat
+2025-04-02 12:31:53,124 - WARNING -  * Debugger is active!
+2025-04-02 12:31:53,136 - INFO -  * Debugger PIN: 880-221-942
+2025-04-02 12:32:04,337 - INFO - 127.0.0.1 - - [02/Apr/2025 12:32:04] "GET / HTTP/1.1" 200 -
+2025-04-02 12:32:06,395 - INFO - 127.0.0.1 - - [02/Apr/2025 12:32:06] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-04-02 12:32:06,395 - INFO - Nettoyage du cache du driver à /Users/victorpiamias/.wdm
+2025-04-02 12:32:06,406 - INFO - 127.0.0.1 - - [02/Apr/2025 12:32:06] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:32:06,407 - INFO - Cache du ChromeDriver supprimé: /Users/victorpiamias/.wdm/drivers/chromedriver
+2025-04-02 12:32:06,407 - INFO - Nettoyage du cache du driver à /Users/victorpiamias/.wdm
+2025-04-02 12:32:06,407 - INFO - Détection de Mac avec processeur ARM (Apple Silicon)
+2025-04-02 12:32:06,407 - INFO - ====== WebDriver manager ======
+2025-04-02 12:32:06,553 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-02 12:32:06,643 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-02 12:32:06,729 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-02 12:32:06,941 - INFO - WebDriver version 134.0.6998.165 selected
+2025-04-02 12:32:06,943 - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/134.0.6998.165/mac-arm64/chromedriver-mac-arm64.zip
+2025-04-02 12:32:06,943 - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/134.0.6998.165/mac-arm64/chromedriver-mac-arm64.zip
+2025-04-02 12:32:07,106 - INFO - Driver downloading response is 200
+2025-04-02 12:32:07,598 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-02 12:32:07,753 - INFO - Driver has been saved in cache [/Users/victorpiamias/.wdm/drivers/chromedriver/mac64/134.0.6998.165]
+2025-04-02 12:32:07,763 - INFO - Permissions d'exécution accordées à: /Users/victorpiamias/.wdm/drivers/chromedriver/mac64/134.0.6998.165/chromedriver-mac-arm64/THIRD_PARTY_NOTICES.chromedriver
+2025-04-02 12:32:07,770 - ERROR - Erreur lors de l'initialisation du WebDriver: [Errno 8] Exec format error: '/Users/victorpiamias/.wdm/drivers/chromedriver/mac64/134.0.6998.165/chromedriver-mac-arm64/THIRD_PARTY_NOTICES.chromedriver'
+2025-04-02 12:32:07,771 - INFO - Tentative d'initialisation minimale du WebDriver...
+2025-04-02 12:32:11,532 - INFO - 127.0.0.1 - - [02/Apr/2025 12:32:11] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:32:13,494 - WARNING - Impossible de déterminer le nombre total de pages: list index out of range
+2025-04-02 12:32:13,495 - INFO - Nombre total de pages à scraper: 1
+2025-04-02 12:32:13,843 - INFO - Extraction de 0 liens de produits sur la page
+2025-04-02 12:32:13,843 - INFO - Scraping de la page 1/1
+2025-04-02 12:32:17,522 - INFO - 127.0.0.1 - - [02/Apr/2025 12:32:17] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:32:22,665 - INFO - 127.0.0.1 - - [02/Apr/2025 12:32:22] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:32:28,264 - INFO - 127.0.0.1 - - [02/Apr/2025 12:32:28] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:32:33,518 - INFO - 127.0.0.1 - - [02/Apr/2025 12:32:33] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:32:39,514 - INFO - 127.0.0.1 - - [02/Apr/2025 12:32:39] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:32:45,512 - INFO - 127.0.0.1 - - [02/Apr/2025 12:32:45] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:32:51,511 - INFO - 127.0.0.1 - - [02/Apr/2025 12:32:51] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:32:57,519 - INFO - 127.0.0.1 - - [02/Apr/2025 12:32:57] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:33:03,514 - INFO - 127.0.0.1 - - [02/Apr/2025 12:33:03] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:33:09,516 - INFO - 127.0.0.1 - - [02/Apr/2025 12:33:09] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:33:15,512 - INFO - 127.0.0.1 - - [02/Apr/2025 12:33:15] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:33:21,520 - INFO - 127.0.0.1 - - [02/Apr/2025 12:33:21] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:33:27,519 - INFO - 127.0.0.1 - - [02/Apr/2025 12:33:27] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:33:33,511 - INFO - 127.0.0.1 - - [02/Apr/2025 12:33:33] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:33:39,524 - INFO - 127.0.0.1 - - [02/Apr/2025 12:33:39] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:33:45,526 - INFO - 127.0.0.1 - - [02/Apr/2025 12:33:45] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:33:51,522 - INFO - 127.0.0.1 - - [02/Apr/2025 12:33:51] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:33:57,514 - INFO - 127.0.0.1 - - [02/Apr/2025 12:33:57] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:34:03,512 - INFO - 127.0.0.1 - - [02/Apr/2025 12:34:03] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:34:09,516 - INFO - 127.0.0.1 - - [02/Apr/2025 12:34:09] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:34:15,516 - INFO - 127.0.0.1 - - [02/Apr/2025 12:34:15] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:34:21,517 - INFO - 127.0.0.1 - - [02/Apr/2025 12:34:21] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:34:27,511 - INFO - 127.0.0.1 - - [02/Apr/2025 12:34:27] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:34:33,531 - INFO - 127.0.0.1 - - [02/Apr/2025 12:34:33] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:34:39,514 - INFO - 127.0.0.1 - - [02/Apr/2025 12:34:39] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:34:45,515 - INFO - 127.0.0.1 - - [02/Apr/2025 12:34:45] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:34:51,515 - INFO - 127.0.0.1 - - [02/Apr/2025 12:34:51] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:34:57,514 - INFO - 127.0.0.1 - - [02/Apr/2025 12:34:57] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:35:03,512 - INFO - 127.0.0.1 - - [02/Apr/2025 12:35:03] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:35:09,521 - INFO - 127.0.0.1 - - [02/Apr/2025 12:35:09] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:35:15,519 - INFO - 127.0.0.1 - - [02/Apr/2025 12:35:15] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:35:21,515 - INFO - 127.0.0.1 - - [02/Apr/2025 12:35:21] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:35:27,514 - INFO - 127.0.0.1 - - [02/Apr/2025 12:35:27] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:35:33,518 - INFO - 127.0.0.1 - - [02/Apr/2025 12:35:33] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:35:39,515 - INFO - 127.0.0.1 - - [02/Apr/2025 12:35:39] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:35:45,509 - INFO - 127.0.0.1 - - [02/Apr/2025 12:35:45] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:35:51,515 - INFO - 127.0.0.1 - - [02/Apr/2025 12:35:51] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:35:57,514 - INFO - 127.0.0.1 - - [02/Apr/2025 12:35:57] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:36:03,514 - INFO - 127.0.0.1 - - [02/Apr/2025 12:36:03] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:36:09,508 - INFO - 127.0.0.1 - - [02/Apr/2025 12:36:09] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:36:15,521 - INFO - 127.0.0.1 - - [02/Apr/2025 12:36:15] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:36:21,515 - INFO - 127.0.0.1 - - [02/Apr/2025 12:36:21] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:36:27,514 - INFO - 127.0.0.1 - - [02/Apr/2025 12:36:27] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:36:33,512 - INFO - 127.0.0.1 - - [02/Apr/2025 12:36:33] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:36:39,512 - INFO - 127.0.0.1 - - [02/Apr/2025 12:36:39] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:36:45,524 - INFO - 127.0.0.1 - - [02/Apr/2025 12:36:45] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:36:52,624 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 12:36:52,625 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 12:36:52,626 - INFO -  * Restarting with stat
+2025-04-02 12:36:52,849 - WARNING -  * Debugger is active!
+2025-04-02 12:36:52,856 - INFO -  * Debugger PIN: 880-221-942
+2025-04-02 12:36:54,206 - INFO - 127.0.0.1 - - [02/Apr/2025 12:36:54] "GET / HTTP/1.1" 200 -
+2025-04-02 12:39:49,128 - INFO -  * Detected change in '/Users/victorpiamias/Desktop/Apothical/extracteur/simplified_category_scraper.py', reloading
+2025-04-02 12:39:49,215 - INFO -  * Restarting with stat
+2025-04-02 12:39:49,570 - WARNING -  * Debugger is active!
+2025-04-02 12:39:49,577 - INFO -  * Debugger PIN: 880-221-942
+2025-04-02 12:39:53,507 - INFO - 127.0.0.1 - - [02/Apr/2025 12:39:53] "GET / HTTP/1.1" 200 -
+2025-04-02 12:39:55,667 - INFO - ====== WebDriver manager ======
+2025-04-02 12:39:55,857 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-02 12:39:55,995 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-02 12:39:56,079 - INFO - Driver [/Users/victorpiamias/.wdm/drivers/chromedriver/mac64/134.0.6998.165/chromedriver-mac-arm64/THIRD_PARTY_NOTICES.chromedriver] found in cache
+2025-04-02 12:39:56,084 - INFO - 127.0.0.1 - - [02/Apr/2025 12:39:56] "POST / HTTP/1.1" 200 -
+2025-04-02 12:40:02,603 - INFO - 127.0.0.1 - - [02/Apr/2025 12:40:02] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-04-02 12:40:02,621 - INFO - 127.0.0.1 - - [02/Apr/2025 12:40:02] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:40:04,152 - INFO - WebDriver initialisé avec succès (méthode directe)
+2025-04-02 12:40:07,722 - INFO - 127.0.0.1 - - [02/Apr/2025 12:40:07] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:40:10,295 - INFO - Pas de bannière de cookies ou erreur: Message: 
+Stacktrace:
+0   chromedriver                        0x00000001030bb6c8 cxxbridge1$str$ptr + 2791212
+1   chromedriver                        0x00000001030b3c9c cxxbridge1$str$ptr + 2759936
+2   chromedriver                        0x0000000102c05e30 cxxbridge1$string$len + 92928
+3   chromedriver                        0x0000000102c4d170 cxxbridge1$string$len + 384576
+4   chromedriver                        0x0000000102c8e5f8 cxxbridge1$string$len + 651976
+5   chromedriver                        0x0000000102c412fc cxxbridge1$string$len + 335820
+6   chromedriver                        0x00000001030806c4 cxxbridge1$str$ptr + 2549544
+7   chromedriver                        0x0000000103083988 cxxbridge1$str$ptr + 2562540
+8   chromedriver                        0x000000010306071c cxxbridge1$str$ptr + 2418560
+9   chromedriver                        0x00000001030841e8 cxxbridge1$str$ptr + 2564684
+10  chromedriver                        0x0000000103051750 cxxbridge1$str$ptr + 2357172
+11  chromedriver                        0x00000001030a3f58 cxxbridge1$str$ptr + 2695100
+12  chromedriver                        0x00000001030a40e0 cxxbridge1$str$ptr + 2695492
+13  chromedriver                        0x00000001030b3910 cxxbridge1$str$ptr + 2759028
+14  libsystem_pthread.dylib             0x0000000191d7df94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000191d78d34 thread_start + 8
+
+2025-04-02 12:40:13,569 - INFO - 127.0.0.1 - - [02/Apr/2025 12:40:13] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:40:19,565 - INFO - 127.0.0.1 - - [02/Apr/2025 12:40:19] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:40:21,359 - WARNING - Impossible de déterminer le nombre total de pages: Message: 
+Stacktrace:
+0   chromedriver                        0x00000001030bb6c8 cxxbridge1$str$ptr + 2791212
+1   chromedriver                        0x00000001030b3c9c cxxbridge1$str$ptr + 2759936
+2   chromedriver                        0x0000000102c05e30 cxxbridge1$string$len + 92928
+3   chromedriver                        0x0000000102c4d170 cxxbridge1$string$len + 384576
+4   chromedriver                        0x0000000102c8e5f8 cxxbridge1$string$len + 651976
+5   chromedriver                        0x0000000102c412fc cxxbridge1$string$len + 335820
+6   chromedriver                        0x00000001030806c4 cxxbridge1$str$ptr + 2549544
+7   chromedriver                        0x0000000103083988 cxxbridge1$str$ptr + 2562540
+8   chromedriver                        0x000000010306071c cxxbridge1$str$ptr + 2418560
+9   chromedriver                        0x00000001030841e8 cxxbridge1$str$ptr + 2564684
+10  chromedriver                        0x0000000103051750 cxxbridge1$str$ptr + 2357172
+11  chromedriver                        0x00000001030a3f58 cxxbridge1$str$ptr + 2695100
+12  chromedriver                        0x00000001030a40e0 cxxbridge1$str$ptr + 2695492
+13  chromedriver                        0x00000001030b3910 cxxbridge1$str$ptr + 2759028
+14  libsystem_pthread.dylib             0x0000000191d7df94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000191d78d34 thread_start + 8
+
+2025-04-02 12:40:21,359 - INFO - Nombre total de pages à scraper: 1
+2025-04-02 12:40:21,492 - INFO - Extraction de 32 liens de produits sur la page
+2025-04-02 12:40:21,492 - INFO - Scraping de la page 1/1
+2025-04-02 12:40:25,566 - INFO - 127.0.0.1 - - [02/Apr/2025 12:40:25] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:40:30,720 - INFO - 127.0.0.1 - - [02/Apr/2025 12:40:30] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:40:35,822 - INFO - 127.0.0.1 - - [02/Apr/2025 12:40:35] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:40:41,571 - INFO - 127.0.0.1 - - [02/Apr/2025 12:40:41] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:40:46,775 - INFO - 127.0.0.1 - - [02/Apr/2025 12:40:46] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:40:52,016 - ERROR - Erreur lors du scraping du produit https://www.e.leclerc/fp/vichy-homme-hydra-mag-c-soin-hydratant-anti-fatigue-50ml-3337871322571: Message: 
+Stacktrace:
+0   chromedriver                        0x00000001030bb6c8 cxxbridge1$str$ptr + 2791212
+1   chromedriver                        0x00000001030b3c9c cxxbridge1$str$ptr + 2759936
+2   chromedriver                        0x0000000102c05e30 cxxbridge1$string$len + 92928
+3   chromedriver                        0x0000000102c4d170 cxxbridge1$string$len + 384576
+4   chromedriver                        0x0000000102c8e5f8 cxxbridge1$string$len + 651976
+5   chromedriver                        0x0000000102c412fc cxxbridge1$string$len + 335820
+6   chromedriver                        0x00000001030806c4 cxxbridge1$str$ptr + 2549544
+7   chromedriver                        0x0000000103083988 cxxbridge1$str$ptr + 2562540
+8   chromedriver                        0x000000010306071c cxxbridge1$str$ptr + 2418560
+9   chromedriver                        0x00000001030841e8 cxxbridge1$str$ptr + 2564684
+10  chromedriver                        0x0000000103051750 cxxbridge1$str$ptr + 2357172
+11  chromedriver                        0x00000001030a3f58 cxxbridge1$str$ptr + 2695100
+12  chromedriver                        0x00000001030a40e0 cxxbridge1$str$ptr + 2695492
+13  chromedriver                        0x00000001030b3910 cxxbridge1$str$ptr + 2759028
+14  libsystem_pthread.dylib             0x0000000191d7df94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000191d78d34 thread_start + 8
+
+2025-04-02 12:40:52,583 - INFO - 127.0.0.1 - - [02/Apr/2025 12:40:52] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:40:58,571 - INFO - 127.0.0.1 - - [02/Apr/2025 12:40:58] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:41:04,566 - INFO - 127.0.0.1 - - [02/Apr/2025 12:41:04] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:41:10,581 - INFO - 127.0.0.1 - - [02/Apr/2025 12:41:10] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:41:16,566 - INFO - 127.0.0.1 - - [02/Apr/2025 12:41:16] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:41:22,432 - ERROR - Erreur lors du scraping du produit https://www.e.leclerc/fp/la-roche-posay-toleriane-ultra-dermallergo-serum-20ml-3337875693820: Message: 
+Stacktrace:
+0   chromedriver                        0x00000001030bb6c8 cxxbridge1$str$ptr + 2791212
+1   chromedriver                        0x00000001030b3c9c cxxbridge1$str$ptr + 2759936
+2   chromedriver                        0x0000000102c05e30 cxxbridge1$string$len + 92928
+3   chromedriver                        0x0000000102c4d170 cxxbridge1$string$len + 384576
+4   chromedriver                        0x0000000102c8e5f8 cxxbridge1$string$len + 651976
+5   chromedriver                        0x0000000102c412fc cxxbridge1$string$len + 335820
+6   chromedriver                        0x00000001030806c4 cxxbridge1$str$ptr + 2549544
+7   chromedriver                        0x0000000103083988 cxxbridge1$str$ptr + 2562540
+8   chromedriver                        0x000000010306071c cxxbridge1$str$ptr + 2418560
+9   chromedriver                        0x00000001030841e8 cxxbridge1$str$ptr + 2564684
+10  chromedriver                        0x0000000103051750 cxxbridge1$str$ptr + 2357172
+11  chromedriver                        0x00000001030a3f58 cxxbridge1$str$ptr + 2695100
+12  chromedriver                        0x00000001030a40e0 cxxbridge1$str$ptr + 2695492
+13  chromedriver                        0x00000001030b3910 cxxbridge1$str$ptr + 2759028
+14  libsystem_pthread.dylib             0x0000000191d7df94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000191d78d34 thread_start + 8
+
+2025-04-02 12:41:22,568 - INFO - 127.0.0.1 - - [02/Apr/2025 12:41:22] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:41:28,563 - INFO - 127.0.0.1 - - [02/Apr/2025 12:41:28] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:41:34,566 - INFO - 127.0.0.1 - - [02/Apr/2025 12:41:34] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:41:40,567 - INFO - 127.0.0.1 - - [02/Apr/2025 12:41:40] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:41:46,568 - INFO - 127.0.0.1 - - [02/Apr/2025 12:41:46] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:41:52,565 - INFO - 127.0.0.1 - - [02/Apr/2025 12:41:52] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:41:53,084 - ERROR - Erreur lors du scraping du produit https://www.e.leclerc/fp/nuxe-merveillance-lift-glow-creme-bonne-mine-effet-liftant-50ml-3264680035234: Message: 
+Stacktrace:
+0   chromedriver                        0x00000001030bb6c8 cxxbridge1$str$ptr + 2791212
+1   chromedriver                        0x00000001030b3c9c cxxbridge1$str$ptr + 2759936
+2   chromedriver                        0x0000000102c05e30 cxxbridge1$string$len + 92928
+3   chromedriver                        0x0000000102c4d170 cxxbridge1$string$len + 384576
+4   chromedriver                        0x0000000102c8e5f8 cxxbridge1$string$len + 651976
+5   chromedriver                        0x0000000102c412fc cxxbridge1$string$len + 335820
+6   chromedriver                        0x00000001030806c4 cxxbridge1$str$ptr + 2549544
+7   chromedriver                        0x0000000103083988 cxxbridge1$str$ptr + 2562540
+8   chromedriver                        0x000000010306071c cxxbridge1$str$ptr + 2418560
+9   chromedriver                        0x00000001030841e8 cxxbridge1$str$ptr + 2564684
+10  chromedriver                        0x0000000103051750 cxxbridge1$str$ptr + 2357172
+11  chromedriver                        0x00000001030a3f58 cxxbridge1$str$ptr + 2695100
+12  chromedriver                        0x00000001030a40e0 cxxbridge1$str$ptr + 2695492
+13  chromedriver                        0x00000001030b3910 cxxbridge1$str$ptr + 2759028
+14  libsystem_pthread.dylib             0x0000000191d7df94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000191d78d34 thread_start + 8
+
+2025-04-02 12:41:58,565 - INFO - 127.0.0.1 - - [02/Apr/2025 12:41:58] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:42:04,564 - INFO - 127.0.0.1 - - [02/Apr/2025 12:42:04] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:42:10,564 - INFO - 127.0.0.1 - - [02/Apr/2025 12:42:10] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:42:16,565 - INFO - 127.0.0.1 - - [02/Apr/2025 12:42:16] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:42:22,565 - INFO - 127.0.0.1 - - [02/Apr/2025 12:42:22] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:42:23,504 - ERROR - Erreur lors du scraping du produit https://www.e.leclerc/fp/vinopure-gelee-nettoyante-purifiante-385-ml-3522930004066: Message: 
+Stacktrace:
+0   chromedriver                        0x00000001030bb6c8 cxxbridge1$str$ptr + 2791212
+1   chromedriver                        0x00000001030b3c9c cxxbridge1$str$ptr + 2759936
+2   chromedriver                        0x0000000102c05e30 cxxbridge1$string$len + 92928
+3   chromedriver                        0x0000000102c4d170 cxxbridge1$string$len + 384576
+4   chromedriver                        0x0000000102c8e5f8 cxxbridge1$string$len + 651976
+5   chromedriver                        0x0000000102c412fc cxxbridge1$string$len + 335820
+6   chromedriver                        0x00000001030806c4 cxxbridge1$str$ptr + 2549544
+7   chromedriver                        0x0000000103083988 cxxbridge1$str$ptr + 2562540
+8   chromedriver                        0x000000010306071c cxxbridge1$str$ptr + 2418560
+9   chromedriver                        0x00000001030841e8 cxxbridge1$str$ptr + 2564684
+10  chromedriver                        0x0000000103051750 cxxbridge1$str$ptr + 2357172
+11  chromedriver                        0x00000001030a3f58 cxxbridge1$str$ptr + 2695100
+12  chromedriver                        0x00000001030a40e0 cxxbridge1$str$ptr + 2695492
+13  chromedriver                        0x00000001030b3910 cxxbridge1$str$ptr + 2759028
+14  libsystem_pthread.dylib             0x0000000191d7df94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000191d78d34 thread_start + 8
+
+2025-04-02 12:42:28,571 - INFO - 127.0.0.1 - - [02/Apr/2025 12:42:28] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:42:34,564 - INFO - 127.0.0.1 - - [02/Apr/2025 12:42:34] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:42:40,565 - INFO - 127.0.0.1 - - [02/Apr/2025 12:42:40] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:42:46,568 - INFO - 127.0.0.1 - - [02/Apr/2025 12:42:46] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:42:52,571 - INFO - 127.0.0.1 - - [02/Apr/2025 12:42:52] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:42:53,953 - ERROR - Erreur lors du scraping du produit https://www.e.leclerc/fp/soin-apaisant-contour-des-yeux-10ml-3282779051361: Message: 
+Stacktrace:
+0   chromedriver                        0x00000001030bb6c8 cxxbridge1$str$ptr + 2791212
+1   chromedriver                        0x00000001030b3c9c cxxbridge1$str$ptr + 2759936
+2   chromedriver                        0x0000000102c05e30 cxxbridge1$string$len + 92928
+3   chromedriver                        0x0000000102c4d170 cxxbridge1$string$len + 384576
+4   chromedriver                        0x0000000102c8e5f8 cxxbridge1$string$len + 651976
+5   chromedriver                        0x0000000102c412fc cxxbridge1$string$len + 335820
+6   chromedriver                        0x00000001030806c4 cxxbridge1$str$ptr + 2549544
+7   chromedriver                        0x0000000103083988 cxxbridge1$str$ptr + 2562540
+8   chromedriver                        0x000000010306071c cxxbridge1$str$ptr + 2418560
+9   chromedriver                        0x00000001030841e8 cxxbridge1$str$ptr + 2564684
+10  chromedriver                        0x0000000103051750 cxxbridge1$str$ptr + 2357172
+11  chromedriver                        0x00000001030a3f58 cxxbridge1$str$ptr + 2695100
+12  chromedriver                        0x00000001030a40e0 cxxbridge1$str$ptr + 2695492
+13  chromedriver                        0x00000001030b3910 cxxbridge1$str$ptr + 2759028
+14  libsystem_pthread.dylib             0x0000000191d7df94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000191d78d34 thread_start + 8
+
+2025-04-02 12:42:58,566 - INFO - 127.0.0.1 - - [02/Apr/2025 12:42:58] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:43:02,890 - INFO - 127.0.0.1 - - [02/Apr/2025 12:43:02] "GET / HTTP/1.1" 200 -
+2025-04-02 12:43:07,670 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 12:43:07,671 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 12:43:07,674 - INFO -  * Restarting with stat
+2025-04-02 12:43:07,930 - WARNING -  * Debugger is active!
+2025-04-02 12:43:07,938 - INFO -  * Debugger PIN: 880-221-942
+2025-04-02 12:43:08,826 - INFO - 127.0.0.1 - - [02/Apr/2025 12:43:08] "GET / HTTP/1.1" 200 -
+2025-04-02 12:44:17,421 - INFO -  * Detected change in '/Users/victorpiamias/Desktop/Apothical/extracteur/simplified_category_scraper.py', reloading
+2025-04-02 12:44:17,468 - INFO -  * Restarting with stat
+2025-04-02 12:44:17,880 - WARNING -  * Debugger is active!
+2025-04-02 12:44:17,922 - INFO -  * Debugger PIN: 880-221-942
+2025-04-02 12:44:20,542 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 12:44:20,542 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 12:44:20,543 - INFO -  * Restarting with stat
+2025-04-02 12:44:20,746 - WARNING -  * Debugger is active!
+2025-04-02 12:44:20,760 - INFO -  * Debugger PIN: 880-221-942
+2025-04-02 12:44:46,826 - INFO - 127.0.0.1 - - [02/Apr/2025 12:44:46] "GET / HTTP/1.1" 200 -
+2025-04-02 12:44:51,283 - INFO - 127.0.0.1 - - [02/Apr/2025 12:44:51] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-04-02 12:44:51,296 - INFO - 127.0.0.1 - - [02/Apr/2025 12:44:51] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:44:53,079 - INFO - WebDriver initialisé avec succès (méthode directe)
+2025-04-02 12:44:56,571 - INFO - 127.0.0.1 - - [02/Apr/2025 12:44:56] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:44:58,523 - INFO - Pas de bannière de cookies ou erreur: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000102ab76c8 cxxbridge1$str$ptr + 2791212
+1   chromedriver                        0x0000000102aafc9c cxxbridge1$str$ptr + 2759936
+2   chromedriver                        0x0000000102601e30 cxxbridge1$string$len + 92928
+3   chromedriver                        0x0000000102649170 cxxbridge1$string$len + 384576
+4   chromedriver                        0x000000010268a5f8 cxxbridge1$string$len + 651976
+5   chromedriver                        0x000000010263d2fc cxxbridge1$string$len + 335820
+6   chromedriver                        0x0000000102a7c6c4 cxxbridge1$str$ptr + 2549544
+7   chromedriver                        0x0000000102a7f988 cxxbridge1$str$ptr + 2562540
+8   chromedriver                        0x0000000102a5c71c cxxbridge1$str$ptr + 2418560
+9   chromedriver                        0x0000000102a801e8 cxxbridge1$str$ptr + 2564684
+10  chromedriver                        0x0000000102a4d750 cxxbridge1$str$ptr + 2357172
+11  chromedriver                        0x0000000102a9ff58 cxxbridge1$str$ptr + 2695100
+12  chromedriver                        0x0000000102aa00e0 cxxbridge1$str$ptr + 2695492
+13  chromedriver                        0x0000000102aaf910 cxxbridge1$str$ptr + 2759028
+14  libsystem_pthread.dylib             0x0000000191d7df94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000191d78d34 thread_start + 8
+
+2025-04-02 12:45:02,571 - INFO - 127.0.0.1 - - [02/Apr/2025 12:45:02] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:45:08,568 - INFO - 127.0.0.1 - - [02/Apr/2025 12:45:08] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:45:09,575 - WARNING - Impossible de déterminer le nombre total de pages: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000102ab76c8 cxxbridge1$str$ptr + 2791212
+1   chromedriver                        0x0000000102aafc9c cxxbridge1$str$ptr + 2759936
+2   chromedriver                        0x0000000102601e30 cxxbridge1$string$len + 92928
+3   chromedriver                        0x0000000102649170 cxxbridge1$string$len + 384576
+4   chromedriver                        0x000000010268a5f8 cxxbridge1$string$len + 651976
+5   chromedriver                        0x000000010263d2fc cxxbridge1$string$len + 335820
+6   chromedriver                        0x0000000102a7c6c4 cxxbridge1$str$ptr + 2549544
+7   chromedriver                        0x0000000102a7f988 cxxbridge1$str$ptr + 2562540
+8   chromedriver                        0x0000000102a5c71c cxxbridge1$str$ptr + 2418560
+9   chromedriver                        0x0000000102a801e8 cxxbridge1$str$ptr + 2564684
+10  chromedriver                        0x0000000102a4d750 cxxbridge1$str$ptr + 2357172
+11  chromedriver                        0x0000000102a9ff58 cxxbridge1$str$ptr + 2695100
+12  chromedriver                        0x0000000102aa00e0 cxxbridge1$str$ptr + 2695492
+13  chromedriver                        0x0000000102aaf910 cxxbridge1$str$ptr + 2759028
+14  libsystem_pthread.dylib             0x0000000191d7df94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000191d78d34 thread_start + 8
+
+2025-04-02 12:45:09,576 - INFO - Nombre total de pages à scraper: 1
+2025-04-02 12:45:09,709 - INFO - Extraction de 32 liens de produits sur la page
+2025-04-02 12:45:09,709 - INFO - Scraping de la page 1/1
+2025-04-02 12:45:12,059 - INFO - Produit scrapé avec succès: Vichy Homme hydra mag c+ soin hydratant anti-fatigue 50ml
+2025-04-02 12:45:13,728 - INFO - 127.0.0.1 - - [02/Apr/2025 12:45:13] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:45:14,788 - INFO - Produit scrapé avec succès: La Roche-Posay Toleriane ultra dermallergo sérum 20ml
+2025-04-02 12:45:17,034 - INFO - Produit scrapé avec succès: Nuxe Merveillance Lift glow crème bonne mine effet liftant 50ml
+2025-04-02 12:45:18,832 - INFO - 127.0.0.1 - - [02/Apr/2025 12:45:18] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:45:19,246 - INFO - Produit scrapé avec succès: Vinopure Gelée Nettoyante Purifiante - 385 ml
+2025-04-02 12:45:21,478 - INFO - Produit scrapé avec succès: Soin apaisant contour des yeux 10ml
+2025-04-02 12:45:23,605 - INFO - Produit scrapé avec succès: La Roche-Posay Effaclar Duo+ Soin Triple-Correction anti-Imperfection 40ml
+2025-04-02 12:45:23,923 - INFO - 127.0.0.1 - - [02/Apr/2025 12:45:23] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:45:25,814 - INFO - Produit scrapé avec succès: La Roche-Posay Effaclar sérum ultra concentré 30ml
+2025-04-02 12:45:28,108 - INFO - Produit scrapé avec succès: Avène Hydrance Riche Crème hydratante 40 ml
+2025-04-02 12:45:29,012 - INFO - 127.0.0.1 - - [02/Apr/2025 12:45:29] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:45:30,322 - INFO - Produit scrapé avec succès: Vinopure Stop Bouton Salicylique - 15 ml
+2025-04-02 12:45:32,624 - INFO - Produit scrapé avec succès: Avène Hydrance Légère Emulsion hydratante 40ml
+2025-04-02 12:45:34,142 - INFO - 127.0.0.1 - - [02/Apr/2025 12:45:34] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:45:35,168 - INFO - Produit scrapé avec succès: Cerave gel moussant anti-imperfections 236ml
+2025-04-02 12:45:37,510 - INFO - Produit scrapé avec succès: Eucerin Hyaluron-Filler + 3x Effect Soin De Jour Spf 30 50ml Tous Types de Peaux
+2025-04-02 12:45:39,225 - INFO - 127.0.0.1 - - [02/Apr/2025 12:45:39] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:45:40,233 - INFO - Produit scrapé avec succès: SVR Sebiaclear Ampoule Flash 30ml
+2025-04-02 12:45:42,456 - INFO - Produit scrapé avec succès: SVR Sebiaclear sérum anti-imperfections 30ml
+2025-04-02 12:45:44,314 - INFO - 127.0.0.1 - - [02/Apr/2025 12:45:44] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:45:44,690 - INFO - Produit scrapé avec succès: La Roche-Posay Effaclar mat Hydratant sébo-régulateur 40ml
+2025-04-02 12:45:46,911 - INFO - Produit scrapé avec succès: La Roche-Posay Hyalu B5 sérum concentré anti-rides réparateur 30ml
+2025-04-02 12:45:49,184 - INFO - Produit scrapé avec succès: Avène crème apaisante - peaux desséchées et irritées par traitements 40ml
+2025-04-02 12:45:49,394 - INFO - 127.0.0.1 - - [02/Apr/2025 12:45:49] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:45:51,394 - INFO - Produit scrapé avec succès: La Roche-Posay Effaclar H Iso-Biome Soin Réparateur Apaisant 40ml
+2025-04-02 12:45:53,613 - INFO - Produit scrapé avec succès: Lotion purifiante anti-imperfections peaux grasses à tendance acnéique 200ml
+2025-04-02 12:45:54,520 - INFO - 127.0.0.1 - - [02/Apr/2025 12:45:54] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:45:57,330 - INFO - Produit scrapé avec succès: Eucerin Hyaluron-Filler + 3x Effect Soin De Nuit 50ml
+2025-04-02 12:45:59,539 - INFO - Produit scrapé avec succès: Ecrinal gel cils & sourcils fortifiant à l'ANP 2+ 9ml
+2025-04-02 12:45:59,606 - INFO - 127.0.0.1 - - [02/Apr/2025 12:45:59] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:46:01,746 - INFO - Produit scrapé avec succès: Avène Cleanance Comedomed 30ml
+2025-04-02 12:46:04,147 - INFO - Produit scrapé avec succès: Cerave sérum rétinol anti-marques 30ml
+2025-04-02 12:46:04,690 - INFO - 127.0.0.1 - - [02/Apr/2025 12:46:04] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:46:06,380 - INFO - Produit scrapé avec succès: La Roche-Posay Toleriane Sensitive Soin hydratant apaisant protecteur 40ml
+2025-04-02 12:46:09,111 - INFO - Produit scrapé avec succès: Bioderma Créaline DS+ Crème 40 ml
+2025-04-02 12:46:09,816 - INFO - 127.0.0.1 - - [02/Apr/2025 12:46:09] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:46:11,324 - INFO - Produit scrapé avec succès: Vichy Minéral 89 booster quotidien fortifiant et repulpant 50ml
+2025-04-02 12:46:13,901 - INFO - Produit scrapé avec succès: Eucerin Aquaphor Réparateur Lèvres Sos 10ml
+2025-04-02 12:46:15,572 - INFO - 127.0.0.1 - - [02/Apr/2025 12:46:15] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:46:16,192 - INFO - Produit scrapé avec succès: Filorga Time-filler 5xp crème correction rides 50ml
+2025-04-02 12:46:18,528 - INFO - Produit scrapé avec succès: Eucerin Sérum anti-pigment 30ml
+2025-04-02 12:46:20,717 - INFO - 127.0.0.1 - - [02/Apr/2025 12:46:20] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:46:20,854 - INFO - Produit scrapé avec succès: Avène Rosamed Concentré anti-rougeurs 30ml
+2025-04-02 12:46:23,101 - INFO - Produit scrapé avec succès: Eucerin Anti-Pigment Soin De Nuit 50ml
+2025-04-02 12:46:25,336 - INFO - Produit scrapé avec succès: La Roche-Posay Toleriane Ultra Dermallergo crème 40ml
+2025-04-02 12:46:25,822 - INFO - 127.0.0.1 - - [02/Apr/2025 12:46:25] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:46:30,916 - INFO - 127.0.0.1 - - [02/Apr/2025 12:46:30] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:46:31,428 - INFO - 127.0.0.1 - - [02/Apr/2025 12:46:31] "GET /results HTTP/1.1" 200 -
+2025-04-02 12:46:37,745 - INFO - 127.0.0.1 - - [02/Apr/2025 12:46:37] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:46:39,171 - INFO - 127.0.0.1 - - [02/Apr/2025 12:46:39] "[33mGET /download HTTP/1.1[0m" 404 -
+2025-04-02 12:57:13,358 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 12:57:13,359 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 12:57:13,361 - INFO -  * Restarting with stat
+2025-04-02 12:57:13,632 - WARNING -  * Debugger is active!
+2025-04-02 12:57:13,646 - INFO -  * Debugger PIN: 880-221-942
+2025-04-02 12:57:16,987 - INFO - 127.0.0.1 - - [02/Apr/2025 12:57:16] "GET / HTTP/1.1" 200 -
+2025-04-02 12:57:21,001 - INFO - 127.0.0.1 - - [02/Apr/2025 12:57:21] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-04-02 12:57:21,021 - INFO - 127.0.0.1 - - [02/Apr/2025 12:57:21] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:57:22,654 - INFO - WebDriver initialisé avec succès (méthode directe)
+2025-04-02 12:57:26,132 - INFO - 127.0.0.1 - - [02/Apr/2025 12:57:26] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:57:28,431 - INFO - Pas de bannière de cookies ou erreur: Message: 
+Stacktrace:
+0   chromedriver                        0x00000001009ab6c8 cxxbridge1$str$ptr + 2791212
+1   chromedriver                        0x00000001009a3c9c cxxbridge1$str$ptr + 2759936
+2   chromedriver                        0x00000001004f5e30 cxxbridge1$string$len + 92928
+3   chromedriver                        0x000000010053d170 cxxbridge1$string$len + 384576
+4   chromedriver                        0x000000010057e5f8 cxxbridge1$string$len + 651976
+5   chromedriver                        0x00000001005312fc cxxbridge1$string$len + 335820
+6   chromedriver                        0x00000001009706c4 cxxbridge1$str$ptr + 2549544
+7   chromedriver                        0x0000000100973988 cxxbridge1$str$ptr + 2562540
+8   chromedriver                        0x000000010095071c cxxbridge1$str$ptr + 2418560
+9   chromedriver                        0x00000001009741e8 cxxbridge1$str$ptr + 2564684
+10  chromedriver                        0x0000000100941750 cxxbridge1$str$ptr + 2357172
+11  chromedriver                        0x0000000100993f58 cxxbridge1$str$ptr + 2695100
+12  chromedriver                        0x00000001009940e0 cxxbridge1$str$ptr + 2695492
+13  chromedriver                        0x00000001009a3910 cxxbridge1$str$ptr + 2759028
+14  libsystem_pthread.dylib             0x0000000191d7df94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000191d78d34 thread_start + 8
+
+2025-04-02 12:57:31,242 - INFO - 127.0.0.1 - - [02/Apr/2025 12:57:31] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:57:36,569 - INFO - 127.0.0.1 - - [02/Apr/2025 12:57:36] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:57:39,524 - WARNING - Impossible de déterminer le nombre total de pages: Message: 
+Stacktrace:
+0   chromedriver                        0x00000001009ab6c8 cxxbridge1$str$ptr + 2791212
+1   chromedriver                        0x00000001009a3c9c cxxbridge1$str$ptr + 2759936
+2   chromedriver                        0x00000001004f5e30 cxxbridge1$string$len + 92928
+3   chromedriver                        0x000000010053d170 cxxbridge1$string$len + 384576
+4   chromedriver                        0x000000010057e5f8 cxxbridge1$string$len + 651976
+5   chromedriver                        0x00000001005312fc cxxbridge1$string$len + 335820
+6   chromedriver                        0x00000001009706c4 cxxbridge1$str$ptr + 2549544
+7   chromedriver                        0x0000000100973988 cxxbridge1$str$ptr + 2562540
+8   chromedriver                        0x000000010095071c cxxbridge1$str$ptr + 2418560
+9   chromedriver                        0x00000001009741e8 cxxbridge1$str$ptr + 2564684
+10  chromedriver                        0x0000000100941750 cxxbridge1$str$ptr + 2357172
+11  chromedriver                        0x0000000100993f58 cxxbridge1$str$ptr + 2695100
+12  chromedriver                        0x00000001009940e0 cxxbridge1$str$ptr + 2695492
+13  chromedriver                        0x00000001009a3910 cxxbridge1$str$ptr + 2759028
+14  libsystem_pthread.dylib             0x0000000191d7df94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000191d78d34 thread_start + 8
+
+2025-04-02 12:57:39,524 - INFO - Nombre total de pages à scraper: 1
+2025-04-02 12:57:39,746 - INFO - Extraction de 32 liens de produits sur la page
+2025-04-02 12:57:39,746 - INFO - Scraping de la page 1/1
+2025-04-02 12:57:42,308 - INFO - Produit scrapé avec succès: Vichy Homme hydra mag c+ soin hydratant anti-fatigue 50ml
+2025-04-02 12:57:42,605 - INFO - 127.0.0.1 - - [02/Apr/2025 12:57:42] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:57:45,563 - INFO - Produit scrapé avec succès: La Roche-Posay Toleriane ultra dermallergo sérum 20ml
+2025-04-02 12:57:48,032 - INFO - Produit scrapé avec succès: Nuxe Merveillance Lift glow crème bonne mine effet liftant 50ml
+2025-04-02 12:57:48,575 - INFO - 127.0.0.1 - - [02/Apr/2025 12:57:48] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:57:50,339 - INFO - Produit scrapé avec succès: Vinopure Gelée Nettoyante Purifiante - 385 ml
+2025-04-02 12:57:52,609 - INFO - Produit scrapé avec succès: Soin apaisant contour des yeux 10ml
+2025-04-02 12:57:54,579 - INFO - 127.0.0.1 - - [02/Apr/2025 12:57:54] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:57:54,884 - INFO - Produit scrapé avec succès: La Roche-Posay Effaclar Duo+ Soin Triple-Correction anti-Imperfection 40ml
+2025-04-02 12:57:57,329 - INFO - Produit scrapé avec succès: La Roche-Posay Effaclar sérum ultra concentré 30ml
+2025-04-02 12:57:59,623 - INFO - Produit scrapé avec succès: Avène Hydrance Riche Crème hydratante 40 ml
+2025-04-02 12:58:00,584 - INFO - 127.0.0.1 - - [02/Apr/2025 12:58:00] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:58:01,919 - INFO - Produit scrapé avec succès: Vinopure Stop Bouton Salicylique - 15 ml
+2025-04-02 12:58:04,199 - INFO - Produit scrapé avec succès: Avène Hydrance Légère Emulsion hydratante 40ml
+2025-04-02 12:58:06,494 - INFO - Produit scrapé avec succès: Cerave gel moussant anti-imperfections 236ml
+2025-04-02 12:58:06,572 - INFO - 127.0.0.1 - - [02/Apr/2025 12:58:06] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:58:08,823 - INFO - Produit scrapé avec succès: Eucerin Hyaluron-Filler + 3x Effect Soin De Jour Spf 30 50ml Tous Types de Peaux
+2025-04-02 12:58:11,105 - INFO - Produit scrapé avec succès: SVR Sebiaclear Ampoule Flash 30ml
+2025-04-02 12:58:12,596 - INFO - 127.0.0.1 - - [02/Apr/2025 12:58:12] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:58:13,436 - INFO - Produit scrapé avec succès: SVR Sebiaclear sérum anti-imperfections 30ml
+2025-04-02 12:58:16,108 - INFO - Produit scrapé avec succès: La Roche-Posay Effaclar mat Hydratant sébo-régulateur 40ml
+2025-04-02 12:58:18,447 - INFO - Produit scrapé avec succès: La Roche-Posay Hyalu B5 sérum concentré anti-rides réparateur 30ml
+2025-04-02 12:58:18,872 - INFO - 127.0.0.1 - - [02/Apr/2025 12:58:18] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:58:20,915 - INFO - Produit scrapé avec succès: Avène crème apaisante - peaux desséchées et irritées par traitements 40ml
+2025-04-02 12:58:23,195 - INFO - Produit scrapé avec succès: La Roche-Posay Effaclar H Iso-Biome Soin Réparateur Apaisant 40ml
+2025-04-02 12:58:24,602 - INFO - 127.0.0.1 - - [02/Apr/2025 12:58:24] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:58:25,452 - INFO - Produit scrapé avec succès: Lotion purifiante anti-imperfections peaux grasses à tendance acnéique 200ml
+2025-04-02 12:58:27,706 - INFO - Produit scrapé avec succès: Eucerin Hyaluron-Filler + 3x Effect Soin De Nuit 50ml
+2025-04-02 12:58:30,069 - INFO - Produit scrapé avec succès: Ecrinal gel cils & sourcils fortifiant à l'ANP 2+ 9ml
+2025-04-02 12:58:30,710 - INFO - 127.0.0.1 - - [02/Apr/2025 12:58:30] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:58:32,378 - INFO - Produit scrapé avec succès: Avène Cleanance Comedomed 30ml
+2025-04-02 12:58:34,697 - INFO - Produit scrapé avec succès: Cerave sérum rétinol anti-marques 30ml
+2025-04-02 12:58:36,579 - INFO - 127.0.0.1 - - [02/Apr/2025 12:58:36] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:58:36,950 - INFO - Produit scrapé avec succès: La Roche-Posay Toleriane Sensitive Soin hydratant apaisant protecteur 40ml
+2025-04-02 12:58:39,732 - INFO - Produit scrapé avec succès: Bioderma Créaline DS+ Crème 40 ml
+2025-04-02 12:58:41,977 - INFO - Produit scrapé avec succès: Vichy Minéral 89 booster quotidien fortifiant et repulpant 50ml
+2025-04-02 12:58:42,580 - INFO - 127.0.0.1 - - [02/Apr/2025 12:58:42] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:58:44,204 - INFO - Produit scrapé avec succès: Eucerin Aquaphor Réparateur Lèvres Sos 10ml
+2025-04-02 12:58:46,515 - INFO - Produit scrapé avec succès: Filorga Time-filler 5xp crème correction rides 50ml
+2025-04-02 12:58:48,577 - INFO - 127.0.0.1 - - [02/Apr/2025 12:58:48] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:58:48,816 - INFO - Produit scrapé avec succès: Eucerin Sérum anti-pigment 30ml
+2025-04-02 12:58:51,078 - INFO - Produit scrapé avec succès: Avène Rosamed Concentré anti-rougeurs 30ml
+2025-04-02 12:58:53,350 - INFO - Produit scrapé avec succès: Eucerin Anti-Pigment Soin De Nuit 50ml
+2025-04-02 12:58:54,574 - INFO - 127.0.0.1 - - [02/Apr/2025 12:58:54] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:58:55,578 - INFO - Produit scrapé avec succès: La Roche-Posay Toleriane Ultra Dermallergo crème 40ml
+2025-04-02 12:59:00,577 - INFO - 127.0.0.1 - - [02/Apr/2025 12:59:00] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:59:06,576 - INFO - 127.0.0.1 - - [02/Apr/2025 12:59:06] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:59:12,574 - INFO - 127.0.0.1 - - [02/Apr/2025 12:59:12] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:59:18,602 - INFO - 127.0.0.1 - - [02/Apr/2025 12:59:18] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:59:24,582 - INFO - 127.0.0.1 - - [02/Apr/2025 12:59:24] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:59:30,580 - INFO - 127.0.0.1 - - [02/Apr/2025 12:59:30] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:59:36,575 - INFO - 127.0.0.1 - - [02/Apr/2025 12:59:36] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:59:42,576 - INFO - 127.0.0.1 - - [02/Apr/2025 12:59:42] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:59:48,584 - INFO - 127.0.0.1 - - [02/Apr/2025 12:59:48] "GET /status HTTP/1.1" 200 -
+2025-04-02 12:59:54,615 - INFO - 127.0.0.1 - - [02/Apr/2025 12:59:54] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:00:00,586 - INFO - 127.0.0.1 - - [02/Apr/2025 13:00:00] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:00:06,570 - INFO - 127.0.0.1 - - [02/Apr/2025 13:00:06] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:00:12,589 - INFO - 127.0.0.1 - - [02/Apr/2025 13:00:12] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:00:18,582 - INFO - 127.0.0.1 - - [02/Apr/2025 13:00:18] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:00:24,575 - INFO - 127.0.0.1 - - [02/Apr/2025 13:00:24] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:00:30,576 - INFO - 127.0.0.1 - - [02/Apr/2025 13:00:30] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:00:36,577 - INFO - 127.0.0.1 - - [02/Apr/2025 13:00:36] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:00:42,576 - INFO - 127.0.0.1 - - [02/Apr/2025 13:00:42] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:00:48,577 - INFO - 127.0.0.1 - - [02/Apr/2025 13:00:48] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:00:54,569 - INFO - 127.0.0.1 - - [02/Apr/2025 13:00:54] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:01:00,581 - INFO - 127.0.0.1 - - [02/Apr/2025 13:01:00] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:01:06,575 - INFO - 127.0.0.1 - - [02/Apr/2025 13:01:06] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:01:11,722 - INFO - 127.0.0.1 - - [02/Apr/2025 13:01:11] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:01:14,836 - INFO - 127.0.0.1 - - [02/Apr/2025 13:01:14] "[33mGET /download HTTP/1.1[0m" 404 -
+2025-04-02 13:01:30,400 - INFO - 127.0.0.1 - - [02/Apr/2025 13:01:30] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:01:31,613 - INFO - 127.0.0.1 - - [02/Apr/2025 13:01:31] "GET /results HTTP/1.1" 200 -
+2025-04-02 13:01:45,479 - INFO - 127.0.0.1 - - [02/Apr/2025 13:01:45] "GET / HTTP/1.1" 200 -
+2025-04-02 13:02:33,163 - INFO -  * Detected change in '/Users/victorpiamias/Desktop/Apothical/extracteur/app.py', reloading
+2025-04-02 13:02:33,262 - INFO -  * Restarting with stat
+2025-04-02 13:02:33,623 - WARNING -  * Debugger is active!
+2025-04-02 13:02:33,633 - INFO -  * Debugger PIN: 880-221-942
+2025-04-02 13:02:34,956 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 13:02:34,956 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 13:02:34,957 - INFO -  * Restarting with stat
+2025-04-02 13:02:35,155 - WARNING -  * Debugger is active!
+2025-04-02 13:02:35,160 - INFO -  * Debugger PIN: 880-221-942
+2025-04-02 13:04:24,492 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 13:04:24,492 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 13:04:24,493 - INFO -  * Restarting with stat
+2025-04-02 13:04:24,694 - WARNING -  * Debugger is active!
+2025-04-02 13:04:24,701 - INFO -  * Debugger PIN: 880-221-942
+2025-04-02 13:04:27,787 - INFO - 127.0.0.1 - - [02/Apr/2025 13:04:27] "GET / HTTP/1.1" 200 -
+2025-04-02 13:04:30,000 - INFO - 127.0.0.1 - - [02/Apr/2025 13:04:29] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-04-02 13:04:30,014 - INFO - 127.0.0.1 - - [02/Apr/2025 13:04:30] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:04:32,052 - INFO - WebDriver initialisé avec succès (méthode directe)
+2025-04-02 13:04:35,124 - INFO - 127.0.0.1 - - [02/Apr/2025 13:04:35] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:04:37,814 - INFO - Pas de bannière de cookies ou erreur: Message: 
+Stacktrace:
+0   chromedriver                        0x00000001034ef6c8 cxxbridge1$str$ptr + 2791212
+1   chromedriver                        0x00000001034e7c9c cxxbridge1$str$ptr + 2759936
+2   chromedriver                        0x0000000103039e30 cxxbridge1$string$len + 92928
+3   chromedriver                        0x0000000103081170 cxxbridge1$string$len + 384576
+4   chromedriver                        0x00000001030c25f8 cxxbridge1$string$len + 651976
+5   chromedriver                        0x00000001030752fc cxxbridge1$string$len + 335820
+6   chromedriver                        0x00000001034b46c4 cxxbridge1$str$ptr + 2549544
+7   chromedriver                        0x00000001034b7988 cxxbridge1$str$ptr + 2562540
+8   chromedriver                        0x000000010349471c cxxbridge1$str$ptr + 2418560
+9   chromedriver                        0x00000001034b81e8 cxxbridge1$str$ptr + 2564684
+10  chromedriver                        0x0000000103485750 cxxbridge1$str$ptr + 2357172
+11  chromedriver                        0x00000001034d7f58 cxxbridge1$str$ptr + 2695100
+12  chromedriver                        0x00000001034d80e0 cxxbridge1$str$ptr + 2695492
+13  chromedriver                        0x00000001034e7910 cxxbridge1$str$ptr + 2759028
+14  libsystem_pthread.dylib             0x0000000191d7df94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000191d78d34 thread_start + 8
+
+2025-04-02 13:04:40,233 - INFO - 127.0.0.1 - - [02/Apr/2025 13:04:40] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:04:45,321 - INFO - 127.0.0.1 - - [02/Apr/2025 13:04:45] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:04:49,236 - WARNING - Impossible de déterminer le nombre total de pages: Message: 
+Stacktrace:
+0   chromedriver                        0x00000001034ef6c8 cxxbridge1$str$ptr + 2791212
+1   chromedriver                        0x00000001034e7c9c cxxbridge1$str$ptr + 2759936
+2   chromedriver                        0x0000000103039e30 cxxbridge1$string$len + 92928
+3   chromedriver                        0x0000000103081170 cxxbridge1$string$len + 384576
+4   chromedriver                        0x00000001030c25f8 cxxbridge1$string$len + 651976
+5   chromedriver                        0x00000001030752fc cxxbridge1$string$len + 335820
+6   chromedriver                        0x00000001034b46c4 cxxbridge1$str$ptr + 2549544
+7   chromedriver                        0x00000001034b7988 cxxbridge1$str$ptr + 2562540
+8   chromedriver                        0x000000010349471c cxxbridge1$str$ptr + 2418560
+9   chromedriver                        0x00000001034b81e8 cxxbridge1$str$ptr + 2564684
+10  chromedriver                        0x0000000103485750 cxxbridge1$str$ptr + 2357172
+11  chromedriver                        0x00000001034d7f58 cxxbridge1$str$ptr + 2695100
+12  chromedriver                        0x00000001034d80e0 cxxbridge1$str$ptr + 2695492
+13  chromedriver                        0x00000001034e7910 cxxbridge1$str$ptr + 2759028
+14  libsystem_pthread.dylib             0x0000000191d7df94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000191d78d34 thread_start + 8
+
+2025-04-02 13:04:49,237 - INFO - Nombre total de pages à scraper: 1
+2025-04-02 13:04:49,374 - INFO - Extraction de 32 liens de produits sur la page
+2025-04-02 13:04:49,375 - INFO - Scraping de la page 1/1
+2025-04-02 13:04:50,562 - INFO - 127.0.0.1 - - [02/Apr/2025 13:04:50] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:04:51,699 - INFO - Produit scrapé avec succès: Vichy Homme hydra mag c+ soin hydratant anti-fatigue 50ml
+2025-04-02 13:04:54,357 - INFO - Produit scrapé avec succès: La Roche-Posay Toleriane ultra dermallergo sérum 20ml
+2025-04-02 13:04:55,716 - INFO - 127.0.0.1 - - [02/Apr/2025 13:04:55] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:04:56,647 - INFO - Produit scrapé avec succès: Nuxe Merveillance Lift glow crème bonne mine effet liftant 50ml
+2025-04-02 13:04:58,863 - INFO - Produit scrapé avec succès: Vinopure Gelée Nettoyante Purifiante - 385 ml
+2025-04-02 13:05:00,834 - INFO - 127.0.0.1 - - [02/Apr/2025 13:05:00] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:05:01,149 - INFO - Produit scrapé avec succès: Soin apaisant contour des yeux 10ml
+2025-04-02 13:05:03,357 - INFO - Produit scrapé avec succès: La Roche-Posay Effaclar Duo+ Soin Triple-Correction anti-Imperfection 40ml
+2025-04-02 13:05:05,658 - INFO - Produit scrapé avec succès: La Roche-Posay Effaclar sérum ultra concentré 30ml
+2025-04-02 13:05:06,568 - INFO - 127.0.0.1 - - [02/Apr/2025 13:05:06] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:05:07,974 - INFO - Produit scrapé avec succès: Avène Hydrance Riche Crème hydratante 40 ml
+2025-04-02 13:05:10,245 - INFO - Produit scrapé avec succès: Vinopure Stop Bouton Salicylique - 15 ml
+2025-04-02 13:05:12,459 - INFO - Produit scrapé avec succès: Avène Hydrance Légère Emulsion hydratante 40ml
+2025-04-02 13:05:12,561 - INFO - 127.0.0.1 - - [02/Apr/2025 13:05:12] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:05:14,899 - INFO - Produit scrapé avec succès: Cerave gel moussant anti-imperfections 236ml
+2025-04-02 13:05:17,137 - INFO - Produit scrapé avec succès: Eucerin Hyaluron-Filler + 3x Effect Soin De Jour Spf 30 50ml Tous Types de Peaux
+2025-04-02 13:05:18,563 - INFO - 127.0.0.1 - - [02/Apr/2025 13:05:18] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:05:19,461 - INFO - Produit scrapé avec succès: SVR Sebiaclear Ampoule Flash 30ml
+2025-04-02 13:05:21,688 - INFO - Produit scrapé avec succès: SVR Sebiaclear sérum anti-imperfections 30ml
+2025-04-02 13:05:23,926 - INFO - Produit scrapé avec succès: La Roche-Posay Effaclar mat Hydratant sébo-régulateur 40ml
+2025-04-02 13:05:24,564 - INFO - 127.0.0.1 - - [02/Apr/2025 13:05:24] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:05:26,150 - INFO - Produit scrapé avec succès: La Roche-Posay Hyalu B5 sérum concentré anti-rides réparateur 30ml
+2025-04-02 13:05:28,412 - INFO - Produit scrapé avec succès: Avène crème apaisante - peaux desséchées et irritées par traitements 40ml
+2025-04-02 13:05:30,565 - INFO - 127.0.0.1 - - [02/Apr/2025 13:05:30] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:05:30,683 - INFO - Produit scrapé avec succès: La Roche-Posay Effaclar H Iso-Biome Soin Réparateur Apaisant 40ml
+2025-04-02 13:05:32,792 - INFO - Produit scrapé avec succès: Lotion purifiante anti-imperfections peaux grasses à tendance acnéique 200ml
+2025-04-02 13:05:35,107 - INFO - Produit scrapé avec succès: Eucerin Hyaluron-Filler + 3x Effect Soin De Nuit 50ml
+2025-04-02 13:05:36,571 - INFO - 127.0.0.1 - - [02/Apr/2025 13:05:36] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:05:37,516 - INFO - Produit scrapé avec succès: Ecrinal gel cils & sourcils fortifiant à l'ANP 2+ 9ml
+2025-04-02 13:05:39,829 - INFO - Produit scrapé avec succès: Avène Cleanance Comedomed 30ml
+2025-04-02 13:05:42,102 - INFO - Produit scrapé avec succès: Cerave sérum rétinol anti-marques 30ml
+2025-04-02 13:05:42,567 - INFO - 127.0.0.1 - - [02/Apr/2025 13:05:42] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:05:44,378 - INFO - Produit scrapé avec succès: La Roche-Posay Toleriane Sensitive Soin hydratant apaisant protecteur 40ml
+2025-04-02 13:05:47,262 - INFO - Produit scrapé avec succès: Bioderma Créaline DS+ Crème 40 ml
+2025-04-02 13:05:48,563 - INFO - 127.0.0.1 - - [02/Apr/2025 13:05:48] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:05:49,529 - INFO - Produit scrapé avec succès: Vichy Minéral 89 booster quotidien fortifiant et repulpant 50ml
+2025-04-02 13:05:51,910 - INFO - Produit scrapé avec succès: Eucerin Aquaphor Réparateur Lèvres Sos 10ml
+2025-04-02 13:05:54,162 - INFO - Produit scrapé avec succès: Filorga Time-filler 5xp crème correction rides 50ml
+2025-04-02 13:05:54,566 - INFO - 127.0.0.1 - - [02/Apr/2025 13:05:54] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:05:56,439 - INFO - Produit scrapé avec succès: Eucerin Sérum anti-pigment 30ml
+2025-04-02 13:05:58,654 - INFO - Produit scrapé avec succès: Avène Rosamed Concentré anti-rougeurs 30ml
+2025-04-02 13:06:00,565 - INFO - 127.0.0.1 - - [02/Apr/2025 13:06:00] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:06:00,922 - INFO - Produit scrapé avec succès: Eucerin Anti-Pigment Soin De Nuit 50ml
+2025-04-02 13:06:03,156 - INFO - Produit scrapé avec succès: La Roche-Posay Toleriane Ultra Dermallergo crème 40ml
+2025-04-02 13:06:06,568 - INFO - 127.0.0.1 - - [02/Apr/2025 13:06:06] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:06:11,693 - INFO - 127.0.0.1 - - [02/Apr/2025 13:06:11] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:06:15,080 - INFO - 127.0.0.1 - - [02/Apr/2025 13:06:15] "[33mGET /download HTTP/1.1[0m" 404 -
+2025-04-02 13:06:16,782 - INFO - 127.0.0.1 - - [02/Apr/2025 13:06:16] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:06:17,447 - INFO - 127.0.0.1 - - [02/Apr/2025 13:06:17] "GET /results HTTP/1.1" 200 -
+2025-04-02 13:07:38,100 - INFO -  * Detected change in '/Users/victorpiamias/Desktop/Apothical/extracteur/simplified_category_scraper.py', reloading
+2025-04-02 13:07:38,159 - INFO -  * Restarting with stat
+2025-04-02 13:07:38,541 - WARNING -  * Debugger is active!
+2025-04-02 13:07:38,548 - INFO -  * Debugger PIN: 880-221-942
+2025-04-02 13:07:40,783 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 13:07:40,783 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 13:07:40,784 - INFO -  * Restarting with stat
+2025-04-02 13:07:40,995 - WARNING -  * Debugger is active!
+2025-04-02 13:07:41,000 - INFO -  * Debugger PIN: 880-221-942
+2025-04-02 13:07:43,080 - INFO - 127.0.0.1 - - [02/Apr/2025 13:07:43] "GET /results HTTP/1.1" 200 -
+2025-04-02 13:07:45,591 - INFO - 127.0.0.1 - - [02/Apr/2025 13:07:45] "GET / HTTP/1.1" 200 -
+2025-04-02 13:07:47,794 - INFO - 127.0.0.1 - - [02/Apr/2025 13:07:47] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-04-02 13:07:47,805 - INFO - 127.0.0.1 - - [02/Apr/2025 13:07:47] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:07:49,439 - INFO - WebDriver initialisé avec succès (méthode directe)
+2025-04-02 13:07:52,894 - INFO - 127.0.0.1 - - [02/Apr/2025 13:07:52] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:07:55,187 - INFO - Pas de bannière de cookies ou erreur: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000100f3b6c8 cxxbridge1$str$ptr + 2791212
+1   chromedriver                        0x0000000100f33c9c cxxbridge1$str$ptr + 2759936
+2   chromedriver                        0x0000000100a85e30 cxxbridge1$string$len + 92928
+3   chromedriver                        0x0000000100acd170 cxxbridge1$string$len + 384576
+4   chromedriver                        0x0000000100b0e5f8 cxxbridge1$string$len + 651976
+5   chromedriver                        0x0000000100ac12fc cxxbridge1$string$len + 335820
+6   chromedriver                        0x0000000100f006c4 cxxbridge1$str$ptr + 2549544
+7   chromedriver                        0x0000000100f03988 cxxbridge1$str$ptr + 2562540
+8   chromedriver                        0x0000000100ee071c cxxbridge1$str$ptr + 2418560
+9   chromedriver                        0x0000000100f041e8 cxxbridge1$str$ptr + 2564684
+10  chromedriver                        0x0000000100ed1750 cxxbridge1$str$ptr + 2357172
+11  chromedriver                        0x0000000100f23f58 cxxbridge1$str$ptr + 2695100
+12  chromedriver                        0x0000000100f240e0 cxxbridge1$str$ptr + 2695492
+13  chromedriver                        0x0000000100f33910 cxxbridge1$str$ptr + 2759028
+14  libsystem_pthread.dylib             0x0000000191d7df94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000191d78d34 thread_start + 8
+
+2025-04-02 13:07:57,997 - INFO - 127.0.0.1 - - [02/Apr/2025 13:07:57] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:08:03,081 - INFO - 127.0.0.1 - - [02/Apr/2025 13:08:03] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:08:06,298 - WARNING - Impossible de déterminer le nombre total de pages: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000100f3b6c8 cxxbridge1$str$ptr + 2791212
+1   chromedriver                        0x0000000100f33c9c cxxbridge1$str$ptr + 2759936
+2   chromedriver                        0x0000000100a85e30 cxxbridge1$string$len + 92928
+3   chromedriver                        0x0000000100acd170 cxxbridge1$string$len + 384576
+4   chromedriver                        0x0000000100b0e5f8 cxxbridge1$string$len + 651976
+5   chromedriver                        0x0000000100ac12fc cxxbridge1$string$len + 335820
+6   chromedriver                        0x0000000100f006c4 cxxbridge1$str$ptr + 2549544
+7   chromedriver                        0x0000000100f03988 cxxbridge1$str$ptr + 2562540
+8   chromedriver                        0x0000000100ee071c cxxbridge1$str$ptr + 2418560
+9   chromedriver                        0x0000000100f041e8 cxxbridge1$str$ptr + 2564684
+10  chromedriver                        0x0000000100ed1750 cxxbridge1$str$ptr + 2357172
+11  chromedriver                        0x0000000100f23f58 cxxbridge1$str$ptr + 2695100
+12  chromedriver                        0x0000000100f240e0 cxxbridge1$str$ptr + 2695492
+13  chromedriver                        0x0000000100f33910 cxxbridge1$str$ptr + 2759028
+14  libsystem_pthread.dylib             0x0000000191d7df94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000191d78d34 thread_start + 8
+
+2025-04-02 13:08:06,299 - INFO - Nombre total de pages à scraper: 1
+2025-04-02 13:08:06,440 - INFO - Extraction de 32 liens de produits sur la page
+2025-04-02 13:08:06,440 - INFO - Scraping de la page 1/1
+2025-04-02 13:08:08,200 - INFO - 127.0.0.1 - - [02/Apr/2025 13:08:08] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:08:08,867 - INFO - Produit scrapé avec succès: Vichy Homme hydra mag c+ soin hydratant anti-fatigue 50ml
+2025-04-02 13:08:11,552 - INFO - Produit scrapé avec succès: La Roche-Posay Toleriane ultra dermallergo sérum 20ml
+2025-04-02 13:08:13,301 - INFO - 127.0.0.1 - - [02/Apr/2025 13:08:13] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:08:13,777 - INFO - Produit scrapé avec succès: Nuxe Merveillance Lift glow crème bonne mine effet liftant 50ml
+2025-04-02 13:08:15,984 - INFO - Produit scrapé avec succès: Vinopure Gelée Nettoyante Purifiante - 385 ml
+2025-04-02 13:08:18,267 - INFO - Produit scrapé avec succès: Soin apaisant contour des yeux 10ml
+2025-04-02 13:08:18,432 - INFO - 127.0.0.1 - - [02/Apr/2025 13:08:18] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:08:20,758 - INFO - Produit scrapé avec succès: La Roche-Posay Effaclar Duo+ Soin Triple-Correction anti-Imperfection 40ml
+2025-04-02 13:08:23,035 - INFO - Produit scrapé avec succès: La Roche-Posay Effaclar sérum ultra concentré 30ml
+2025-04-02 13:08:23,644 - INFO - 127.0.0.1 - - [02/Apr/2025 13:08:23] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:08:25,278 - INFO - Produit scrapé avec succès: Avène Hydrance Riche Crème hydratante 40 ml
+2025-04-02 13:08:27,572 - INFO - Produit scrapé avec succès: Vinopure Stop Bouton Salicylique - 15 ml
+2025-04-02 13:08:28,749 - INFO - 127.0.0.1 - - [02/Apr/2025 13:08:28] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:08:29,826 - INFO - Produit scrapé avec succès: Avène Hydrance Légère Emulsion hydratante 40ml
+2025-04-02 13:08:32,127 - INFO - Produit scrapé avec succès: Cerave gel moussant anti-imperfections 236ml
+2025-04-02 13:08:34,357 - INFO - Produit scrapé avec succès: Eucerin Hyaluron-Filler + 3x Effect Soin De Jour Spf 30 50ml Tous Types de Peaux
+2025-04-02 13:08:34,569 - INFO - 127.0.0.1 - - [02/Apr/2025 13:08:34] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:08:36,574 - INFO - Produit scrapé avec succès: SVR Sebiaclear Ampoule Flash 30ml
+2025-04-02 13:08:38,786 - INFO - Produit scrapé avec succès: SVR Sebiaclear sérum anti-imperfections 30ml
+2025-04-02 13:08:40,567 - INFO - 127.0.0.1 - - [02/Apr/2025 13:08:40] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:08:41,037 - INFO - Produit scrapé avec succès: La Roche-Posay Effaclar mat Hydratant sébo-régulateur 40ml
+2025-04-02 13:08:43,276 - INFO - Produit scrapé avec succès: La Roche-Posay Hyalu B5 sérum concentré anti-rides réparateur 30ml
+2025-04-02 13:08:45,482 - INFO - Produit scrapé avec succès: Avène crème apaisante - peaux desséchées et irritées par traitements 40ml
+2025-04-02 13:08:46,565 - INFO - 127.0.0.1 - - [02/Apr/2025 13:08:46] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:08:47,705 - INFO - Produit scrapé avec succès: La Roche-Posay Effaclar H Iso-Biome Soin Réparateur Apaisant 40ml
+2025-04-02 13:08:49,956 - INFO - Produit scrapé avec succès: Lotion purifiante anti-imperfections peaux grasses à tendance acnéique 200ml
+2025-04-02 13:08:52,318 - INFO - Produit scrapé avec succès: Eucerin Hyaluron-Filler + 3x Effect Soin De Nuit 50ml
+2025-04-02 13:08:52,569 - INFO - 127.0.0.1 - - [02/Apr/2025 13:08:52] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:08:54,651 - INFO - Produit scrapé avec succès: Ecrinal gel cils & sourcils fortifiant à l'ANP 2+ 9ml
+2025-04-02 13:08:56,862 - INFO - Produit scrapé avec succès: Avène Cleanance Comedomed 30ml
+2025-04-02 13:08:58,567 - INFO - 127.0.0.1 - - [02/Apr/2025 13:08:58] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:08:59,142 - INFO - Produit scrapé avec succès: Cerave sérum rétinol anti-marques 30ml
+2025-04-02 13:09:01,375 - INFO - Produit scrapé avec succès: La Roche-Posay Toleriane Sensitive Soin hydratant apaisant protecteur 40ml
+2025-04-02 13:09:04,000 - INFO - Produit scrapé avec succès: Bioderma Créaline DS+ Crème 40 ml
+2025-04-02 13:09:04,569 - INFO - 127.0.0.1 - - [02/Apr/2025 13:09:04] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:09:06,218 - INFO - Produit scrapé avec succès: Vichy Minéral 89 booster quotidien fortifiant et repulpant 50ml
+2025-04-02 13:09:08,471 - INFO - Produit scrapé avec succès: Eucerin Aquaphor Réparateur Lèvres Sos 10ml
+2025-04-02 13:09:10,566 - INFO - 127.0.0.1 - - [02/Apr/2025 13:09:10] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:09:10,693 - INFO - Produit scrapé avec succès: Filorga Time-filler 5xp crème correction rides 50ml
+2025-04-02 13:09:12,815 - INFO - Produit scrapé avec succès: Eucerin Sérum anti-pigment 30ml
+2025-04-02 13:09:15,163 - INFO - Produit scrapé avec succès: Avène Rosamed Concentré anti-rougeurs 30ml
+2025-04-02 13:09:16,570 - INFO - 127.0.0.1 - - [02/Apr/2025 13:09:16] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:09:17,418 - INFO - Produit scrapé avec succès: Eucerin Anti-Pigment Soin De Nuit 50ml
+2025-04-02 13:09:19,652 - INFO - Produit scrapé avec succès: La Roche-Posay Toleriane Ultra Dermallergo crème 40ml
+2025-04-02 13:09:22,570 - INFO - 127.0.0.1 - - [02/Apr/2025 13:09:22] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:09:28,571 - INFO - 127.0.0.1 - - [02/Apr/2025 13:09:28] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:09:34,567 - INFO - 127.0.0.1 - - [02/Apr/2025 13:09:34] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:09:40,568 - INFO - 127.0.0.1 - - [02/Apr/2025 13:09:40] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:09:45,326 - INFO - 127.0.0.1 - - [02/Apr/2025 13:09:45] "[33mGET /download HTTP/1.1[0m" 404 -
+2025-04-02 13:09:47,662 - INFO - 127.0.0.1 - - [02/Apr/2025 13:09:47] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:09:48,467 - INFO - 127.0.0.1 - - [02/Apr/2025 13:09:48] "GET /results HTTP/1.1" 200 -
