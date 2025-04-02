@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Résultats du Scraping - Leclerc Parapharmacie</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+  <div class="max-w-7xl mx-auto py-10 px-6 bg-white shadow-lg rounded-lg mt-10">
+    <div class="flex justify-between items-center mb-6">
+      <h1 class="text-2xl font-bold text-blue-700">
+        <i class="fas fa-database mr-2"></i> Résultats du Scraping
+      </h1>
+      <a href="/" class="text-blue-600 hover:underline">
+        <i class="fas fa-home mr-1"></i> Accueil
+      </a>
+    </div>
+    
+    <!-- Informations sur les résultats -->
+    <div class="bg-blue-50 p-4 rounded-lg border border-blue-200 mb-6">
+      <div class="flex flex-wrap justify-between items-center">
+        <div>
+          <h3 class="font-semibold text-blue-900">Total des produits: {{ total_products }}</h3>
+          <p class="text-sm text-blue-800">
+            Page {{ page }} sur {{ total_pages }} ({{ per_page }} produits par page)
+          </p>
+        </div>
+        
+        <div class="mt-2 md:mt-0">
+          <a href="/download" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition inline-block">
+            <i class="fas fa-download mr-1"></i> Télécharger le CSV
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Sélecteur du nombre de résultats par page -->
+    <div class="mb-6 flex justify-end">
+      <form method="GET" class="flex items-center space-x-2">
+        <label for="per_page" class="text-sm text-gray-600">Résultats par page:</label>
+        <select name="per_page" id="per_page" class="border rounded px-2 py-1" onchange="this.form.submit()">
+          <option value="20" {% if per_page == 20 %}selected{% endif %}>20</option>
+          <option value="50" {% if per_page == 50 %}selected{% endif %}>50</option>
+          <option value="100" {% if per_page == 100 %}selected{% endif %}>100</option>
+          <option value="200" {% if per_page == 200 %}selected{% endif %}>200</option>
+        </select>
+      </form>
+    </div>
+    
+    <!-- Tableau des résultats -->
+    {% if results %}
+      <div class="overflow-x-auto">
+        <table class="min-w-full border text-sm text-left border-gray-300">
+          <thead class="bg-gray-200 text-gray-700">
+            <tr>
+              <th class="px-4 py-2 border">Nom</th>
+              <th class="px-4 py-2 border">EAN</th>
+              <th class="px-4 py-2 border">Prix</th>
+              <th class="px-4 py-2 border">Marque</th>
+              <th class="px-4 py-2 border">Catégorie</th>
+              <th class="px-4 py-2 border">Date</th>
+              <th class="px-4 py-2 border">Lien</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in results %}
+            <tr class="bg-white hover:bg-gray-50">
+              <td class="px-4 py-2 border">{{ item['Nom du produit'] }}</td>
+              <td class="px-4 py-2 border">{{ item['EAN'] }}</td>
+              <td class="px-4 py-2 border">{{ item['Prix'] }}</td>
+              <td class="px-4 py-2 border">{{ item.get('Marque', '-') }}</td>
+              <td class="px-4 py-2 border">{{ item.get('Catégorie', '-') }}</td>
+              <td class="px-4 py-2 border">{{ item['Date'] }}</td>
+              <td class="px-4 py-2 border">
+                <a href="{{ item['Lien'] }}" class="text-blue-500 underline" target="_blank">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      
+      <!-- Pagination -->
+      <div class="mt-6 flex justify-center">
+        <div class="inline-flex rounded shadow">
+          <!-- Bouton précédent -->
+          {% if page > 1 %}
+            <a href="{{ url_for('results', page=page-1, per_page=per_page) }}" class="bg-white px-4 py-2 rounded-l border hover:bg-gray-100">
+              <i class="fas fa-chevron-left"></i> Précédent
+            </a>
+          {% else %}
+            <span class="bg-gray-100 px-4 py-2 rounded-l border text-gray-400 cursor-not-allowed">
+              <i class="fas fa-chevron-left"></i> Précédent
+            </span>
+          {% endif %}
+          
+          <!-- Numéros de page -->
+          <div class="hidden md:flex">
+            {% set start = [1, page - 2]|max %}
+            {% set end = [start + 4, total_pages + 1]|min %}
+            {% set start = [end - 5, 1]|max %}
+            
+            {% for i in range(start, end) %}
+              {% if i == page %}
+                <span class="bg-blue-600 text-white px-4 py-2 border-t border-b">{{ i }}</span>
+              {% else %}
+                <a href="{{ url_for('results', page=i, per_page=per_page) }}" class="bg-white px-4 py-2 border-t border-b hover:bg-gray-100">{{ i }}</a>
+              {% endif %}
+            {% endfor %}
+          </div>
+          
+          <!-- Information de page mobile -->
+          <span class="bg-white px-4 py-2 border-t border-b md:hidden">
+            Page {{ page }}/{{ total_pages }}
+          </span>
+          
+          <!-- Bouton suivant -->
+          {% if page < total_pages %}
+            <a href="{{ url_for('results', page=page+1, per_page=per_page) }}" class="bg-white px-4 py-2 rounded-r border hover:bg-gray-100">
+              Suivant <i class="fas fa-chevron-right"></i>
+            </a>
+          {% else %}
+            <span class="bg-gray-100 px-4 py-2 rounded-r border text-gray-400 cursor-not-allowed">
+              Suivant <i class="fas fa-chevron-right"></i>
+            </span>
+          {% endif %}
+        </div>
+      </div>
+    {% else %}
+      <div class="text-center py-16 bg-gray-50 rounded-lg border border-gray-200">
+        <p class="text-gray-600">Aucun résultat disponible pour le moment.</p>
+        <p class="text-sm mt-2">Lancez le scraping depuis la page d'accueil pour commencer à collecter des données.</p>
+        <a href="/" class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+          Retour à l'accueil
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Statut du Scraping - Leclerc Parapharmacie</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script>
+    // Rafraîchir la page toutes les 5 secondes pour voir les mises à jour
+    setTimeout(function() {
+      location.reload();
+    }, 5000);
+    
+    // Calcul du pourcentage de progression
+    function calculateProgress() {
+      const processed = {{ status.processed_products }};
+      const total = {{ status.total_products }};
+      
+      if (total > 0) {
+        return Math.round((processed / total) * 100);
+      }
+      return 0;
+    }
+    
+    // Mise à jour de la barre de progression
+    document.addEventListener('DOMContentLoaded', function() {
+      const progressBar = document.getElementById('progress-bar');
+      const progressText = document.getElementById('progress-text');
+      
+      const progressPercent = calculateProgress();
+      progressBar.style.width = progressPercent + '%';
+      progressText.textContent = progressPercent + '%';
+    });
+  </script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+  <div class="max-w-3xl mx-auto py-10 px-6 bg-white shadow-lg rounded-lg mt-10">
+    <div class="flex justify-between items-center mb-6">
+      <h1 class="text-2xl font-bold text-blue-700">
+        <i class="fas fa-chart-line mr-2"></i> Statut du Scraping
+      </h1>
+      <a href="/" class="text-blue-600 hover:underline">
+        <i class="fas fa-home mr-1"></i> Accueil
+      </a>
+    </div>
+    
+    <!-- Carte de statut -->
+    <div class="bg-blue-50 rounded-lg border border-blue-200 p-6 mb-8">
+      <div class="grid grid-cols-2 gap-4 mb-6">
+        <div class="bg-white p-3 rounded shadow">
+          <h3 class="text-sm font-medium text-gray-500">Statut</h3>
+          <p class="text-lg font-semibold">
+            {% if status.in_progress %}
+              <span class="text-green-600">
+                <i class="fas fa-cog fa-spin mr-1"></i> En cours
+              </span>
+            {% else %}
+              <span class="text-gray-600">
+                <i class="fas fa-pause mr-1"></i> En attente
+              </span>
+            {% endif %}
+          </p>
+        </div>
+        
+        <div class="bg-white p-3 rounded shadow">
+          <h3 class="text-sm font-medium text-gray-500">Temps estimé restant</h3>
+          <p class="text-lg font-semibold" id="remaining-time">
+            {{ get_estimated_time_remaining() }}
+          </p>
+        </div>
+        
+        <div class="bg-white p-3 rounded shadow">
+          <h3 class="text-sm font-medium text-gray-500">Produits traités</h3>
+          <p class="text-lg font-semibold">
+            {{ status.processed_products }} / {{ status.total_products }}
+          </p>
+        </div>
+        
+        <div class="bg-white p-3 rounded shadow">
+          <h3 class="text-sm font-medium text-gray-500">Début du scraping</h3>
+          <p class="text-lg font-semibold">
+            {% if status.start_time %}
+              {{ (status.start_time|int)|timestamp_to_time }}
+            {% else %}
+              -
+            {% endif %}
+          </p>
+        </div>
+      </div>
+      
+      <!-- Barre de progression -->
+      <div class="mb-4">
+        <div class="w-full bg-gray-200 rounded-full h-4 dark:bg-gray-700">
+          <div id="progress-bar" class="bg-blue-600 h-4 rounded-full transition-all duration-300" style="width: 0%"></div>
+        </div>
+        <div class="flex justify-between mt-1 text-xs text-gray-600">
+          <span>0%</span>
+          <span id="progress-text">0%</span>
+          <span>100%</span>
+        </div>
+      </div>
+      
+      <!-- Dernier produit traité -->
+      {% if status.last_product %}
+      <div class="mt-6 bg-white p-3 rounded shadow">
+        <h3 class="text-sm font-medium text-gray-500 mb-1">Dernier produit traité</h3>
+        <p class="text-sm truncate">{{ status.last_product }}</p>
+      </div>
+      {% endif %}
+    </div>
+    
+    <!-- Boutons d'action -->
+    <div class="flex space-x-4 mb-8">
+      <a href="/" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition flex-1 text-center">
+        <i class="fas fa-home mr-1"></i> Retour à l'accueil
+      </a>
+      
+      {% if status.processed_products > 0 %}
+      <a href="/results" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition flex-1 text-center">
+        <i class="fas fa-table mr-1"></i> Voir les résultats
+      </a>
+      {% endif %}
+      
+      {% if status.processed_products > 0 %}
+      <a href="/download" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600 transition flex-1 text-center">
+        <i class="fas fa-download mr-1"></i> Télécharger CSV
+      </a>
+      {% endif %}
+    </div>
+    
+    <!-- Conseils -->
+    <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+      <h3 class="font-semibold mb-2 text-yellow-800">
+        <i class="fas fa-lightbulb mr-1"></i> Conseils
+      </h3>
+      <ul class="text-sm text-yellow-800 space-y-1 list-disc pl-5">
+        <li>Cette page se rafraîchit automatiquement toutes les 5 secondes</li>
+        <li>Le scraping peut prendre plusieurs heures pour l'ensemble des produits</li>
+        <li>Vous pouvez fermer cette page et revenir plus tard, le scraping continuera</li>
+        <li>En cas d'erreur, vous pourrez reprendre le scraping depuis la page d'accueil</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
