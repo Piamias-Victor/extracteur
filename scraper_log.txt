@@ -1274,3 +1274,606 @@ Stacktrace:
 2025-04-02 14:30:00,713 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 6578 octets
 2025-04-02 14:30:05,035 - INFO - 127.0.0.1 - - [02/Apr/2025 14:30:05] "GET /status HTTP/1.1" 200 -
 2025-04-02 14:30:06,923 - INFO - 127.0.0.1 - - [02/Apr/2025 14:30:06] "GET /results HTTP/1.1" 200 -
+2025-04-03 15:23:59,732 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-03 15:23:59,732 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-03 15:23:59,734 - INFO -  * Restarting with stat
+2025-04-03 15:23:59,961 - WARNING -  * Debugger is active!
+2025-04-03 15:23:59,971 - INFO -  * Debugger PIN: 880-221-942
+2025-04-03 15:24:07,980 - INFO - ----- DIAGNOSTIC D'ENVIRONNEMENT -----
+2025-04-03 15:24:07,980 - INFO - Répertoire de base: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:24:07,980 - INFO - Chemin du CSV spécifique: /Users/victorpiamias/Desktop/Apothical/extracteur/produit_leclerc.csv
+2025-04-03 15:24:07,981 - INFO - Chemin du CSV de catégorie: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:24:07,981 - INFO - ✅ Test d'écriture réussi dans /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:24:07,982 - INFO - Le fichier spécifique existe: False
+2025-04-03 15:24:07,982 - INFO - Le fichier de catégorie existe: True
+2025-04-03 15:24:07,982 - INFO - Version Python: 3.13.2 (v3.13.2:4f8bb3947cf, Feb  4 2025, 11:51:10) [Clang 15.0.0 (clang-1500.3.9.4)]
+2025-04-03 15:24:07,982 - INFO - Encodage par défaut: utf-8
+2025-04-03 15:24:07,982 - INFO - Répertoire de travail actuel: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:24:07,982 - INFO - ----- FIN DU DIAGNOSTIC -----
+2025-04-03 15:24:07,982 - INFO - Vérification des permissions dans /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:24:07,983 - INFO - ✅ Test d'écriture réussi dans /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:24:07,993 - INFO - 127.0.0.1 - - [03/Apr/2025 15:24:07] "GET / HTTP/1.1" 200 -
+2025-04-03 15:24:13,227 - INFO - Vérification des permissions dans /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:24:13,228 - INFO - ✅ Test d'écriture réussi dans /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:24:13,230 - INFO - 127.0.0.1 - - [03/Apr/2025 15:24:13] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-04-03 15:24:13,242 - INFO - 127.0.0.1 - - [03/Apr/2025 15:24:13] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:24:15,612 - INFO - WebDriver initialisé avec succès (méthode directe)
+2025-04-03 15:24:19,089 - INFO - 127.0.0.1 - - [03/Apr/2025 15:24:19] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:24:21,518 - INFO - Pas de bannière de cookies ou erreur: Message: 
+Stacktrace:
+0   chromedriver                        0x00000001027636c8 cxxbridge1$str$ptr + 2791212
+1   chromedriver                        0x000000010275bc9c cxxbridge1$str$ptr + 2759936
+2   chromedriver                        0x00000001022ade30 cxxbridge1$string$len + 92928
+3   chromedriver                        0x00000001022f5170 cxxbridge1$string$len + 384576
+4   chromedriver                        0x00000001023365f8 cxxbridge1$string$len + 651976
+5   chromedriver                        0x00000001022e92fc cxxbridge1$string$len + 335820
+6   chromedriver                        0x00000001027286c4 cxxbridge1$str$ptr + 2549544
+7   chromedriver                        0x000000010272b988 cxxbridge1$str$ptr + 2562540
+8   chromedriver                        0x000000010270871c cxxbridge1$str$ptr + 2418560
+9   chromedriver                        0x000000010272c1e8 cxxbridge1$str$ptr + 2564684
+10  chromedriver                        0x00000001026f9750 cxxbridge1$str$ptr + 2357172
+11  chromedriver                        0x000000010274bf58 cxxbridge1$str$ptr + 2695100
+12  chromedriver                        0x000000010274c0e0 cxxbridge1$str$ptr + 2695492
+13  chromedriver                        0x000000010275b910 cxxbridge1$str$ptr + 2759028
+14  libsystem_pthread.dylib             0x0000000191d7df94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000191d78d34 thread_start + 8
+
+2025-04-03 15:24:22,321 - INFO - Détermination du nombre total de pages...
+2025-04-03 15:24:22,996 - INFO - Span avec nombre trouvé: '1'
+2025-04-03 15:24:23,003 - INFO - Span avec nombre trouvé: '2'
+2025-04-03 15:24:23,012 - INFO - Span avec nombre trouvé: '3'
+2025-04-03 15:24:23,027 - INFO - Span avec nombre trouvé: '47'
+2025-04-03 15:24:23,589 - INFO - Nombre maximal de pages trouvé: 47
+2025-04-03 15:24:23,589 - INFO - Nombre total de pages à scraper: 47
+2025-04-03 15:24:23,719 - INFO - Extraction de 32 liens de produits sur la page
+2025-04-03 15:24:23,719 - INFO - Scraping de la page 1/47
+2025-04-03 15:24:25,095 - INFO - 127.0.0.1 - - [03/Apr/2025 15:24:25] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:24:25,995 - INFO - Produit scrapé avec succès: Nuxe Merveillance Lift glow crème bonne mine effet liftant 50ml
+2025-04-03 15:24:28,672 - INFO - Produit scrapé avec succès: La Roche-Posay Toleriane ultra dermallergo sérum 20ml
+2025-04-03 15:24:30,277 - INFO - 127.0.0.1 - - [03/Apr/2025 15:24:30] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:24:30,869 - INFO - Produit scrapé avec succès: Vinopure Gelée Nettoyante Purifiante - 385 ml
+2025-04-03 15:24:33,129 - INFO - Produit scrapé avec succès: Vichy Homme hydra mag c+ soin hydratant anti-fatigue 50ml
+2025-04-03 15:24:35,361 - INFO - Produit scrapé avec succès: Soin apaisant contour des yeux 10ml
+2025-04-03 15:24:35,361 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:24:35,361 - INFO - Nombre d'enregistrements: 5
+2025-04-03 15:24:35,361 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:24:35,361 - INFO - Répertoire existe: True
+2025-04-03 15:24:35,361 - INFO - Permissions d'écriture: True
+2025-04-03 15:24:35,363 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 1048 octets
+2025-04-03 15:24:35,395 - INFO - 127.0.0.1 - - [03/Apr/2025 15:24:35] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:24:37,629 - INFO - Produit scrapé avec succès: La Roche-Posay Effaclar Duo+ Soin Triple-Correction anti-Imperfection 40ml
+2025-04-03 15:24:40,011 - INFO - Produit scrapé avec succès: Vinopure Stop Bouton Salicylique - 15 ml
+2025-04-03 15:24:41,093 - INFO - 127.0.0.1 - - [03/Apr/2025 15:24:41] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:24:42,397 - INFO - Produit scrapé avec succès: Cerave gel moussant anti-imperfections 236ml
+2025-04-03 15:24:44,635 - INFO - Produit scrapé avec succès: La Roche-Posay Effaclar sérum ultra concentré 30ml
+2025-04-03 15:24:46,873 - INFO - Produit scrapé avec succès: SVR Sebiaclear Ampoule Flash 30ml
+2025-04-03 15:24:46,874 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:24:46,874 - INFO - Nombre d'enregistrements: 10
+2025-04-03 15:24:46,874 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:24:46,874 - INFO - Répertoire existe: True
+2025-04-03 15:24:46,874 - INFO - Permissions d'écriture: True
+2025-04-03 15:24:46,874 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 2009 octets
+2025-04-03 15:24:47,078 - INFO - 127.0.0.1 - - [03/Apr/2025 15:24:47] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:24:49,176 - INFO - Produit scrapé avec succès: SVR Sebiaclear sérum anti-imperfections 30ml
+2025-04-03 15:24:51,438 - INFO - Produit scrapé avec succès: Avène Hydrance Riche Crème hydratante 40 ml
+2025-04-03 15:24:53,091 - INFO - 127.0.0.1 - - [03/Apr/2025 15:24:53] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:24:53,745 - INFO - Produit scrapé avec succès: Avène Hydrance Légère Emulsion hydratante 40ml
+2025-04-03 15:24:55,989 - INFO - Produit scrapé avec succès: Lotion purifiante anti-imperfections peaux grasses à tendance acnéique 200ml
+2025-04-03 15:24:58,248 - INFO - Produit scrapé avec succès: La Roche-Posay Hyalu B5 sérum concentré anti-rides réparateur 30ml
+2025-04-03 15:24:58,248 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:24:58,248 - INFO - Nombre d'enregistrements: 15
+2025-04-03 15:24:58,248 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:24:58,248 - INFO - Répertoire existe: True
+2025-04-03 15:24:58,248 - INFO - Permissions d'écriture: True
+2025-04-03 15:24:58,249 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 3056 octets
+2025-04-03 15:24:59,078 - INFO - 127.0.0.1 - - [03/Apr/2025 15:24:59] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:25:00,600 - INFO - Produit scrapé avec succès: La Roche-Posay Effaclar H Iso-Biome Soin Réparateur Apaisant 40ml
+2025-04-03 15:25:02,951 - INFO - Produit scrapé avec succès: Cerave sérum rétinol anti-marques 30ml
+2025-04-03 15:25:05,104 - INFO - 127.0.0.1 - - [03/Apr/2025 15:25:05] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:25:05,257 - INFO - Produit scrapé avec succès: La Roche-Posay Effaclar mat Hydratant sébo-régulateur 40ml
+2025-04-03 15:25:07,689 - INFO - Produit scrapé avec succès: Eucerin Hyaluron-Filler + 3x Effect Soin De Nuit 50ml
+2025-04-03 15:25:09,971 - INFO - Produit scrapé avec succès: Filorga Time-filler 5xp crème correction rides 50ml
+2025-04-03 15:25:09,971 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:25:09,971 - INFO - Nombre d'enregistrements: 20
+2025-04-03 15:25:09,971 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:25:09,971 - INFO - Répertoire existe: True
+2025-04-03 15:25:09,971 - INFO - Permissions d'écriture: True
+2025-04-03 15:25:09,973 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 4075 octets
+2025-04-03 15:25:11,082 - INFO - 127.0.0.1 - - [03/Apr/2025 15:25:11] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:25:12,262 - INFO - Produit scrapé avec succès: Avène Cleanance Comedomed 30ml
+2025-04-03 15:25:14,496 - INFO - Produit scrapé avec succès: Avène crème apaisante - peaux desséchées et irritées par traitements 40ml
+2025-04-03 15:25:16,734 - INFO - Produit scrapé avec succès: Ecrinal gel cils & sourcils fortifiant à l'ANP 2+ 9ml
+2025-04-03 15:25:17,091 - INFO - 127.0.0.1 - - [03/Apr/2025 15:25:17] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:25:19,405 - INFO - Produit scrapé avec succès: Eucerin Hyaluron-Filler + 3x Effect Soin De Jour Spf 30 50ml Tous Types de Peaux
+2025-04-03 15:25:21,763 - INFO - Produit scrapé avec succès: La Roche-Posay Hydraphase à l'Acide Hyaluronique Riche 50ml
+2025-04-03 15:25:21,764 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:25:21,764 - INFO - Nombre d'enregistrements: 25
+2025-04-03 15:25:21,764 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:25:21,764 - INFO - Répertoire existe: True
+2025-04-03 15:25:21,764 - INFO - Permissions d'écriture: True
+2025-04-03 15:25:21,764 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 5156 octets
+2025-04-03 15:25:23,091 - INFO - 127.0.0.1 - - [03/Apr/2025 15:25:23] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:25:24,245 - INFO - Produit scrapé avec succès: Avène Rosamed Concentré anti-rougeurs 30ml
+2025-04-03 15:25:26,580 - INFO - Produit scrapé avec succès: Eucerin Sérum anti-pigment 30ml
+2025-04-03 15:25:28,900 - INFO - Produit scrapé avec succès: La Roche-Posay Toleriane Sensitive Soin hydratant apaisant protecteur 40ml
+2025-04-03 15:25:29,095 - INFO - 127.0.0.1 - - [03/Apr/2025 15:25:29] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:25:31,194 - INFO - Produit scrapé avec succès: Eucerin Aquaphor Réparateur Lèvres Sos 10ml
+2025-04-03 15:25:33,451 - INFO - Produit scrapé avec succès: La Roche-Posay Toleriane Ultra Dermallergo crème 40ml
+2025-04-03 15:25:33,451 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:25:33,452 - INFO - Nombre d'enregistrements: 30
+2025-04-03 15:25:33,452 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:25:33,452 - INFO - Répertoire existe: True
+2025-04-03 15:25:33,452 - INFO - Permissions d'écriture: True
+2025-04-03 15:25:33,453 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 6132 octets
+2025-04-03 15:25:34,295 - INFO - 127.0.0.1 - - [03/Apr/2025 15:25:34] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:25:36,148 - INFO - Produit scrapé avec succès: Bioderma Créaline DS+ Crème 40 ml
+2025-04-03 15:25:38,369 - INFO - Produit scrapé avec succès: Cerave Soin concentré anti-imperfections 40ml
+2025-04-03 15:25:39,423 - INFO - 127.0.0.1 - - [03/Apr/2025 15:25:39] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:25:42,268 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:25:42,269 - INFO - Nombre d'enregistrements: 32
+2025-04-03 15:25:42,269 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:25:42,270 - INFO - Répertoire existe: True
+2025-04-03 15:25:42,270 - INFO - Permissions d'écriture: True
+2025-04-03 15:25:42,271 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 6493 octets
+2025-04-03 15:25:42,271 - INFO - Scraping de la page 2/47
+2025-04-03 15:25:42,412 - INFO - Extraction de 32 liens de produits sur la page
+2025-04-03 15:25:44,524 - INFO - 127.0.0.1 - - [03/Apr/2025 15:25:44] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:25:44,663 - INFO - Produit scrapé avec succès: Vinoperfect Soin Eclaircissant Regard - 15 ml
+2025-04-03 15:25:46,944 - INFO - Produit scrapé avec succès: Eucerin Anti-Pigment Soin De Jour Spf 30 - 50ml
+2025-04-03 15:25:49,150 - INFO - Produit scrapé avec succès: La Roche-Posay Hydraphase à l'Acide Hyaluronique Légère 50ml
+2025-04-03 15:25:49,150 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:25:49,150 - INFO - Nombre d'enregistrements: 35
+2025-04-03 15:25:49,150 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:25:49,151 - INFO - Répertoire existe: True
+2025-04-03 15:25:49,151 - INFO - Permissions d'écriture: True
+2025-04-03 15:25:49,152 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 7093 octets
+2025-04-03 15:25:49,625 - INFO - 127.0.0.1 - - [03/Apr/2025 15:25:49] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:25:51,380 - INFO - Produit scrapé avec succès: Eucerin Hyaluron-Filler + Elasticity Thiamidol soin de nuit Anti-Âge 50ml
+2025-04-03 15:25:53,773 - INFO - Produit scrapé avec succès: Eucerin Hyaluron-Filler + 3x Effect Sérum Booster D’Hydratation Anti-Âge 30ml
+2025-04-03 15:25:54,724 - INFO - 127.0.0.1 - - [03/Apr/2025 15:25:54] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:25:56,016 - INFO - Produit scrapé avec succès: La Roche-Posay Hyalu B5 soin anti-rides réparateur repulpant 40ml
+2025-04-03 15:25:58,222 - INFO - Produit scrapé avec succès: Vichy Minéral 89 booster quotidien fortifiant et repulpant 50ml
+2025-04-03 15:25:59,815 - INFO - 127.0.0.1 - - [03/Apr/2025 15:25:59] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:26:00,515 - INFO - Produit scrapé avec succès: Avène Hydrance UV Légère Emulsion hydratante 40ml
+2025-04-03 15:26:00,516 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:26:00,516 - INFO - Nombre d'enregistrements: 40
+2025-04-03 15:26:00,516 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:26:00,516 - INFO - Répertoire existe: True
+2025-04-03 15:26:00,516 - INFO - Permissions d'écriture: True
+2025-04-03 15:26:00,518 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 8243 octets
+2025-04-03 15:26:02,878 - INFO - Produit scrapé avec succès: Masque B Hydra intensif 12ml
+2025-04-03 15:26:05,096 - INFO - 127.0.0.1 - - [03/Apr/2025 15:26:05] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:26:05,167 - INFO - Produit scrapé avec succès: Avène Hyaluron activ b3 recharge crème régénération cellulaire 50ml
+2025-04-03 15:26:07,434 - INFO - Produit scrapé avec succès: Nuxe Rêve de Miel baume lèvres au miel ultra-nourrissant 15g
+2025-04-03 15:26:09,753 - INFO - Produit scrapé avec succès: Avène Tolérance Hydra 10 Crème Hydratante Peaux sensibles sèches à très sèches 40ml
+2025-04-03 15:26:11,076 - INFO - 127.0.0.1 - - [03/Apr/2025 15:26:11] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:26:12,006 - INFO - Produit scrapé avec succès: Cerave lotion visage jour 52ml
+2025-04-03 15:26:12,006 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:26:12,006 - INFO - Nombre d'enregistrements: 45
+2025-04-03 15:26:12,006 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:26:12,006 - INFO - Répertoire existe: True
+2025-04-03 15:26:12,006 - INFO - Permissions d'écriture: True
+2025-04-03 15:26:12,007 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 9285 octets
+2025-04-03 15:26:14,555 - INFO - Produit scrapé avec succès: Nuxe Very Rose Sérum Lèvres Repulpant 8ml
+2025-04-03 15:26:17,005 - INFO - Produit scrapé avec succès: Bioderma Atoderm Intensive Eye 100ml
+2025-04-03 15:26:17,092 - INFO - 127.0.0.1 - - [03/Apr/2025 15:26:17] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:26:19,337 - INFO - Produit scrapé avec succès: Avène Hyaluron Activ B3 - sérum concentré repulpant - 30ml
+2025-04-03 15:26:21,582 - INFO - Produit scrapé avec succès: Avène Hydrance boost sérum réhydratant 30ml
+2025-04-03 15:26:23,087 - INFO - 127.0.0.1 - - [03/Apr/2025 15:26:23] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:26:23,916 - INFO - Produit scrapé avec succès: SVR Sebiaclear active gel 40ml
+2025-04-03 15:26:23,917 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:26:23,917 - INFO - Nombre d'enregistrements: 50
+2025-04-03 15:26:23,917 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:26:23,917 - INFO - Répertoire existe: True
+2025-04-03 15:26:23,917 - INFO - Permissions d'écriture: True
+2025-04-03 15:26:23,918 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 10196 octets
+2025-04-03 15:26:26,160 - INFO - Produit scrapé avec succès: Bioderma Sébium Sensitive 30ml
+2025-04-03 15:26:28,400 - INFO - Produit scrapé avec succès: SVR Sebiaclear Mat+Pores 40ml
+2025-04-03 15:26:29,091 - INFO - 127.0.0.1 - - [03/Apr/2025 15:26:29] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:26:30,625 - INFO - Produit scrapé avec succès: Avène Cleanance soin matifiant 40ml
+2025-04-03 15:26:32,849 - INFO - Produit scrapé avec succès: Cerave Crème Hydratante Visage SPF50 52ml
+2025-04-03 15:26:35,081 - INFO - 127.0.0.1 - - [03/Apr/2025 15:26:35] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:26:35,215 - INFO - Produit scrapé avec succès: La Roche-Posay Rétinol B3 Sérum anti-rides au rétinol régénérant 30ml
+2025-04-03 15:26:35,215 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:26:35,215 - INFO - Nombre d'enregistrements: 55
+2025-04-03 15:26:35,215 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:26:35,215 - INFO - Répertoire existe: True
+2025-04-03 15:26:35,215 - INFO - Permissions d'écriture: True
+2025-04-03 15:26:35,216 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 11100 octets
+2025-04-03 15:26:37,611 - INFO - Produit scrapé avec succès: Bioderma Sébium Hydra 40 ml
+2025-04-03 15:26:39,948 - INFO - Produit scrapé avec succès: Bioderma Sébium Pore Refiner 30 ml
+2025-04-03 15:26:41,096 - INFO - 127.0.0.1 - - [03/Apr/2025 15:26:41] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:26:42,809 - INFO - Produit scrapé avec succès: La Roche-Posay Toleriane Dermallergo Fluide Hydratant 40ml
+2025-04-03 15:26:44,990 - INFO - Produit scrapé avec succès: Eucerin Hyaluron-Filler + Elasticity Thiamidol soin de jour SPF 30 Anti-Âge 50ml
+2025-04-03 15:26:47,078 - INFO - 127.0.0.1 - - [03/Apr/2025 15:26:47] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:26:47,233 - INFO - Produit scrapé avec succès: Bioderma Créaline AR teintée 40 ml
+2025-04-03 15:26:47,233 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:26:47,233 - INFO - Nombre d'enregistrements: 60
+2025-04-03 15:26:47,233 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:26:47,233 - INFO - Répertoire existe: True
+2025-04-03 15:26:47,233 - INFO - Permissions d'écriture: True
+2025-04-03 15:26:47,234 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 12064 octets
+2025-04-03 15:26:49,726 - INFO - Produit scrapé avec succès: La Roche-Posay Toleriane Ultra Contour des Yeux 20ml
+2025-04-03 15:26:52,208 - INFO - Produit scrapé avec succès: Eucerin Aquaphor baume réparateur 40g
+2025-04-03 15:26:53,095 - INFO - 127.0.0.1 - - [03/Apr/2025 15:26:53] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:26:54,483 - INFO - Produit scrapé avec succès: Eucerin Anti-Pigment Soin De Nuit 50ml
+2025-04-03 15:26:56,732 - INFO - Produit scrapé avec succès: La Roche-Posay Effaclar k (+) 40ml
+2025-04-03 15:26:59,077 - INFO - 127.0.0.1 - - [03/Apr/2025 15:26:59] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:26:59,754 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:26:59,754 - INFO - Nombre d'enregistrements: 64
+2025-04-03 15:26:59,754 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:26:59,754 - INFO - Répertoire existe: True
+2025-04-03 15:26:59,754 - INFO - Permissions d'écriture: True
+2025-04-03 15:26:59,756 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 12768 octets
+2025-04-03 15:26:59,757 - INFO - Scraping de la page 3/47
+2025-04-03 15:26:59,922 - INFO - Extraction de 32 liens de produits sur la page
+2025-04-03 15:27:02,182 - INFO - Produit scrapé avec succès: Eucerin Hyaluron-Filler + Elasticity Thiamidol soin contour des yeux SPF 20 Anti-Âge 50ml
+2025-04-03 15:27:02,183 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:27:02,183 - INFO - Nombre d'enregistrements: 65
+2025-04-03 15:27:02,183 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:27:02,183 - INFO - Répertoire existe: True
+2025-04-03 15:27:02,183 - INFO - Permissions d'écriture: True
+2025-04-03 15:27:02,184 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 13045 octets
+2025-04-03 15:27:04,563 - INFO - Produit scrapé avec succès: Nuxe la crème poudrée effet liftant 50ml
+2025-04-03 15:27:05,094 - INFO - 127.0.0.1 - - [03/Apr/2025 15:27:05] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:27:06,820 - INFO - Produit scrapé avec succès: Avène Hyaluron activ b3 - crème régénération cellulaire jour - 50ml
+2025-04-03 15:27:09,166 - INFO - Produit scrapé avec succès: Avène Hydrance Aqua Gel-crème hydratante 50ml
+2025-04-03 15:27:11,083 - INFO - 127.0.0.1 - - [03/Apr/2025 15:27:11] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:27:11,425 - INFO - Produit scrapé avec succès: Avène Hydrance UV Riche Crème hydratante 40ml
+2025-04-03 15:27:13,748 - INFO - Produit scrapé avec succès: Cerave Crème Hydratante Visage SPF30 52ml
+2025-04-03 15:27:13,749 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:27:13,749 - INFO - Nombre d'enregistrements: 70
+2025-04-03 15:27:13,749 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:27:13,749 - INFO - Répertoire existe: True
+2025-04-03 15:27:13,749 - INFO - Permissions d'écriture: True
+2025-04-03 15:27:13,750 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 14022 octets
+2025-04-03 15:27:16,325 - INFO - Produit scrapé avec succès: Avène Hyaluron activ b3 - crème multi-intensive nuit - 40ml
+2025-04-03 15:27:17,097 - INFO - 127.0.0.1 - - [03/Apr/2025 15:27:17] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:27:18,563 - INFO - Produit scrapé avec succès: Eau Thermale Avène Cleanance Comedomed Peeling Crème Intensive Poussées de Boutons 40ml
+2025-04-03 15:27:21,020 - INFO - Produit scrapé avec succès: Bioderma Pigmentbio Sensitive areas 75ml
+2025-04-03 15:27:22,310 - INFO - 127.0.0.1 - - [03/Apr/2025 15:27:22] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:27:23,636 - INFO - Produit scrapé avec succès: La Roche-Posay Toleriane Kerium DS Crème Soin Apaisant Anti Squames 40ml
+2025-04-03 15:27:23,857 - INFO - 127.0.0.1 - - [03/Apr/2025 15:27:23] "GET /results HTTP/1.1" 200 -
+2025-04-03 15:27:25,855 - INFO - Produit scrapé avec succès: Bariéderm Cica-lèvres baume protecteur 15ml
+2025-04-03 15:27:25,856 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:27:25,856 - INFO - Nombre d'enregistrements: 75
+2025-04-03 15:27:25,856 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:27:25,856 - INFO - Répertoire existe: True
+2025-04-03 15:27:25,856 - INFO - Permissions d'écriture: True
+2025-04-03 15:27:25,857 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 15119 octets
+2025-04-03 15:27:28,068 - INFO - Produit scrapé avec succès: La Roche-Posay crème riche 40ml
+2025-04-03 15:27:30,377 - INFO - Produit scrapé avec succès: Ducray Crème Apaisante Visage Anti-Squames Kelual DS 40ml
+2025-04-03 15:27:32,748 - INFO - Produit scrapé avec succès: Eucerin Dermopure Sérum Triple Action 40ml
+2025-04-03 15:27:35,092 - INFO - Produit scrapé avec succès: La Roche-Posay Effaclar duo[+] spf30 40ml
+2025-04-03 15:27:35,708 - INFO - Vérification des permissions dans /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:27:35,708 - INFO - ✅ Test d'écriture réussi dans /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:27:35,710 - INFO - 127.0.0.1 - - [03/Apr/2025 15:27:35] "GET / HTTP/1.1" 200 -
+2025-04-03 15:27:37,349 - INFO - Produit scrapé avec succès: Avène Vitamin Activ Cg Sérum Correcteur Éclat 30 ml
+2025-04-03 15:27:37,349 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:27:37,349 - INFO - Nombre d'enregistrements: 80
+2025-04-03 15:27:37,349 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:27:37,349 - INFO - Répertoire existe: True
+2025-04-03 15:27:37,349 - INFO - Permissions d'écriture: True
+2025-04-03 15:27:37,351 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 16050 octets
+2025-04-03 15:27:39,564 - INFO - Produit scrapé avec succès: SVR Essence Hydra solution réparatrice, hydratante, repulpante 150ml
+2025-04-03 15:27:41,904 - INFO - Produit scrapé avec succès: Bioderma Créaline H2O Eau micellaire anti-rougeur 250ml
+2025-04-03 15:27:44,196 - INFO - Produit scrapé avec succès: Avène Cleanance Pur Sérum exfoliant AHA 30ml
+2025-04-03 15:27:44,980 - INFO - 127.0.0.1 - - [03/Apr/2025 15:27:44] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:27:46,469 - INFO - Produit scrapé avec succès: Eucerin Kit Routine Anti-Pigment Sérum Duo 30ml + Soin de Jour SPF30 20ml + Trousse
+2025-04-03 15:27:48,937 - INFO - Produit scrapé avec succès: Nuxe crème repulpante hydratante 48h 50ml
+2025-04-03 15:27:48,938 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:27:48,938 - INFO - Nombre d'enregistrements: 85
+2025-04-03 15:27:48,938 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:27:48,938 - INFO - Répertoire existe: True
+2025-04-03 15:27:48,938 - INFO - Permissions d'écriture: True
+2025-04-03 15:27:48,939 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 17126 octets
+2025-04-03 15:27:50,084 - INFO - 127.0.0.1 - - [03/Apr/2025 15:27:50] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:27:51,164 - INFO - Produit scrapé avec succès: Eucerin - Hyaluron-Filler + Elasticity Soin de Jour Rosé SPF30 anti-âge 50ml
+2025-04-03 15:27:53,394 - INFO - Produit scrapé avec succès: Jonzac soin léger réhydratant bio 50ml
+2025-04-03 15:27:55,708 - INFO - Produit scrapé avec succès: Cerave crème réparatrice contour des yeux 14ml
+2025-04-03 15:27:56,127 - INFO - 127.0.0.1 - - [03/Apr/2025 15:27:56] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:27:57,986 - INFO - Produit scrapé avec succès: SVR Densidiane crème redensifiante 125ml
+2025-04-03 15:28:00,302 - INFO - Produit scrapé avec succès: Eucerin Anti-Pigment Soin Contour des Yeux Illuminateur Correcteur de Cernes 15ml
+2025-04-03 15:28:00,302 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:28:00,302 - INFO - Nombre d'enregistrements: 90
+2025-04-03 15:28:00,302 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:28:00,303 - INFO - Répertoire existe: True
+2025-04-03 15:28:00,303 - INFO - Permissions d'écriture: True
+2025-04-03 15:28:00,304 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 18185 octets
+2025-04-03 15:28:02,092 - INFO - 127.0.0.1 - - [03/Apr/2025 15:28:02] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:28:02,587 - INFO - Produit scrapé avec succès: Avène crème apaisante restauratrice cosmétique Stérile® 40ml
+2025-04-03 15:28:04,802 - INFO - Produit scrapé avec succès: Filorga Time-Filler 5XP Gel crème correction tous types de rides 50ml
+2025-04-03 15:28:07,155 - INFO - Produit scrapé avec succès: Age Lift Fluide Jour Lissant Fermeté 40ml
+2025-04-03 15:28:08,102 - INFO - 127.0.0.1 - - [03/Apr/2025 15:28:08] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:28:09,590 - INFO - Produit scrapé avec succès: Eucerin Hyaluron-Filler + 3x Effect Soin De Jour Spf 15 50ml Peau Normale à Mixte
+2025-04-03 15:28:13,088 - INFO - Produit scrapé avec succès: SVR Sensifine Ar crème Spf50+ 40ml
+2025-04-03 15:28:13,088 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:28:13,088 - INFO - Nombre d'enregistrements: 95
+2025-04-03 15:28:13,089 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:28:13,089 - INFO - Répertoire existe: True
+2025-04-03 15:28:13,089 - INFO - Permissions d'écriture: True
+2025-04-03 15:28:13,091 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 19254 octets
+2025-04-03 15:28:14,078 - INFO - 127.0.0.1 - - [03/Apr/2025 15:28:14] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:28:15,503 - INFO - Produit scrapé avec succès: Avène baume apaisant restaurateur Cosmétique Stérile® - peaux hypersensibles, réactives, intolérantes ou
+2025-04-03 15:28:20,030 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:28:20,030 - INFO - Nombre d'enregistrements: 96
+2025-04-03 15:28:20,030 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:28:20,030 - INFO - Répertoire existe: True
+2025-04-03 15:28:20,030 - INFO - Permissions d'écriture: True
+2025-04-03 15:28:20,032 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 19581 octets
+2025-04-03 15:28:20,032 - INFO - Scraping de la page 4/47
+2025-04-03 15:28:20,099 - INFO - 127.0.0.1 - - [03/Apr/2025 15:28:20] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:28:20,164 - INFO - Extraction de 32 liens de produits sur la page
+2025-04-03 15:28:22,385 - INFO - Produit scrapé avec succès: La Roche-Posay Nutritic intense riche 50ml
+2025-04-03 15:28:24,914 - INFO - Produit scrapé avec succès: Eucerin Hyaluron-Filler + 3x Effect Soin de Nuit Booster d'Hydratation Anti-Âge 50ml
+2025-04-03 15:28:26,084 - INFO - 127.0.0.1 - - [03/Apr/2025 15:28:26] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:28:27,258 - INFO - Produit scrapé avec succès: Avène Tolérance Hydra 10 Fluide Hydratant Peaux sensibles normales à mixtes 40ml
+2025-04-03 15:28:30,258 - INFO - Produit scrapé avec succès: Bioderma Hydrabio Sérum 40 ml
+2025-04-03 15:28:30,258 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:28:30,258 - INFO - Nombre d'enregistrements: 100
+2025-04-03 15:28:30,259 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:28:30,259 - INFO - Répertoire existe: True
+2025-04-03 15:28:30,259 - INFO - Permissions d'écriture: True
+2025-04-03 15:28:30,260 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 20447 octets
+2025-04-03 15:28:32,101 - INFO - 127.0.0.1 - - [03/Apr/2025 15:28:32] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:28:32,519 - INFO - Produit scrapé avec succès: Hyalu B5 SPF30 Aquagel Soin protecteur réparateur repulpant 50ml
+2025-04-03 15:28:34,844 - INFO - Produit scrapé avec succès: Caudalie Vinopure sérum salicylique anti-imperfections 30ml
+2025-04-03 15:28:37,445 - INFO - Produit scrapé avec succès: Baume à lèvres réparateur 15ml
+2025-04-03 15:28:38,083 - INFO - 127.0.0.1 - - [03/Apr/2025 15:28:38] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:28:39,730 - INFO - Produit scrapé avec succès: Cerave Gel-Crème Hydratant Oil Control Peaux Mixtes à Grasses 52ml
+2025-04-03 15:28:42,019 - INFO - Produit scrapé avec succès: Caudalie Vinoperfect Sérum éclat anti-tâches - 30ml
+2025-04-03 15:28:42,019 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:28:42,019 - INFO - Nombre d'enregistrements: 105
+2025-04-03 15:28:42,019 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:28:42,019 - INFO - Répertoire existe: True
+2025-04-03 15:28:42,019 - INFO - Permissions d'écriture: True
+2025-04-03 15:28:42,021 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 21491 octets
+2025-04-03 15:28:44,107 - INFO - 127.0.0.1 - - [03/Apr/2025 15:28:44] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:28:44,470 - INFO - Produit scrapé avec succès: Eucerin Hyaluron-Filler + Elasticity 3d Sérum 30ml
+2025-04-03 15:28:46,808 - INFO - Produit scrapé avec succès: Palpébral crème apaisante 15ml
+2025-04-03 15:28:49,116 - INFO - Produit scrapé avec succès: Uriage Eau thermale crème d'eau légère 40ml
+2025-04-03 15:28:49,308 - INFO - 127.0.0.1 - - [03/Apr/2025 15:28:49] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:28:51,526 - INFO - Produit scrapé avec succès: Eucerin Hyaluron-Filler +3x Effect Soin Contour Des Yeux Spf15 15ml
+2025-04-03 15:28:52,259 - INFO - 127.0.0.1 - - [03/Apr/2025 15:28:52] "GET /results HTTP/1.1" 200 -
+2025-04-03 15:28:54,040 - INFO - 127.0.0.1 - - [03/Apr/2025 15:28:54] "GET /results?page=2&per_page=20 HTTP/1.1" 200 -
+2025-04-03 15:28:54,279 - INFO - Produit scrapé avec succès: SVR Clairial sérum anti-taches éclat 30ml
+2025-04-03 15:28:54,279 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:28:54,280 - INFO - Nombre d'enregistrements: 110
+2025-04-03 15:28:54,280 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:28:54,280 - INFO - Répertoire existe: True
+2025-04-03 15:28:54,280 - INFO - Permissions d'écriture: True
+2025-04-03 15:28:54,281 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 22459 octets
+2025-04-03 15:28:55,776 - INFO - 127.0.0.1 - - [03/Apr/2025 15:28:55] "GET /results?page=4&per_page=20 HTTP/1.1" 200 -
+2025-04-03 15:28:56,541 - INFO - Produit scrapé avec succès: Weleda Crème de Jour raffermissante Grenade & Maca 40ml
+2025-04-03 15:28:58,872 - INFO - 127.0.0.1 - - [03/Apr/2025 15:28:58] "GET /results?page=1&per_page=20 HTTP/1.1" 200 -
+2025-04-03 15:28:59,255 - INFO - Produit scrapé avec succès: Uriage Âge Absolu Sérum Micro-Redensifiant Booster Collagène 30ml
+2025-04-03 15:29:01,555 - INFO - Produit scrapé avec succès: Nuxe crème Prodigieuse Boost baume huile récupérateur nuit 50ml
+2025-04-03 15:29:03,780 - INFO - Produit scrapé avec succès: Ampoule Lift concentré lissant 30ml
+2025-04-03 15:29:04,353 - INFO - 127.0.0.1 - - [03/Apr/2025 15:29:04] "GET /results?page=4&per_page=20 HTTP/1.1" 200 -
+2025-04-03 15:29:05,760 - INFO - 127.0.0.1 - - [03/Apr/2025 15:29:05] "GET /results?page=5&per_page=20 HTTP/1.1" 200 -
+2025-04-03 15:29:06,033 - INFO - Produit scrapé avec succès: Soin lèvres au miel 10ml Rêve de Miel
+2025-04-03 15:29:06,033 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:29:06,033 - INFO - Nombre d'enregistrements: 115
+2025-04-03 15:29:06,033 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:29:06,033 - INFO - Répertoire existe: True
+2025-04-03 15:29:06,033 - INFO - Permissions d'écriture: True
+2025-04-03 15:29:06,035 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 23472 octets
+2025-04-03 15:29:06,877 - INFO - 127.0.0.1 - - [03/Apr/2025 15:29:06] "GET /results?page=6&per_page=20 HTTP/1.1" 200 -
+2025-04-03 15:29:08,742 - INFO - Produit scrapé avec succès: SVR ampoule B3 hydra concentré réparateur 30ml
+2025-04-03 15:29:11,054 - INFO - Produit scrapé avec succès: Ducray Crème anti-tâches SPF 50+ 50 ml
+2025-04-03 15:29:13,332 - INFO - Produit scrapé avec succès: Hero Mighty Patch Original Patchs de Nuit Anti-Acné 24 Patchs Hydrocolloïdes
+2025-04-03 15:29:14,882 - INFO - 127.0.0.1 - - [03/Apr/2025 15:29:14] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:29:15,762 - INFO - Produit scrapé avec succès: SVR Collagen Biotic Refill 50ml
+2025-04-03 15:29:17,954 - INFO - Produit scrapé avec succès: Bioderma Créaline DS+ gel nettoyant 200ml
+2025-04-03 15:29:17,954 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:29:17,954 - INFO - Nombre d'enregistrements: 120
+2025-04-03 15:29:17,954 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:29:17,955 - INFO - Répertoire existe: True
+2025-04-03 15:29:17,955 - INFO - Permissions d'écriture: True
+2025-04-03 15:29:17,957 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 24432 octets
+2025-04-03 15:29:20,116 - INFO - 127.0.0.1 - - [03/Apr/2025 15:29:20] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:29:20,480 - INFO - Produit scrapé avec succès: Ducray PP+ Emulsion traitante purifiante - peaux à tendance acnéique 30ml
+2025-04-03 15:29:22,747 - INFO - Produit scrapé avec succès: La Roche-Posay Mela B3 Soin Correcteur Protecteur Anti-Taches SPF30 40ml
+2025-04-03 15:29:25,031 - INFO - Produit scrapé avec succès: Nuxe Crème fraîche de beauté 3-en-1 crème Hydratante 48h, lait démaquillant et masque repulpant 100ml
+2025-04-03 15:29:26,092 - INFO - 127.0.0.1 - - [03/Apr/2025 15:29:26] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:29:27,373 - INFO - Produit scrapé avec succès: Hydro Boost Aqua-Gel Pot 50ml
+2025-04-03 15:29:29,627 - INFO - Produit scrapé avec succès: Vichy Liftactiv Collagen Specialist crème anti-âge 50ml
+2025-04-03 15:29:29,627 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:29:29,627 - INFO - Nombre d'enregistrements: 125
+2025-04-03 15:29:29,627 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:29:29,627 - INFO - Répertoire existe: True
+2025-04-03 15:29:29,627 - INFO - Permissions d'écriture: True
+2025-04-03 15:29:29,629 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 25584 octets
+2025-04-03 15:29:31,880 - INFO - Produit scrapé avec succès: Bioderma Hydrabio gel crème 40 ml
+2025-04-03 15:29:32,100 - INFO - 127.0.0.1 - - [03/Apr/2025 15:29:32] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:29:34,203 - INFO - Produit scrapé avec succès: Jonzac Soin riche réhydratant bio 50ml
+2025-04-03 15:29:36,620 - INFO - Produit scrapé avec succès: Filorga Optim-eyes contour des yeux 15ml
+2025-04-03 15:29:37,341 - INFO - 127.0.0.1 - - [03/Apr/2025 15:29:37] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:29:41,901 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:29:41,902 - INFO - Nombre d'enregistrements: 128
+2025-04-03 15:29:41,902 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:29:41,902 - INFO - Répertoire existe: True
+2025-04-03 15:29:41,902 - INFO - Permissions d'écriture: True
+2025-04-03 15:29:41,903 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 26108 octets
+2025-04-03 15:29:41,904 - INFO - Scraping de la page 5/47
+2025-04-03 15:29:42,045 - INFO - Extraction de 32 liens de produits sur la page
+2025-04-03 15:29:43,075 - INFO - 127.0.0.1 - - [03/Apr/2025 15:29:43] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:29:44,266 - INFO - Produit scrapé avec succès: SVR Topialyse crème nourrissante et apaisante 400ml
+2025-04-03 15:29:46,721 - INFO - Produit scrapé avec succès: Vichy Mineral 89 soin réparateur des yeux 15ml
+2025-04-03 15:29:46,721 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:29:46,721 - INFO - Nombre d'enregistrements: 130
+2025-04-03 15:29:46,722 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:29:46,722 - INFO - Répertoire existe: True
+2025-04-03 15:29:46,722 - INFO - Permissions d'écriture: True
+2025-04-03 15:29:46,724 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 26498 octets
+2025-04-03 15:29:49,091 - INFO - 127.0.0.1 - - [03/Apr/2025 15:29:49] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:29:49,113 - INFO - Produit scrapé avec succès: Sublimactive Anti-Âge Cellulaire Crème Riche Lissante 40ml Bio
+2025-04-03 15:29:51,417 - INFO - Produit scrapé avec succès: Biology AC Global Soin imperfections sévères bio 40 ml
+2025-04-03 15:29:54,016 - INFO - Produit scrapé avec succès: Cerave Coffret Cartable SOS Anti-Boutons : Gel Moussant Anti-Imperfections 236ml + Soin Concentre Anti-Im
+2025-04-03 15:29:55,081 - INFO - 127.0.0.1 - - [03/Apr/2025 15:29:55] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:29:56,242 - INFO - Produit scrapé avec succès: La Roche-Posay Mela B3 Sérum Concentré Intensif Anti-Taches Anti-Récidive 30ml
+2025-04-03 15:29:58,500 - INFO - Produit scrapé avec succès: Super Sérum 30ml
+2025-04-03 15:29:58,500 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:29:58,500 - INFO - Nombre d'enregistrements: 135
+2025-04-03 15:29:58,500 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:29:58,500 - INFO - Répertoire existe: True
+2025-04-03 15:29:58,500 - INFO - Permissions d'écriture: True
+2025-04-03 15:29:58,501 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 27662 octets
+2025-04-03 15:30:00,898 - INFO - Produit scrapé avec succès: Eucerin Nobacter gel de rasage lot 2x150ml
+2025-04-03 15:30:01,116 - INFO - 127.0.0.1 - - [03/Apr/2025 15:30:01] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:30:03,226 - INFO - Produit scrapé avec succès: Nuxe Men gel visage hydratant 50ml
+2025-04-03 15:30:05,654 - INFO - Produit scrapé avec succès: Vichy Neovadiol Post-Ménopause crème Jour 50ml
+2025-04-03 15:30:07,078 - INFO - 127.0.0.1 - - [03/Apr/2025 15:30:07] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:30:07,877 - INFO - Produit scrapé avec succès: Vichy Normaderm soin anti-âge 50ml
+2025-04-03 15:30:10,122 - INFO - Produit scrapé avec succès: Atoderm Stick Lèvres Ultra Hydratant Lot de 2 x 4g
+2025-04-03 15:30:10,122 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:30:10,122 - INFO - Nombre d'enregistrements: 140
+2025-04-03 15:30:10,122 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:30:10,122 - INFO - Répertoire existe: True
+2025-04-03 15:30:10,122 - INFO - Permissions d'écriture: True
+2025-04-03 15:30:10,124 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 28570 octets
+2025-04-03 15:30:12,448 - INFO - Produit scrapé avec succès: Hydraphase BB Crème Teinte Claire 40ml
+2025-04-03 15:30:13,094 - INFO - 127.0.0.1 - - [03/Apr/2025 15:30:13] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:30:14,911 - INFO - Produit scrapé avec succès: Filorga Time-Filler Eyes 5 XP Crème Yeux Correction 15ml
+2025-04-03 15:30:17,128 - INFO - Produit scrapé avec succès: La Roche-Posay Hyalu B5 Sérum Yeux 15ml
+2025-04-03 15:30:19,082 - INFO - 127.0.0.1 - - [03/Apr/2025 15:30:19] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:30:19,677 - INFO - Produit scrapé avec succès: Eucerin Hyaluron-Filler +3x Effect Soin De Jour Spf 15 Peau Sèche 50ml
+2025-04-03 15:31:43,842 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-03 15:31:43,842 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-03 15:31:43,844 - INFO -  * Restarting with stat
+2025-04-03 15:31:44,047 - WARNING -  * Debugger is active!
+2025-04-03 15:31:44,060 - INFO -  * Debugger PIN: 880-221-942
+2025-04-03 15:31:49,328 - INFO - ----- DIAGNOSTIC D'ENVIRONNEMENT -----
+2025-04-03 15:31:49,328 - INFO - Répertoire de base: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:31:49,328 - INFO - Chemin du CSV spécifique: /Users/victorpiamias/Desktop/Apothical/extracteur/produit_leclerc.csv
+2025-04-03 15:31:49,328 - INFO - Chemin du CSV de catégorie: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:31:49,329 - INFO - ✅ Test d'écriture réussi dans /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:31:49,330 - INFO - Le fichier spécifique existe: False
+2025-04-03 15:31:49,330 - INFO - Le fichier de catégorie existe: True
+2025-04-03 15:31:49,330 - INFO - Version Python: 3.13.2 (v3.13.2:4f8bb3947cf, Feb  4 2025, 11:51:10) [Clang 15.0.0 (clang-1500.3.9.4)]
+2025-04-03 15:31:49,330 - INFO - Encodage par défaut: utf-8
+2025-04-03 15:31:49,330 - INFO - Répertoire de travail actuel: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:31:49,330 - INFO - ----- FIN DU DIAGNOSTIC -----
+2025-04-03 15:31:49,330 - INFO - Vérification des permissions dans /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:31:49,331 - INFO - ✅ Test d'écriture réussi dans /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:31:49,361 - INFO - 127.0.0.1 - - [03/Apr/2025 15:31:49] "GET / HTTP/1.1" 200 -
+2025-04-03 15:31:50,955 - INFO - Vérification des permissions dans /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:31:50,956 - INFO - ✅ Test d'écriture réussi dans /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:31:50,956 - INFO - 127.0.0.1 - - [03/Apr/2025 15:31:50] "GET / HTTP/1.1" 200 -
+2025-04-03 15:31:54,464 - INFO - Vérification des permissions dans /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:31:54,466 - INFO - ✅ Test d'écriture réussi dans /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:31:54,469 - INFO - 127.0.0.1 - - [03/Apr/2025 15:31:54] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-04-03 15:31:54,483 - INFO - 127.0.0.1 - - [03/Apr/2025 15:31:54] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:31:55,969 - INFO - WebDriver initialisé avec succès (méthode directe)
+2025-04-03 15:32:00,115 - INFO - 127.0.0.1 - - [03/Apr/2025 15:32:00] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:32:01,736 - INFO - Pas de bannière de cookies ou erreur: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000102bf76c8 cxxbridge1$str$ptr + 2791212
+1   chromedriver                        0x0000000102befc9c cxxbridge1$str$ptr + 2759936
+2   chromedriver                        0x0000000102741e30 cxxbridge1$string$len + 92928
+3   chromedriver                        0x0000000102789170 cxxbridge1$string$len + 384576
+4   chromedriver                        0x00000001027ca5f8 cxxbridge1$string$len + 651976
+5   chromedriver                        0x000000010277d2fc cxxbridge1$string$len + 335820
+6   chromedriver                        0x0000000102bbc6c4 cxxbridge1$str$ptr + 2549544
+7   chromedriver                        0x0000000102bbf988 cxxbridge1$str$ptr + 2562540
+8   chromedriver                        0x0000000102b9c71c cxxbridge1$str$ptr + 2418560
+9   chromedriver                        0x0000000102bc01e8 cxxbridge1$str$ptr + 2564684
+10  chromedriver                        0x0000000102b8d750 cxxbridge1$str$ptr + 2357172
+11  chromedriver                        0x0000000102bdff58 cxxbridge1$str$ptr + 2695100
+12  chromedriver                        0x0000000102be00e0 cxxbridge1$str$ptr + 2695492
+13  chromedriver                        0x0000000102bef910 cxxbridge1$str$ptr + 2759028
+14  libsystem_pthread.dylib             0x0000000191d7df94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000191d78d34 thread_start + 8
+
+2025-04-03 15:32:02,650 - INFO - Détermination du nombre total de pages...
+2025-04-03 15:32:04,922 - INFO - Nombre maximal de pages trouvé dans l'HTML: 2
+2025-04-03 15:32:04,922 - INFO - Nombre total de pages à scraper: 2
+2025-04-03 15:32:05,046 - INFO - Extraction de 32 liens de produits sur la page
+2025-04-03 15:32:05,047 - INFO - Scraping de la page 1/2
+2025-04-03 15:32:06,087 - INFO - 127.0.0.1 - - [03/Apr/2025 15:32:06] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:32:07,330 - INFO - Produit scrapé avec succès: Gel douceur hygiène intime bio 500ml
+2025-04-03 15:32:09,645 - INFO - Produit scrapé avec succès: Lipikar Baume AP+M 200ml
+2025-04-03 15:32:11,861 - INFO - Produit scrapé avec succès: Nuxe Merveillance Lift glow crème bonne mine effet liftant 50ml
+2025-04-03 15:32:12,101 - INFO - 127.0.0.1 - - [03/Apr/2025 15:32:12] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:32:14,534 - INFO - Produit scrapé avec succès: La Roche-Posay Toleriane ultra dermallergo sérum 20ml
+2025-04-03 15:32:16,875 - INFO - Produit scrapé avec succès: Vinopure Gelée Nettoyante Purifiante - 385 ml
+2025-04-03 15:32:16,877 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:32:16,877 - INFO - Nombre d'enregistrements: 5
+2025-04-03 15:32:16,877 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:32:16,878 - INFO - Répertoire existe: True
+2025-04-03 15:32:16,879 - INFO - Permissions d'écriture: True
+2025-04-03 15:32:16,884 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 986 octets
+2025-04-03 15:32:17,377 - INFO - 127.0.0.1 - - [03/Apr/2025 15:32:17] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:32:19,498 - INFO - Produit scrapé avec succès: Avène Cicalfate+ Crème réparatrice protectrice - peaux sensibles et irritées 100 ml
+2025-04-03 15:32:21,928 - INFO - Produit scrapé avec succès: Urearepair Plus Crème Mains 5% D'urée 75ml
+2025-04-03 15:32:23,082 - INFO - 127.0.0.1 - - [03/Apr/2025 15:32:23] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:32:24,323 - INFO - Produit scrapé avec succès: Vichy Homme hydra mag c+ soin hydratant anti-fatigue 50ml
+2025-04-03 15:32:26,612 - INFO - Produit scrapé avec succès: Symbiosys Alflorex+ Duo 2 Boites de 30 Gélules
+2025-04-03 15:32:28,901 - INFO - Produit scrapé avec succès: Granions Décontractant Musculaire Collagène Marin - Pot de 300g
+2025-04-03 15:32:28,901 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:32:28,901 - INFO - Nombre d'enregistrements: 10
+2025-04-03 15:32:28,901 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:32:28,901 - INFO - Répertoire existe: True
+2025-04-03 15:32:28,901 - INFO - Permissions d'écriture: True
+2025-04-03 15:32:28,902 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 2071 octets
+2025-04-03 15:32:29,105 - INFO - 127.0.0.1 - - [03/Apr/2025 15:32:29] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:32:31,172 - INFO - Produit scrapé avec succès: La Roche-Posay Cicaplast Baume B5 100ml
+2025-04-03 15:32:33,414 - INFO - Produit scrapé avec succès: Crème nourrissante, hydratante, protectrice 40ml
+2025-04-03 15:32:35,084 - INFO - 127.0.0.1 - - [03/Apr/2025 15:32:35] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:32:35,706 - INFO - Produit scrapé avec succès: Biostime lait Sn-2 bio plus 3ème âge de 10 à 36 mois 800g
+2025-04-03 15:32:37,963 - INFO - Produit scrapé avec succès: Weleda huile de massage à l'arnica 200ml
+2025-04-03 15:32:40,201 - INFO - Produit scrapé avec succès: Soin apaisant contour des yeux 10ml
+2025-04-03 15:32:40,201 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:32:40,201 - INFO - Nombre d'enregistrements: 15
+2025-04-03 15:32:40,201 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:32:40,201 - INFO - Répertoire existe: True
+2025-04-03 15:32:40,202 - INFO - Permissions d'écriture: True
+2025-04-03 15:32:40,202 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 3002 octets
+2025-04-03 15:32:41,093 - INFO - 127.0.0.1 - - [03/Apr/2025 15:32:41] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:32:42,415 - INFO - Produit scrapé avec succès: La Roche-Posay Effaclar Duo+ Soin Triple-Correction anti-Imperfection 40ml
+2025-04-03 15:32:44,813 - INFO - Produit scrapé avec succès: Brosse à dent souple
+2025-04-03 15:32:47,059 - INFO - Produit scrapé avec succès: Gilbert Physiodose sérum physiologique 40 doses de 5ml
+2025-04-03 15:32:47,103 - INFO - 127.0.0.1 - - [03/Apr/2025 15:32:47] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:32:49,364 - INFO - Produit scrapé avec succès: Saforelle soin Lavant Doux Apaisant Duo 500ml x2 + 100ml
+2025-04-03 15:32:51,596 - INFO - Produit scrapé avec succès: La Roche-Posay Lipikar baume ap [+] 400ml
+2025-04-03 15:32:51,596 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:32:51,596 - INFO - Nombre d'enregistrements: 20
+2025-04-03 15:32:51,596 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:32:51,596 - INFO - Répertoire existe: True
+2025-04-03 15:32:51,597 - INFO - Permissions d'écriture: True
+2025-04-03 15:32:51,598 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 3972 octets
+2025-04-03 15:32:53,092 - INFO - 127.0.0.1 - - [03/Apr/2025 15:32:53] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:32:53,838 - INFO - Produit scrapé avec succès: Eucerin Sun Oil Control Gel-Crème Spf 50+
+2025-04-03 15:32:56,079 - INFO - Produit scrapé avec succès: Vinopure Stop Bouton Salicylique - 15 ml
+2025-04-03 15:32:58,373 - INFO - Produit scrapé avec succès: Eucerin Sun pigment control fluid spf 50+ - 50ml
+2025-04-03 15:32:59,076 - INFO - 127.0.0.1 - - [03/Apr/2025 15:32:59] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:33:00,669 - INFO - Produit scrapé avec succès: Symbiosys Alflorex+ Boîte de 30 gélules
+2025-04-03 15:33:03,117 - INFO - Produit scrapé avec succès: Bioderma Atoderm gel douche 1 L
+2025-04-03 15:33:03,117 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-03 15:33:03,117 - INFO - Nombre d'enregistrements: 25
+2025-04-03 15:33:03,117 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-03 15:33:03,118 - INFO - Répertoire existe: True
+2025-04-03 15:33:03,118 - INFO - Permissions d'écriture: True
+2025-04-03 15:33:03,118 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 4867 octets
+2025-04-03 15:33:05,099 - INFO - 127.0.0.1 - - [03/Apr/2025 15:33:05] "GET /status HTTP/1.1" 200 -
+2025-04-03 15:33:06,291 - INFO - Produit scrapé avec succès: Bioderma Atoderm Huile Lavante 1 L
+2025-04-03 15:34:25,479 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-03 15:34:25,479 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-03 15:34:25,480 - INFO -  * Restarting with stat
+2025-04-03 15:34:25,691 - WARNING -  * Debugger is active!
+2025-04-03 15:34:25,698 - INFO -  * Debugger PIN: 880-221-942
+2025-04-03 15:34:57,313 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-03 15:34:57,313 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-03 15:34:57,315 - INFO -  * Restarting with stat
+2025-04-03 15:34:57,518 - WARNING -  * Debugger is active!
+2025-04-03 15:34:57,526 - INFO -  * Debugger PIN: 880-221-942
+2025-04-03 15:35:12,081 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-03 15:35:12,081 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-03 15:35:12,082 - INFO -  * Restarting with stat
+2025-04-03 15:35:12,279 - WARNING -  * Debugger is active!
+2025-04-03 15:35:12,285 - INFO -  * Debugger PIN: 880-221-942

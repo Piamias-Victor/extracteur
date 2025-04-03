@@ -107,7 +107,7 @@ def index():
                 max_pages = int(max_pages) if max_pages.isdigit() and int(max_pages) > 0 else None
                 
                 # Lancer le scraping dans un thread séparé
-                category_url = "https://www.e.leclerc/cat/soins-visage"
+                category_url = "https://www.e.leclerc/cat/marques-parapharmacie"
                 
                 # Passer le chemin absolu du fichier CSV
                 threading.Thread(

@@ -282,49 +282,215 @@ def initialize_webdriver():
 def determine_total_pages(driver):
     """Détermine le nombre total de pages dans la pagination"""
     try:
-        # Attendre que la pagination se charge
-        WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, "nav.pagination"))
+        logger.info("Détermination du nombre total de pages...")
+        
+        # Méthode 1: Chercher le span contenant le nombre total de pages
+        # Sélecteur spécifique pour le span contenant le dernier numéro de page
+        spans = driver.find_elements(By.TAG_NAME, "span")
+        
+        # Filtrer pour trouver les spans qui contiennent uniquement un nombre
+        page_numbers = []
+        for span in spans:
+            text = span.text.strip()
+            if text.isdigit():
+                logger.info(f"Span avec nombre trouvé: '{text}'")
+                page_numbers.append(int(text))
+        
+        if page_numbers:
+            max_page = max(page_numbers)
+            logger.info(f"Nombre maximal de pages trouvé: {max_page}")
+            return max_page
+        
+        # Méthode 2: Chercher directement dans le texte de la page pour les numéros de page
+        page_source = driver.page_source
+        # Regex pour trouver des modèles comme 'page=X' dans les URLs
+        import re
+        page_matches = re.findall(r'page=(\d+)', page_source)
+        if page_matches:
+            page_numbers = [int(num) for num in page_matches]
+            max_page = max(page_numbers)
+            logger.info(f"Nombre maximal de pages trouvé dans l'HTML: {max_page}")
+            return max_page
+            
+        # Méthode 3: Essayer de déterminer à partir du nombre total de produits
+        try:
+            # Recherche de textes comme "1-24 sur 1000 produits"
+            result_texts = driver.find_elements(By.CSS_SELECTOR, ".description, .results-count, .product-count")
+            for element in result_texts:
+                text = element.text
+                logger.info(f"Texte de comptage trouvé: '{text}'")
+                match = re.search(r'sur\s+(\d+)', text)
+                if match:
+                    total_products = int(match.group(1))
+                    # Généralement 24 produits par page
+                    max_page = (total_products + 23) // 24
+                    logger.info(f"Estimation des pages basée sur {total_products} produits: {max_page}")
+                    return max_page
+        except Exception as e:
+            logger.warning(f"Erreur lors de l'estimation par nombre de produits: {e}")
+        
+        # Dernière tentative: chercher dans tout le texte de la page
+        body_text = driver.find_element(By.TAG_NAME, "body").text
+        logger.info("Recherche dans tout le texte de la page...")
+        # Recherche de modèles comme "Page X sur Y" ou "X-Y sur Z produits"
+        matches = re.findall(r'sur\s+(\d+)', body_text)
+        if matches:
+            numbers = [int(match) for match in matches]
+            # Supposer que le plus grand nombre est soit le nombre de produits, soit le nombre de pages
+            largest = max(numbers)
+            if largest > 100:  # Probablement nombre de produits
+                max_page = (largest + 23) // 24
+            else:  # Probablement déjà le nombre de pages
+                max_page = largest
+            logger.info(f"Dernier essai: nombre de pages estimé à {max_page}")
+            return max_page
+            
+        # Par défaut, recherche des numéros dans le texte et prendre le plus grand inférieur à 100
+        all_numbers = re.findall(r'\b(\d+)\b', body_text)
+        if all_numbers:
+            potential_pages = [int(n) for n in all_numbers if int(n) < 100 and int(n) > 1]
+            if potential_pages:
+                max_page = max(potential_pages)
+                logger.info(f"Analyse générique: nombre de pages probablement {max_page}")
+                return max_page
+        
+        logger.warning("Impossible de déterminer le nombre de pages, utilisation de la valeur par défaut: 47")
+        return 47  # Valeur par défaut basée sur votre information
+        
+    except Exception as e:
+        logger.error(f"Erreur lors de la détermination du nombre de pages: {str(e)}")
+        logger.warning("Utilisation de la valeur par défaut: 47")
+        return 47  # Valeur par défaut en cas d'erreur
+
+def scrape_category_pages(category_url, max_pages=None, output_file="produits_leclerc_soinsvisage.csv"):
+    """Scrape toutes les pages d'une catégorie"""
+    results = []
+    
+    # Réinitialiser le statut
+    reset_status()
+    scraping_status["in_progress"] = True
+    scraping_status["start_time"] = time.time()
+    
+    driver = None
+    try:
+        # Initialiser le driver avec la fonction spécialisée
+        driver = initialize_webdriver()
+        
+        # Accepter les cookies si nécessaire
+        try:
+            driver.get(category_url)
+            # Attendre et cliquer sur le bouton d'acceptation des cookies s'il existe
+            WebDriverWait(driver, 5).until(
+                EC.element_to_be_clickable((By.ID, "onetrust-accept-btn-handler"))
+            ).click()
+            logger.info("Cookies acceptés")
+        except Exception as e:
+            logger.info(f"Pas de bannière de cookies ou erreur: {e}")
+        
+        # Accéder à la page de la catégorie (à nouveau pour s'assurer que la page est chargée après acceptation des cookies)
+        driver.get(category_url)
+        
+        # Attendre que la page se charge complètement
+        WebDriverWait(driver, 30).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, "a.product-card-link"))
         )
         
-        # Méthode 1: Chercher le dernier lien de pagination
-        pagination_links = driver.find_elements(By.CSS_SELECTOR, "nav.pagination a")
-        if pagination_links:
-            # Filtrer pour ne garder que les liens avec des chiffres
-            page_numbers = []
-            for link in pagination_links:
-                text = link.text.strip()
-                if text.isdigit():
-                    page_numbers.append(int(text))
-            
-            if page_numbers:
-                return max(page_numbers)
+        # Déterminer le nombre total de pages
+        total_pages = determine_total_pages(driver)
         
-        # Méthode 2: Chercher d'autres éléments indiquant le nombre de pages
-        pagination_text = driver.find_element(By.CSS_SELECTOR, "nav.pagination").text
-        matches = re.findall(r'\d+', pagination_text)
-        if matches:
-            return int(matches[-1])
+        if max_pages and max_pages < total_pages:
+            total_pages = max_pages
             
-        # Méthode 3: Essayer de déterminer à partir du nombre total de produits et de la taille de page
-        try:
-            # Souvent affiché comme "1-24 sur 123 produits"
-            result_count_element = driver.find_element(By.CSS_SELECTOR, ".product-count, .result-count")
-            if result_count_element:
-                result_text = result_count_element.text
-                total_matches = re.search(r'sur\s+(\d+)', result_text)
-                if total_matches:
-                    total_products = int(total_matches.group(1))
-                    # Généralement 24 produits par page
-                    return (total_products + 23) // 24
-        except:
-            pass
+        logger.info(f"Nombre total de pages à scraper: {total_pages}")
         
-        # Par défaut, supposer au moins une page
-        return 1
+        # Compter le nombre total de produits estimé
+        product_links_first_page = extract_product_links(driver)
+        scraping_status["total_products"] = len(product_links_first_page) * total_pages
+        
+        # Générer toutes les URLs de page à l'avance
+        page_urls = []
+        for page_num in range(1, total_pages + 1):
+            if page_num == 1:
+                page_urls.append(category_url)
+            else:
+                page_url = f"{category_url}?page={page_num}&code=NAVIGATION_soins-visage"
+                page_urls.append(page_url)
+        
+        logger.info(f"URLs de pages générées: {len(page_urls)}")
+        for idx, url in enumerate(page_urls):
+            logger.info(f"URL page {idx+1}: {url}")
+        
+        # Scraper chaque page
+        for page_idx, page_url in enumerate(page_urls):
+            current_page = page_idx + 1
+            logger.info(f"Scraping de la page {current_page}/{total_pages} - URL: {page_url}")
+            
+            # Accéder à la page
+            driver.get(page_url)
+            
+            # Attendre que la page se charge complètement
+            try:
+                WebDriverWait(driver, 30).until(
+                    EC.presence_of_element_located((By.CSS_SELECTOR, "a.product-card-link"))
+                )
+                # Attendre un peu pour être sûr que tous les produits sont chargés
+                time.sleep(2)
+            except Exception as e:
+                logger.error(f"Erreur lors du chargement de la page {current_page}: {e}")
+                continue
+            
+            # Extraire les liens des produits sur cette page
+            product_links = extract_product_links(driver)
+            logger.info(f"Page {current_page}: {len(product_links)} produits trouvés")
+            
+            if not product_links:
+                logger.warning(f"Aucun produit trouvé sur la page {current_page}! Vérification du HTML...")
+                logger.warning(f"URL de la page: {page_url}")
+                # Sauvegarder un extrait du HTML pour déboguer
+                html_snippet = driver.page_source[:1000] + "..." + driver.page_source[-1000:]
+                logger.warning(f"Extrait du HTML: {html_snippet}")
+            
+            # Scraper chaque produit
+            for link_idx, link in enumerate(product_links):
+                try:
+                    logger.info(f"Scraping du produit {link_idx+1}/{len(product_links)} de la page {current_page}")
+                    product_data = scrap_leclerc_product(link, driver)
+                    if product_data:
+                        results.append(product_data)
+                        logger.info(f"Produit scrapé avec succès: {product_data['Nom du produit']}")
+                        
+                        # Exporter les résultats périodiquement
+                        if len(results) % 5 == 0:  # Exporter tous les 5 produits
+                            export_to_csv(results, filename=output_file)
+                            # Backup avec la méthode simple
+                            simple_export_to_csv(results, filename="backup_" + output_file)
+                except Exception as e:
+                    logger.error(f"Erreur lors du scraping du produit {link}: {str(e)}")
+            
+            # Exporter les résultats actuels à chaque page (sauvegarde incrémentale)
+            if results:
+                logger.info(f"Export incrémental après la page {current_page} avec {len(results)} produits")
+                export_to_csv(results, filename=output_file)
+                # Backup avec la méthode simple
+                simple_export_to_csv(results, filename="backup_" + output_file)
+            
     except Exception as e:
-        logger.warning(f"Impossible de déterminer le nombre total de pages: {e}")
-        return 1  # Par défaut, supposer au moins une page
+        logger.error(f"Erreur lors du scraping de la catégorie: {str(e)}")
+    
+    finally:
+        # Exporter une dernière fois pour s'assurer que toutes les données sont sauvegardées
+        if results:
+            logger.info(f"Export final avec {len(results)} produits")
+            export_to_csv(results, filename=output_file)
+            # Backup avec la méthode simple
+            simple_export_to_csv(results, filename="backup_" + output_file)
+        
+        # Mettre à jour le statut final
+        scraping_status["in_progress"] = False
+        if driver:
+            driver.quit()
+    
+    return results
 
 def export_to_csv(data, filename="produits_leclerc_soinsvisage.csv"):
     """Exporte les données dans un fichier CSV avec logs améliorés"""
