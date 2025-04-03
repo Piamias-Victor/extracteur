@@ -16,6 +16,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 import logging
 import re
+import traceback
 
 # Configuration de base du logging
 logging.basicConfig(
@@ -325,6 +326,132 @@ def determine_total_pages(driver):
         logger.warning(f"Impossible de déterminer le nombre total de pages: {e}")
         return 1  # Par défaut, supposer au moins une page
 
+def export_to_csv(data, filename="produits_leclerc_soinsvisage.csv"):
+    """Exporte les données dans un fichier CSV avec logs améliorés"""
+    if not data:
+        logger.warning("Aucune donnée à exporter")
+        return
+    
+    try:
+        # Utiliser un chemin absolu pour le fichier
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        abs_path = os.path.join(script_dir, filename)
+        
+        logger.info(f"Exportation des données vers: {abs_path}")
+        logger.info(f"Nombre d'enregistrements: {len(data)}")
+        
+        # Afficher des infos sur le répertoire
+        logger.info(f"Répertoire du script: {script_dir}")
+        logger.info(f"Répertoire existe: {os.path.exists(script_dir)}")
+        logger.info(f"Permissions d'écriture: {os.access(script_dir, os.W_OK)}")
+        
+        # Assurez-vous que nous pouvons écrire dans le répertoire
+        if not os.access(script_dir, os.W_OK):
+            logger.error(f"Pas de permission d'écriture dans {script_dir}")
+            # Essayer d'utiliser le chemin relatif plutôt qu'absolu
+            abs_path = filename
+            logger.info(f"Tentative avec chemin relatif: {abs_path}")
+        
+        # Exporter les données en mode écriture
+        with open(abs_path, mode="w", newline="", encoding="utf-8") as f:
+            # Déterminer les en-têtes (toutes les clés possibles)
+            all_keys = set()
+            for item in data:
+                all_keys.update(item.keys())
+            
+            fieldnames = sorted(list(all_keys))
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
+            writer.writeheader()
+            writer.writerows(data)
+            
+            # Force l'écriture sur disque
+            f.flush()
+            os.fsync(f.fileno())
+        
+        # Vérifier si le fichier a été créé
+        if os.path.isfile(abs_path):
+            file_size = os.path.getsize(abs_path)
+            logger.info(f"✅ Fichier CSV créé avec succès! Chemin: {abs_path}, Taille: {file_size} octets")
+        else:
+            logger.error(f"❌ Le fichier CSV n'a pas été créé: {abs_path}")
+            
+            # Essayer avec le répertoire courant
+            current_dir = os.getcwd()
+            fallback_path = os.path.join(current_dir, filename)
+            logger.info(f"Tentative avec le répertoire courant: {fallback_path}")
+            
+            with open(fallback_path, mode="w", newline="", encoding="utf-8") as f:
+                writer = csv.DictWriter(f, fieldnames=fieldnames)
+                writer.writeheader()
+                writer.writerows(data)
+                
+                # Force l'écriture sur disque
+                f.flush()
+                os.fsync(f.fileno())
+            
+            if os.path.isfile(fallback_path):
+                file_size = os.path.getsize(fallback_path)
+                logger.info(f"✅ Fichier CSV créé avec succès (fallback)! Chemin: {fallback_path}, Taille: {file_size} octets")
+            else:
+                logger.error(f"❌ Échec de la création du fichier CSV (fallback): {fallback_path}")
+        
+        return abs_path  # Retourner le chemin pour confirmation
+    
+    except PermissionError as pe:
+        logger.error(f"ERREUR DE PERMISSION: {str(pe)}")
+        logger.error(f"Utilisateur actuel: {os.getlogin() if hasattr(os, 'getlogin') else 'Inconnu'}")
+        # Essayer la version simplifiée en dernier recours
+        simple_export_to_csv(data, filename)
+        return None
+        
+    except Exception as e:
+        logger.error(f"Erreur lors de l'export CSV: {str(e)}")
+        logger.error(traceback.format_exc())
+        # Essayer la version simplifiée en dernier recours
+        simple_export_to_csv(data, filename)
+        return None
+
+def simple_export_to_csv(data, filename="produits_leclerc_simple.csv"):
+    """Version ultra-simplifiée pour garantir la création du fichier CSV"""
+    if not data:
+        print("Aucune donnée à exporter")
+        return
+    
+    try:
+        # Utiliser un chemin relatif pour être à la racine du projet
+        print(f"Exportation des données vers: {filename}")
+        
+        # Créer le fichier en mode texte sans complications
+        with open(filename, 'w', encoding='utf-8') as f:
+            # Créer l'en-tête
+            headers = sorted(list(set().union(*[d.keys() for d in data])))
+            header_line = ','.join([f'"{h}"' for h in headers])
+            f.write(header_line + '\n')
+            
+            # Écrire les données
+            for item in data:
+                values = []
+                for header in headers:
+                    value = item.get(header, '')
+                    # Échapper les guillemets et les virgules
+                    if isinstance(value, str):
+                        value = value.replace('"', '""')
+                        value = f'"{value}"'
+                    values.append(str(value))
+                f.write(','.join(values) + '\n')
+        
+        print(f"✅ Fichier créé avec succès: {filename}")
+        
+        # Vérification
+        if os.path.exists(filename):
+            print(f"   Taille: {os.path.getsize(filename)} octets")
+        else:
+            print(f"❌ Le fichier n'a pas été créé!")
+            
+    except Exception as e:
+        print(f"❌ Erreur lors de l'export: {str(e)}")
+        traceback.print_exc()
+
 def scrape_category_pages(category_url, max_pages=None, output_file="produits_leclerc_soinsvisage.csv"):
     """Scrape toutes les pages d'une catégorie"""
     results = []
@@ -385,6 +512,12 @@ def scrape_category_pages(category_url, max_pages=None, output_file="produits_le
                     if product_data:
                         results.append(product_data)
                         logger.info(f"Produit scrapé avec succès: {product_data['Nom du produit']}")
+                        
+                        # Exporter les résultats après chaque produit pour garantir la sauvegarde
+                        if len(results) % 5 == 0:  # Exporter tous les 5 produits
+                            export_to_csv(results, filename=output_file)
+                            # Backup avec la méthode simple
+                            simple_export_to_csv(results, filename="backup_" + output_file)
                 except Exception as e:
                     logger.error(f"Erreur lors du scraping du produit {link}: {str(e)}")
             
@@ -417,11 +550,20 @@ def scrape_category_pages(category_url, max_pages=None, output_file="produits_le
             
             # Exporter les résultats actuels à chaque page (sauvegarde incrémentale)
             export_to_csv(results, filename=output_file)
+            # Backup avec la méthode simple
+            simple_export_to_csv(results, filename="backup_" + output_file)
             
     except Exception as e:
         logger.error(f"Erreur lors du scraping de la catégorie: {str(e)}")
     
     finally:
+        # Exporter une dernière fois pour s'assurer que toutes les données sont sauvegardées
+        if results:
+            logger.info(f"Export final avec {len(results)} produits")
+            export_to_csv(results, filename=output_file)
+            # Backup avec la méthode simple
+            simple_export_to_csv(results, filename="backup_" + output_file)
+        
         # Mettre à jour le statut final
         scraping_status["in_progress"] = False
         if driver:
@@ -429,51 +571,102 @@ def scrape_category_pages(category_url, max_pages=None, output_file="produits_le
     
     return results
 
-def export_to_csv(data, filename="produits_leclerc_soinsvisage.csv"):
-    """Exporte les données dans un fichier CSV avec logs améliorés"""
-    if not data:
-        logger.warning("Aucune donnée à exporter")
-        return
+def batch_scrape_products(urls, batch_size=10, output_file="produits_leclerc.csv", start_index=0):
+    """
+    Scrape les produits par lots avec sauvegarde intermédiaire
+    """
+    all_results = []
     
-    try:
-        # Obtenir le chemin absolu pour être sûr
-        abs_path = os.path.abspath(filename)
-        logger.info(f"Tentative d'écriture du fichier CSV à : {abs_path}")
+    # Chargement des données déjà scrapées si le fichier existe
+    if os.path.exists(output_file) and start_index > 0:
+        with open(output_file, mode="r", newline="", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            all_results = list(reader)
+    
+    # Boucle de scraping par lots
+    total_urls = len(urls)
+    
+    for i in range(start_index, total_urls, batch_size):
+        print(f"Traitement du lot {i//batch_size + 1}/{(total_urls + batch_size - 1)//batch_size}...")
         
-        # Vérifier si le répertoire existe et est accessible en écriture
-        dir_path = os.path.dirname(abs_path)
-        if not os.path.exists(dir_path):
-            logger.warning(f"Le répertoire {dir_path} n'existe pas. Création...")
-            os.makedirs(dir_path, exist_ok=True)
-            
-        # Vérifier si on peut écrire dans le répertoire
-        if not os.access(dir_path, os.W_OK):
-            logger.error(f"Pas de permission d'écriture dans {dir_path}")
-            return
-            
-        # Vérifier si le fichier existe déjà pour déterminer s'il faut écrire les en-têtes
-        file_exists = os.path.isfile(abs_path)
-        logger.info(f"Le fichier existe déjà ? {file_exists}")
+        # Prendre le prochain lot d'URLs
+        batch_urls = urls[i:i+batch_size]
+        batch_results = []
         
-        with open(abs_path, mode="a" if file_exists else "w", newline="", encoding="utf-8") as f:
-            writer = csv.DictWriter(f, fieldnames=data[0].keys())
+        # Scraper chaque URL du lot
+        for url in batch_urls:
+            try:
+                driver = initialize_webdriver()
+                try:
+                    product_data = scrap_leclerc_product(url, driver)
+                    batch_results.append(product_data)
+                    
+                    # Pause aléatoire entre chaque requête
+                    time.sleep(1 + 2 * random.random())
+                finally:
+                    driver.quit()
+            except Exception as e:
+                logger.error(f"Erreur lors du traitement de l'URL {url}: {str(e)}")
+        
+        # Ajouter les résultats du lot aux résultats globaux
+        all_results.extend(batch_results)
+        
+        # Sauvegarder les résultats intermédiaires
+        export_to_csv(all_results, output_file)
+        # Backup avec la méthode simple
+        simple_export_to_csv(all_results, "backup_" + output_file)
+        
+        print(f"Progression: {min(i + batch_size, total_urls)}/{total_urls} produits traités")
+        
+        # Pause entre les lots pour éviter d'être bloqué
+        if i + batch_size < total_urls:
+            pause_time = 5 + 5 * random.random()
+            print(f"Pause de {pause_time:.1f} secondes avant le prochain lot...")
+            time.sleep(pause_time)
+    
+    return all_results
+
+def resume_scraping(urls_file="product_urls.json", output_file="produits_leclerc.csv", batch_size=10):
+    """
+    Reprend le scraping là où il s'est arrêté
+    """
+    # Charger les URLs
+    urls = load_product_urls(urls_file)
+    
+    if not urls:
+        print("Aucune URL trouvée. Veuillez d'abord exécuter get_all_parapharma_product_urls().")
+        return []
+    
+    # Vérifier s'il y a des résultats précédents
+    start_index = 0
+    if os.path.exists(output_file):
+        with open(output_file, mode="r", newline="", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            previous_results = list(reader)
+            start_index = len(previous_results)
             
-            if not file_exists:
-                writer.writeheader()
-            
-            writer.writerows(data)
-            logger.info(f"Données exportées dans {abs_path} - {len(data)} enregistrements")
-            
-        # Vérifier si le fichier a été créé avec succès
-        if os.path.isfile(abs_path):
-            file_size = os.path.getsize(abs_path)
-            logger.info(f"Fichier créé avec succès. Taille : {file_size} octets")
-        else:
-            logger.error(f"Échec de la création du fichier {abs_path}")
-            
-    except Exception as e:
-        logger.error(f"Erreur lors de l'export CSV : {str(e)}")
+        print(f"Reprise du scraping à partir de l'index {start_index}/{len(urls)}")
+    
+    # Continuer le scraping
+    return batch_scrape_products(urls, batch_size, output_file, start_index)
 
 # Fonction pour récupérer le statut actuel du scraping
 def get_status():
     return scraping_status
+
+# Fonction ajoutée pour charger les URLs depuis un fichier JSON
+def load_product_urls(filename="product_urls.json"):
+    """
+    Charge les URLs des produits depuis un fichier JSON
+    """
+    if os.path.exists(filename):
+        try:
+            import json
+            with open(filename, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except Exception as e:
+            logger.error(f"Erreur lors du chargement des URLs: {str(e)}")
+    return []
+
+# Import ajouté pour random
+import random

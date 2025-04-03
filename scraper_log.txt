@@ -808,3 +808,469 @@ Stacktrace:
 2025-04-02 13:09:45,326 - INFO - 127.0.0.1 - - [02/Apr/2025 13:09:45] "[33mGET /download HTTP/1.1[0m" 404 -
 2025-04-02 13:09:47,662 - INFO - 127.0.0.1 - - [02/Apr/2025 13:09:47] "GET /status HTTP/1.1" 200 -
 2025-04-02 13:09:48,467 - INFO - 127.0.0.1 - - [02/Apr/2025 13:09:48] "GET /results HTTP/1.1" 200 -
+2025-04-02 13:19:39,433 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 13:19:39,433 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 13:19:39,434 - INFO -  * Restarting with stat
+2025-04-02 13:19:39,541 - WARNING -  * Debugger is active!
+2025-04-02 13:19:39,547 - INFO -  * Debugger PIN: 880-221-942
+2025-04-02 13:19:42,015 - INFO - ----- DIAGNOSTIC D'ENVIRONNEMENT -----
+2025-04-02 13:19:42,016 - INFO - Répertoire de base: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 13:19:42,016 - INFO - Chemin du CSV spécifique: /Users/victorpiamias/Desktop/Apothical/extracteur/produit_leclerc.csv
+2025-04-02 13:19:42,016 - INFO - Chemin du CSV de catégorie: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-02 13:19:42,017 - INFO - ✅ Test d'écriture réussi dans /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 13:19:42,017 - INFO - Le fichier spécifique existe: False
+2025-04-02 13:19:42,017 - INFO - Le fichier de catégorie existe: False
+2025-04-02 13:19:42,017 - INFO - Version Python: 3.13.2 (v3.13.2:4f8bb3947cf, Feb  4 2025, 11:51:10) [Clang 15.0.0 (clang-1500.3.9.4)]
+2025-04-02 13:19:42,017 - INFO - Encodage par défaut: utf-8
+2025-04-02 13:19:42,017 - INFO - Répertoire de travail actuel: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 13:19:42,017 - INFO - ----- FIN DU DIAGNOSTIC -----
+2025-04-02 13:19:42,034 - INFO - 127.0.0.1 - - [02/Apr/2025 13:19:42] "GET /results HTTP/1.1" 200 -
+2025-04-02 13:19:43,745 - INFO - Vérification des permissions dans /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 13:19:43,745 - INFO - ✅ Test d'écriture réussi dans /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 13:19:43,755 - INFO - 127.0.0.1 - - [02/Apr/2025 13:19:43] "GET / HTTP/1.1" 200 -
+2025-04-02 13:20:06,860 - INFO - Vérification des permissions dans /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 13:20:06,861 - INFO - ✅ Test d'écriture réussi dans /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 13:20:06,865 - INFO - 127.0.0.1 - - [02/Apr/2025 13:20:06] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-04-02 13:20:06,878 - INFO - 127.0.0.1 - - [02/Apr/2025 13:20:06] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:20:08,384 - INFO - WebDriver initialisé avec succès (méthode directe)
+2025-04-02 13:20:12,566 - INFO - 127.0.0.1 - - [02/Apr/2025 13:20:12] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:20:14,123 - INFO - Pas de bannière de cookies ou erreur: Message: 
+Stacktrace:
+0   chromedriver                        0x00000001013af6c8 cxxbridge1$str$ptr + 2791212
+1   chromedriver                        0x00000001013a7c9c cxxbridge1$str$ptr + 2759936
+2   chromedriver                        0x0000000100ef9e30 cxxbridge1$string$len + 92928
+3   chromedriver                        0x0000000100f41170 cxxbridge1$string$len + 384576
+4   chromedriver                        0x0000000100f825f8 cxxbridge1$string$len + 651976
+5   chromedriver                        0x0000000100f352fc cxxbridge1$string$len + 335820
+6   chromedriver                        0x00000001013746c4 cxxbridge1$str$ptr + 2549544
+7   chromedriver                        0x0000000101377988 cxxbridge1$str$ptr + 2562540
+8   chromedriver                        0x000000010135471c cxxbridge1$str$ptr + 2418560
+9   chromedriver                        0x00000001013781e8 cxxbridge1$str$ptr + 2564684
+10  chromedriver                        0x0000000101345750 cxxbridge1$str$ptr + 2357172
+11  chromedriver                        0x0000000101397f58 cxxbridge1$str$ptr + 2695100
+12  chromedriver                        0x00000001013980e0 cxxbridge1$str$ptr + 2695492
+13  chromedriver                        0x00000001013a7910 cxxbridge1$str$ptr + 2759028
+14  libsystem_pthread.dylib             0x0000000191d7df94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000191d78d34 thread_start + 8
+
+2025-04-02 13:20:18,565 - INFO - 127.0.0.1 - - [02/Apr/2025 13:20:18] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:20:24,564 - INFO - 127.0.0.1 - - [02/Apr/2025 13:20:24] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:20:25,503 - WARNING - Impossible de déterminer le nombre total de pages: Message: 
+Stacktrace:
+0   chromedriver                        0x00000001013af6c8 cxxbridge1$str$ptr + 2791212
+1   chromedriver                        0x00000001013a7c9c cxxbridge1$str$ptr + 2759936
+2   chromedriver                        0x0000000100ef9e30 cxxbridge1$string$len + 92928
+3   chromedriver                        0x0000000100f41170 cxxbridge1$string$len + 384576
+4   chromedriver                        0x0000000100f825f8 cxxbridge1$string$len + 651976
+5   chromedriver                        0x0000000100f352fc cxxbridge1$string$len + 335820
+6   chromedriver                        0x00000001013746c4 cxxbridge1$str$ptr + 2549544
+7   chromedriver                        0x0000000101377988 cxxbridge1$str$ptr + 2562540
+8   chromedriver                        0x000000010135471c cxxbridge1$str$ptr + 2418560
+9   chromedriver                        0x00000001013781e8 cxxbridge1$str$ptr + 2564684
+10  chromedriver                        0x0000000101345750 cxxbridge1$str$ptr + 2357172
+11  chromedriver                        0x0000000101397f58 cxxbridge1$str$ptr + 2695100
+12  chromedriver                        0x00000001013980e0 cxxbridge1$str$ptr + 2695492
+13  chromedriver                        0x00000001013a7910 cxxbridge1$str$ptr + 2759028
+14  libsystem_pthread.dylib             0x0000000191d7df94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000191d78d34 thread_start + 8
+
+2025-04-02 13:20:25,503 - INFO - Nombre total de pages à scraper: 1
+2025-04-02 13:20:25,590 - INFO - Extraction de 32 liens de produits sur la page
+2025-04-02 13:20:25,590 - INFO - Scraping de la page 1/1
+2025-04-02 13:20:27,807 - INFO - Produit scrapé avec succès: Vichy Homme hydra mag c+ soin hydratant anti-fatigue 50ml
+2025-04-02 13:20:30,271 - INFO - Produit scrapé avec succès: La Roche-Posay Toleriane ultra dermallergo sérum 20ml
+2025-04-02 13:20:30,568 - INFO - 127.0.0.1 - - [02/Apr/2025 13:20:30] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:20:32,436 - INFO - Produit scrapé avec succès: Nuxe Merveillance Lift glow crème bonne mine effet liftant 50ml
+2025-04-02 13:20:34,636 - INFO - Produit scrapé avec succès: Vinopure Gelée Nettoyante Purifiante - 385 ml
+2025-04-02 13:20:36,565 - INFO - 127.0.0.1 - - [02/Apr/2025 13:20:36] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:20:36,823 - INFO - Produit scrapé avec succès: Soin apaisant contour des yeux 10ml
+2025-04-02 13:20:36,824 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-02 13:20:36,824 - INFO - Nombre d'enregistrements: 5
+2025-04-02 13:20:36,824 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 13:20:36,824 - INFO - Répertoire existe: True
+2025-04-02 13:20:36,824 - INFO - Permissions d'écriture: True
+2025-04-02 13:20:36,824 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 1048 octets
+2025-04-02 13:20:39,047 - INFO - Produit scrapé avec succès: La Roche-Posay Effaclar Duo+ Soin Triple-Correction anti-Imperfection 40ml
+2025-04-02 13:20:41,263 - INFO - Produit scrapé avec succès: La Roche-Posay Effaclar sérum ultra concentré 30ml
+2025-04-02 13:20:42,567 - INFO - 127.0.0.1 - - [02/Apr/2025 13:20:42] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:20:43,430 - INFO - Produit scrapé avec succès: Avène Hydrance Riche Crème hydratante 40 ml
+2025-04-02 13:20:45,629 - INFO - Produit scrapé avec succès: Vinopure Stop Bouton Salicylique - 15 ml
+2025-04-02 13:20:47,810 - INFO - Produit scrapé avec succès: Avène Hydrance Légère Emulsion hydratante 40ml
+2025-04-02 13:20:47,811 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-02 13:20:47,811 - INFO - Nombre d'enregistrements: 10
+2025-04-02 13:20:47,811 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 13:20:47,811 - INFO - Répertoire existe: True
+2025-04-02 13:20:47,811 - INFO - Permissions d'écriture: True
+2025-04-02 13:20:47,811 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 2042 octets
+2025-04-02 13:20:48,566 - INFO - 127.0.0.1 - - [02/Apr/2025 13:20:48] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:20:50,046 - INFO - Produit scrapé avec succès: Cerave gel moussant anti-imperfections 236ml
+2025-04-02 13:20:52,256 - INFO - Produit scrapé avec succès: Eucerin Hyaluron-Filler + 3x Effect Soin De Jour Spf 30 50ml Tous Types de Peaux
+2025-04-02 13:20:54,460 - INFO - Produit scrapé avec succès: SVR Sebiaclear Ampoule Flash 30ml
+2025-04-02 13:20:54,575 - INFO - 127.0.0.1 - - [02/Apr/2025 13:20:54] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:20:56,693 - INFO - Produit scrapé avec succès: SVR Sebiaclear sérum anti-imperfections 30ml
+2025-04-02 13:20:58,875 - INFO - Produit scrapé avec succès: La Roche-Posay Effaclar mat Hydratant sébo-régulateur 40ml
+2025-04-02 13:20:58,875 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-02 13:20:58,875 - INFO - Nombre d'enregistrements: 15
+2025-04-02 13:20:58,875 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 13:20:58,875 - INFO - Répertoire existe: True
+2025-04-02 13:20:58,875 - INFO - Permissions d'écriture: True
+2025-04-02 13:20:58,876 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 3044 octets
+2025-04-02 13:21:00,570 - INFO - 127.0.0.1 - - [02/Apr/2025 13:21:00] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:21:01,128 - INFO - Produit scrapé avec succès: La Roche-Posay Hyalu B5 sérum concentré anti-rides réparateur 30ml
+2025-04-02 13:21:03,116 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 13:21:03,116 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 13:21:03,117 - INFO -  * Restarting with stat
+2025-04-02 13:21:03,233 - WARNING -  * Debugger is active!
+2025-04-02 13:21:03,237 - INFO -  * Debugger PIN: 880-221-942
+2025-04-02 13:21:06,566 - INFO - ----- DIAGNOSTIC D'ENVIRONNEMENT -----
+2025-04-02 13:21:06,567 - INFO - Répertoire de base: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 13:21:06,567 - INFO - Chemin du CSV spécifique: /Users/victorpiamias/Desktop/Apothical/extracteur/produit_leclerc.csv
+2025-04-02 13:21:06,568 - INFO - Chemin du CSV de catégorie: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-02 13:21:06,568 - INFO - ✅ Test d'écriture réussi dans /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 13:21:06,568 - INFO - Le fichier spécifique existe: False
+2025-04-02 13:21:06,568 - INFO - Le fichier de catégorie existe: True
+2025-04-02 13:21:06,569 - INFO - Version Python: 3.13.2 (v3.13.2:4f8bb3947cf, Feb  4 2025, 11:51:10) [Clang 15.0.0 (clang-1500.3.9.4)]
+2025-04-02 13:21:06,569 - INFO - Encodage par défaut: utf-8
+2025-04-02 13:21:06,569 - INFO - Répertoire de travail actuel: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 13:21:06,569 - INFO - ----- FIN DU DIAGNOSTIC -----
+2025-04-02 13:21:06,578 - INFO - 127.0.0.1 - - [02/Apr/2025 13:21:06] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:21:12,568 - INFO - 127.0.0.1 - - [02/Apr/2025 13:21:12] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:21:18,579 - INFO - 127.0.0.1 - - [02/Apr/2025 13:21:18] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:21:23,700 - INFO - 127.0.0.1 - - [02/Apr/2025 13:21:23] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:21:25,767 - INFO - Vérification des permissions dans /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 13:21:25,769 - INFO - ✅ Test d'écriture réussi dans /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 13:21:25,774 - INFO - 127.0.0.1 - - [02/Apr/2025 13:21:25] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-04-02 13:21:25,781 - INFO - 127.0.0.1 - - [02/Apr/2025 13:21:25] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:21:27,137 - INFO - WebDriver initialisé avec succès (méthode directe)
+2025-04-02 13:21:31,568 - INFO - 127.0.0.1 - - [02/Apr/2025 13:21:31] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:21:32,774 - INFO - Pas de bannière de cookies ou erreur: Message: 
+Stacktrace:
+0   chromedriver                        0x00000001014036c8 cxxbridge1$str$ptr + 2791212
+1   chromedriver                        0x00000001013fbc9c cxxbridge1$str$ptr + 2759936
+2   chromedriver                        0x0000000100f4de30 cxxbridge1$string$len + 92928
+3   chromedriver                        0x0000000100f95170 cxxbridge1$string$len + 384576
+4   chromedriver                        0x0000000100fd65f8 cxxbridge1$string$len + 651976
+5   chromedriver                        0x0000000100f892fc cxxbridge1$string$len + 335820
+6   chromedriver                        0x00000001013c86c4 cxxbridge1$str$ptr + 2549544
+7   chromedriver                        0x00000001013cb988 cxxbridge1$str$ptr + 2562540
+8   chromedriver                        0x00000001013a871c cxxbridge1$str$ptr + 2418560
+9   chromedriver                        0x00000001013cc1e8 cxxbridge1$str$ptr + 2564684
+10  chromedriver                        0x0000000101399750 cxxbridge1$str$ptr + 2357172
+11  chromedriver                        0x00000001013ebf58 cxxbridge1$str$ptr + 2695100
+12  chromedriver                        0x00000001013ec0e0 cxxbridge1$str$ptr + 2695492
+13  chromedriver                        0x00000001013fb910 cxxbridge1$str$ptr + 2759028
+14  libsystem_pthread.dylib             0x0000000191d7df94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000191d78d34 thread_start + 8
+
+2025-04-02 13:21:37,565 - INFO - 127.0.0.1 - - [02/Apr/2025 13:21:37] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:21:43,565 - INFO - 127.0.0.1 - - [02/Apr/2025 13:21:43] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:21:44,523 - WARNING - Impossible de déterminer le nombre total de pages: Message: 
+Stacktrace:
+0   chromedriver                        0x00000001014036c8 cxxbridge1$str$ptr + 2791212
+1   chromedriver                        0x00000001013fbc9c cxxbridge1$str$ptr + 2759936
+2   chromedriver                        0x0000000100f4de30 cxxbridge1$string$len + 92928
+3   chromedriver                        0x0000000100f95170 cxxbridge1$string$len + 384576
+4   chromedriver                        0x0000000100fd65f8 cxxbridge1$string$len + 651976
+5   chromedriver                        0x0000000100f892fc cxxbridge1$string$len + 335820
+6   chromedriver                        0x00000001013c86c4 cxxbridge1$str$ptr + 2549544
+7   chromedriver                        0x00000001013cb988 cxxbridge1$str$ptr + 2562540
+8   chromedriver                        0x00000001013a871c cxxbridge1$str$ptr + 2418560
+9   chromedriver                        0x00000001013cc1e8 cxxbridge1$str$ptr + 2564684
+10  chromedriver                        0x0000000101399750 cxxbridge1$str$ptr + 2357172
+11  chromedriver                        0x00000001013ebf58 cxxbridge1$str$ptr + 2695100
+12  chromedriver                        0x00000001013ec0e0 cxxbridge1$str$ptr + 2695492
+13  chromedriver                        0x00000001013fb910 cxxbridge1$str$ptr + 2759028
+14  libsystem_pthread.dylib             0x0000000191d7df94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000191d78d34 thread_start + 8
+
+2025-04-02 13:21:44,523 - INFO - Nombre total de pages à scraper: 1
+2025-04-02 13:21:44,606 - INFO - Extraction de 32 liens de produits sur la page
+2025-04-02 13:21:44,606 - INFO - Scraping de la page 1/1
+2025-04-02 13:21:47,634 - INFO - Produit scrapé avec succès: Vichy Homme hydra mag c+ soin hydratant anti-fatigue 50ml
+2025-04-02 13:21:49,566 - INFO - 127.0.0.1 - - [02/Apr/2025 13:21:49] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:21:50,118 - INFO - Produit scrapé avec succès: La Roche-Posay Toleriane ultra dermallergo sérum 20ml
+2025-04-02 13:21:52,269 - INFO - Produit scrapé avec succès: Nuxe Merveillance Lift glow crème bonne mine effet liftant 50ml
+2025-04-02 13:21:54,474 - INFO - Produit scrapé avec succès: Vinopure Gelée Nettoyante Purifiante - 385 ml
+2025-04-02 13:21:54,694 - INFO - 127.0.0.1 - - [02/Apr/2025 13:21:54] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:21:56,630 - INFO - Produit scrapé avec succès: Soin apaisant contour des yeux 10ml
+2025-04-02 13:21:56,630 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-02 13:21:56,630 - INFO - Nombre d'enregistrements: 5
+2025-04-02 13:21:56,630 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 13:21:56,630 - INFO - Répertoire existe: True
+2025-04-02 13:21:56,630 - INFO - Permissions d'écriture: True
+2025-04-02 13:21:56,631 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 1048 octets
+2025-04-02 13:21:58,820 - INFO - Produit scrapé avec succès: La Roche-Posay Effaclar Duo+ Soin Triple-Correction anti-Imperfection 40ml
+2025-04-02 13:21:59,758 - INFO - 127.0.0.1 - - [02/Apr/2025 13:21:59] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:22:01,021 - INFO - Produit scrapé avec succès: La Roche-Posay Effaclar sérum ultra concentré 30ml
+2025-04-02 13:22:03,176 - INFO - Produit scrapé avec succès: Avène Hydrance Riche Crème hydratante 40 ml
+2025-04-02 13:22:04,816 - INFO - 127.0.0.1 - - [02/Apr/2025 13:22:04] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:22:05,406 - INFO - Produit scrapé avec succès: Vinopure Stop Bouton Salicylique - 15 ml
+2025-04-02 13:22:07,552 - INFO - Produit scrapé avec succès: Avène Hydrance Légère Emulsion hydratante 40ml
+2025-04-02 13:22:07,553 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-02 13:22:07,553 - INFO - Nombre d'enregistrements: 10
+2025-04-02 13:22:07,553 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 13:22:07,553 - INFO - Répertoire existe: True
+2025-04-02 13:22:07,553 - INFO - Permissions d'écriture: True
+2025-04-02 13:22:07,553 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 2042 octets
+2025-04-02 13:22:09,868 - INFO - 127.0.0.1 - - [02/Apr/2025 13:22:09] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:22:09,908 - INFO - Produit scrapé avec succès: Cerave gel moussant anti-imperfections 236ml
+2025-04-02 13:22:12,204 - INFO - Produit scrapé avec succès: Eucerin Hyaluron-Filler + 3x Effect Soin De Jour Spf 30 50ml Tous Types de Peaux
+2025-04-02 13:22:14,345 - INFO - Produit scrapé avec succès: SVR Sebiaclear Ampoule Flash 30ml
+2025-04-02 13:22:14,924 - INFO - 127.0.0.1 - - [02/Apr/2025 13:22:14] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:22:16,476 - INFO - Produit scrapé avec succès: SVR Sebiaclear sérum anti-imperfections 30ml
+2025-04-02 13:22:18,654 - INFO - Produit scrapé avec succès: La Roche-Posay Effaclar mat Hydratant sébo-régulateur 40ml
+2025-04-02 13:22:18,654 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-02 13:22:18,654 - INFO - Nombre d'enregistrements: 15
+2025-04-02 13:22:18,654 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 13:22:18,654 - INFO - Répertoire existe: True
+2025-04-02 13:22:18,654 - INFO - Permissions d'écriture: True
+2025-04-02 13:22:18,655 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 3044 octets
+2025-04-02 13:22:19,988 - INFO - 127.0.0.1 - - [02/Apr/2025 13:22:19] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:22:20,927 - INFO - Produit scrapé avec succès: La Roche-Posay Hyalu B5 sérum concentré anti-rides réparateur 30ml
+2025-04-02 13:22:23,079 - INFO - Produit scrapé avec succès: Avène crème apaisante - peaux desséchées et irritées par traitements 40ml
+2025-04-02 13:22:25,046 - INFO - 127.0.0.1 - - [02/Apr/2025 13:22:25] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:22:25,341 - INFO - Produit scrapé avec succès: La Roche-Posay Effaclar H Iso-Biome Soin Réparateur Apaisant 40ml
+2025-04-02 13:22:27,690 - INFO - Produit scrapé avec succès: Lotion purifiante anti-imperfections peaux grasses à tendance acnéique 200ml
+2025-04-02 13:22:29,925 - INFO - Produit scrapé avec succès: Eucerin Hyaluron-Filler + 3x Effect Soin De Nuit 50ml
+2025-04-02 13:22:29,925 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-02 13:22:29,925 - INFO - Nombre d'enregistrements: 20
+2025-04-02 13:22:29,925 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 13:22:29,925 - INFO - Répertoire existe: True
+2025-04-02 13:22:29,925 - INFO - Permissions d'écriture: True
+2025-04-02 13:22:29,926 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 4201 octets
+2025-04-02 13:22:30,099 - INFO - 127.0.0.1 - - [02/Apr/2025 13:22:30] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:22:32,059 - INFO - Produit scrapé avec succès: Ecrinal gel cils & sourcils fortifiant à l'ANP 2+ 9ml
+2025-04-02 13:22:34,220 - INFO - Produit scrapé avec succès: Avène Cleanance Comedomed 30ml
+2025-04-02 13:22:35,185 - INFO - 127.0.0.1 - - [02/Apr/2025 13:22:35] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:22:36,546 - INFO - Produit scrapé avec succès: Cerave sérum rétinol anti-marques 30ml
+2025-04-02 13:22:38,705 - INFO - Produit scrapé avec succès: La Roche-Posay Toleriane Sensitive Soin hydratant apaisant protecteur 40ml
+2025-04-02 13:22:40,568 - INFO - 127.0.0.1 - - [02/Apr/2025 13:22:40] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:22:41,252 - INFO - Produit scrapé avec succès: Bioderma Créaline DS+ Crème 40 ml
+2025-04-02 13:22:41,252 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-02 13:22:41,252 - INFO - Nombre d'enregistrements: 25
+2025-04-02 13:22:41,252 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 13:22:41,252 - INFO - Répertoire existe: True
+2025-04-02 13:22:41,252 - INFO - Permissions d'écriture: True
+2025-04-02 13:22:41,252 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 5153 octets
+2025-04-02 13:22:43,400 - INFO - Produit scrapé avec succès: Vichy Minéral 89 booster quotidien fortifiant et repulpant 50ml
+2025-04-02 13:22:45,660 - INFO - 127.0.0.1 - - [02/Apr/2025 13:22:45] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:22:45,791 - INFO - Produit scrapé avec succès: Eucerin Aquaphor Réparateur Lèvres Sos 10ml
+2025-04-02 13:22:47,986 - INFO - Produit scrapé avec succès: Filorga Time-filler 5xp crème correction rides 50ml
+2025-04-02 13:22:50,311 - INFO - Produit scrapé avec succès: Eucerin Sérum anti-pigment 30ml
+2025-04-02 13:22:50,729 - INFO - 127.0.0.1 - - [02/Apr/2025 13:22:50] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:22:52,757 - INFO - Produit scrapé avec succès: Avène Rosamed Concentré anti-rougeurs 30ml
+2025-04-02 13:22:52,757 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-02 13:22:52,757 - INFO - Nombre d'enregistrements: 30
+2025-04-02 13:22:52,757 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 13:22:52,757 - INFO - Répertoire existe: True
+2025-04-02 13:22:52,757 - INFO - Permissions d'écriture: True
+2025-04-02 13:22:52,758 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 6116 octets
+2025-04-02 13:22:55,017 - INFO - Produit scrapé avec succès: Eucerin Anti-Pigment Soin De Nuit 50ml
+2025-04-02 13:22:55,789 - INFO - 127.0.0.1 - - [02/Apr/2025 13:22:55] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:22:57,156 - INFO - Produit scrapé avec succès: La Roche-Posay Toleriane Ultra Dermallergo crème 40ml
+2025-04-02 13:22:57,156 - INFO - Export final avec 32 produits
+2025-04-02 13:22:57,156 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-02 13:22:57,156 - INFO - Nombre d'enregistrements: 32
+2025-04-02 13:22:57,156 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 13:22:57,156 - INFO - Répertoire existe: True
+2025-04-02 13:22:57,156 - INFO - Permissions d'écriture: True
+2025-04-02 13:22:57,157 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 6492 octets
+2025-04-02 13:23:00,852 - INFO - 127.0.0.1 - - [02/Apr/2025 13:23:00] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:23:05,219 - INFO - 127.0.0.1 - - [02/Apr/2025 13:23:05] "GET /results HTTP/1.1" 200 -
+2025-04-02 13:23:40,221 - INFO - 127.0.0.1 - - [02/Apr/2025 13:23:40] "GET /results?page=2&per_page=20 HTTP/1.1" 200 -
+2025-04-02 13:23:41,620 - INFO - Fichier trouvé: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, taille: 6492 octets
+2025-04-02 13:23:41,622 - INFO - 127.0.0.1 - - [02/Apr/2025 13:23:41] "GET /download HTTP/1.1" 200 -
+2025-04-02 13:23:55,466 - INFO - 127.0.0.1 - - [02/Apr/2025 13:23:55] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:23:57,511 - INFO - Vérification des permissions dans /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 13:23:57,513 - INFO - ✅ Test d'écriture réussi dans /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 13:23:57,526 - INFO - 127.0.0.1 - - [02/Apr/2025 13:23:57] "GET / HTTP/1.1" 200 -
+2025-04-02 13:24:00,845 - INFO - Vérification des permissions dans /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 13:24:00,846 - INFO - ✅ Test d'écriture réussi dans /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 13:24:00,848 - INFO - 127.0.0.1 - - [02/Apr/2025 13:24:00] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-04-02 13:24:00,855 - INFO - 127.0.0.1 - - [02/Apr/2025 13:24:00] "GET /status HTTP/1.1" 200 -
+2025-04-02 13:24:01,880 - INFO - Vérification des permissions dans /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 13:24:01,881 - INFO - ✅ Test d'écriture réussi dans /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 13:24:01,881 - INFO - 127.0.0.1 - - [02/Apr/2025 13:24:01] "GET / HTTP/1.1" 200 -
+2025-04-02 13:24:02,257 - INFO - WebDriver initialisé avec succès (méthode directe)
+2025-04-02 13:24:07,774 - INFO - Pas de bannière de cookies ou erreur: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104a376c8 cxxbridge1$str$ptr + 2791212
+1   chromedriver                        0x0000000104a2fc9c cxxbridge1$str$ptr + 2759936
+2   chromedriver                        0x0000000104581e30 cxxbridge1$string$len + 92928
+3   chromedriver                        0x00000001045c9170 cxxbridge1$string$len + 384576
+4   chromedriver                        0x000000010460a5f8 cxxbridge1$string$len + 651976
+5   chromedriver                        0x00000001045bd2fc cxxbridge1$string$len + 335820
+6   chromedriver                        0x00000001049fc6c4 cxxbridge1$str$ptr + 2549544
+7   chromedriver                        0x00000001049ff988 cxxbridge1$str$ptr + 2562540
+8   chromedriver                        0x00000001049dc71c cxxbridge1$str$ptr + 2418560
+9   chromedriver                        0x0000000104a001e8 cxxbridge1$str$ptr + 2564684
+10  chromedriver                        0x00000001049cd750 cxxbridge1$str$ptr + 2357172
+11  chromedriver                        0x0000000104a1ff58 cxxbridge1$str$ptr + 2695100
+12  chromedriver                        0x0000000104a200e0 cxxbridge1$str$ptr + 2695492
+13  chromedriver                        0x0000000104a2f910 cxxbridge1$str$ptr + 2759028
+14  libsystem_pthread.dylib             0x0000000191d7df94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000191d78d34 thread_start + 8
+
+2025-04-02 13:24:10,270 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-02 13:24:10,270 - INFO - [33mPress CTRL+C to quit[0m
+2025-04-02 13:24:10,271 - INFO -  * Restarting with stat
+2025-04-02 13:24:10,386 - WARNING -  * Debugger is active!
+2025-04-02 13:24:10,394 - INFO -  * Debugger PIN: 880-221-942
+2025-04-02 13:24:12,188 - INFO - ----- DIAGNOSTIC D'ENVIRONNEMENT -----
+2025-04-02 13:24:12,188 - INFO - Répertoire de base: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 13:24:12,188 - INFO - Chemin du CSV spécifique: /Users/victorpiamias/Desktop/Apothical/extracteur/produit_leclerc.csv
+2025-04-02 13:24:12,188 - INFO - Chemin du CSV de catégorie: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-02 13:24:12,189 - INFO - ✅ Test d'écriture réussi dans /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 13:24:12,189 - INFO - Le fichier spécifique existe: False
+2025-04-02 13:24:12,189 - INFO - Le fichier de catégorie existe: True
+2025-04-02 13:24:12,189 - INFO - Version Python: 3.13.2 (v3.13.2:4f8bb3947cf, Feb  4 2025, 11:51:10) [Clang 15.0.0 (clang-1500.3.9.4)]
+2025-04-02 13:24:12,189 - INFO - Encodage par défaut: utf-8
+2025-04-02 13:24:12,189 - INFO - Répertoire de travail actuel: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 13:24:12,189 - INFO - ----- FIN DU DIAGNOSTIC -----
+2025-04-02 13:24:12,189 - INFO - Vérification des permissions dans /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 13:24:12,189 - INFO - ✅ Test d'écriture réussi dans /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 13:24:12,201 - INFO - 127.0.0.1 - - [02/Apr/2025 13:24:12] "GET / HTTP/1.1" 200 -
+2025-04-02 14:28:27,916 - INFO - Vérification des permissions dans /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 14:28:27,918 - INFO - ✅ Test d'écriture réussi dans /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 14:28:27,922 - INFO - 127.0.0.1 - - [02/Apr/2025 14:28:27] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-04-02 14:28:27,935 - INFO - 127.0.0.1 - - [02/Apr/2025 14:28:27] "GET /status HTTP/1.1" 200 -
+2025-04-02 14:28:29,898 - INFO - WebDriver initialisé avec succès (méthode directe)
+2025-04-02 14:28:33,196 - INFO - 127.0.0.1 - - [02/Apr/2025 14:28:33] "GET /status HTTP/1.1" 200 -
+2025-04-02 14:28:35,929 - INFO - Pas de bannière de cookies ou erreur: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104c5b6c8 cxxbridge1$str$ptr + 2791212
+1   chromedriver                        0x0000000104c53c9c cxxbridge1$str$ptr + 2759936
+2   chromedriver                        0x00000001047a5e30 cxxbridge1$string$len + 92928
+3   chromedriver                        0x00000001047ed170 cxxbridge1$string$len + 384576
+4   chromedriver                        0x000000010482e5f8 cxxbridge1$string$len + 651976
+5   chromedriver                        0x00000001047e12fc cxxbridge1$string$len + 335820
+6   chromedriver                        0x0000000104c206c4 cxxbridge1$str$ptr + 2549544
+7   chromedriver                        0x0000000104c23988 cxxbridge1$str$ptr + 2562540
+8   chromedriver                        0x0000000104c0071c cxxbridge1$str$ptr + 2418560
+9   chromedriver                        0x0000000104c241e8 cxxbridge1$str$ptr + 2564684
+10  chromedriver                        0x0000000104bf1750 cxxbridge1$str$ptr + 2357172
+11  chromedriver                        0x0000000104c43f58 cxxbridge1$str$ptr + 2695100
+12  chromedriver                        0x0000000104c440e0 cxxbridge1$str$ptr + 2695492
+13  chromedriver                        0x0000000104c53910 cxxbridge1$str$ptr + 2759028
+14  libsystem_pthread.dylib             0x0000000191d7df94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000191d78d34 thread_start + 8
+
+2025-04-02 14:28:38,352 - INFO - 127.0.0.1 - - [02/Apr/2025 14:28:38] "GET /status HTTP/1.1" 200 -
+2025-04-02 14:28:43,437 - INFO - 127.0.0.1 - - [02/Apr/2025 14:28:43] "GET /status HTTP/1.1" 200 -
+2025-04-02 14:28:46,986 - WARNING - Impossible de déterminer le nombre total de pages: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104c5b6c8 cxxbridge1$str$ptr + 2791212
+1   chromedriver                        0x0000000104c53c9c cxxbridge1$str$ptr + 2759936
+2   chromedriver                        0x00000001047a5e30 cxxbridge1$string$len + 92928
+3   chromedriver                        0x00000001047ed170 cxxbridge1$string$len + 384576
+4   chromedriver                        0x000000010482e5f8 cxxbridge1$string$len + 651976
+5   chromedriver                        0x00000001047e12fc cxxbridge1$string$len + 335820
+6   chromedriver                        0x0000000104c206c4 cxxbridge1$str$ptr + 2549544
+7   chromedriver                        0x0000000104c23988 cxxbridge1$str$ptr + 2562540
+8   chromedriver                        0x0000000104c0071c cxxbridge1$str$ptr + 2418560
+9   chromedriver                        0x0000000104c241e8 cxxbridge1$str$ptr + 2564684
+10  chromedriver                        0x0000000104bf1750 cxxbridge1$str$ptr + 2357172
+11  chromedriver                        0x0000000104c43f58 cxxbridge1$str$ptr + 2695100
+12  chromedriver                        0x0000000104c440e0 cxxbridge1$str$ptr + 2695492
+13  chromedriver                        0x0000000104c53910 cxxbridge1$str$ptr + 2759028
+14  libsystem_pthread.dylib             0x0000000191d7df94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000191d78d34 thread_start + 8
+
+2025-04-02 14:28:46,986 - INFO - Nombre total de pages à scraper: 1
+2025-04-02 14:28:47,122 - INFO - Extraction de 32 liens de produits sur la page
+2025-04-02 14:28:47,122 - INFO - Scraping de la page 1/1
+2025-04-02 14:28:48,523 - INFO - 127.0.0.1 - - [02/Apr/2025 14:28:48] "GET /status HTTP/1.1" 200 -
+2025-04-02 14:28:49,444 - INFO - Produit scrapé avec succès: Vichy Homme hydra mag c+ soin hydratant anti-fatigue 50ml
+2025-04-02 14:28:52,176 - INFO - Produit scrapé avec succès: La Roche-Posay Toleriane ultra dermallergo sérum 20ml
+2025-04-02 14:28:53,609 - INFO - 127.0.0.1 - - [02/Apr/2025 14:28:53] "GET /status HTTP/1.1" 200 -
+2025-04-02 14:28:54,383 - INFO - Produit scrapé avec succès: Nuxe Merveillance Lift glow crème bonne mine effet liftant 50ml
+2025-04-02 14:28:56,601 - INFO - Produit scrapé avec succès: Vinopure Gelée Nettoyante Purifiante - 385 ml
+2025-04-02 14:28:58,695 - INFO - 127.0.0.1 - - [02/Apr/2025 14:28:58] "GET /status HTTP/1.1" 200 -
+2025-04-02 14:28:58,838 - INFO - Produit scrapé avec succès: Soin apaisant contour des yeux 10ml
+2025-04-02 14:28:58,838 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-02 14:28:58,838 - INFO - Nombre d'enregistrements: 5
+2025-04-02 14:28:58,838 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 14:28:58,839 - INFO - Répertoire existe: True
+2025-04-02 14:28:58,839 - INFO - Permissions d'écriture: True
+2025-04-02 14:28:58,841 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 1048 octets
+2025-04-02 14:29:01,209 - INFO - Produit scrapé avec succès: La Roche-Posay Effaclar Duo+ Soin Triple-Correction anti-Imperfection 40ml
+2025-04-02 14:29:03,427 - INFO - Produit scrapé avec succès: La Roche-Posay Effaclar sérum ultra concentré 30ml
+2025-04-02 14:29:03,785 - INFO - 127.0.0.1 - - [02/Apr/2025 14:29:03] "GET /status HTTP/1.1" 200 -
+2025-04-02 14:29:05,643 - INFO - Produit scrapé avec succès: Avène Hydrance Riche Crème hydratante 40 ml
+2025-04-02 14:29:07,850 - INFO - Produit scrapé avec succès: Vinopure Stop Bouton Salicylique - 15 ml
+2025-04-02 14:29:08,884 - INFO - 127.0.0.1 - - [02/Apr/2025 14:29:08] "GET /status HTTP/1.1" 200 -
+2025-04-02 14:29:10,150 - INFO - Produit scrapé avec succès: Cerave gel moussant anti-imperfections 236ml
+2025-04-02 14:29:10,150 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-02 14:29:10,150 - INFO - Nombre d'enregistrements: 10
+2025-04-02 14:29:10,150 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 14:29:10,150 - INFO - Répertoire existe: True
+2025-04-02 14:29:10,150 - INFO - Permissions d'écriture: True
+2025-04-02 14:29:10,152 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 2034 octets
+2025-04-02 14:29:12,548 - INFO - Produit scrapé avec succès: Avène Hydrance Légère Emulsion hydratante 40ml
+2025-04-02 14:29:13,971 - INFO - 127.0.0.1 - - [02/Apr/2025 14:29:13] "GET /status HTTP/1.1" 200 -
+2025-04-02 14:29:14,762 - INFO - Produit scrapé avec succès: SVR Sebiaclear sérum anti-imperfections 30ml
+2025-04-02 14:29:16,983 - INFO - Produit scrapé avec succès: SVR Sebiaclear Ampoule Flash 30ml
+2025-04-02 14:29:19,059 - INFO - 127.0.0.1 - - [02/Apr/2025 14:29:19] "GET /status HTTP/1.1" 200 -
+2025-04-02 14:29:19,266 - INFO - Produit scrapé avec succès: Eucerin Hyaluron-Filler + 3x Effect Soin De Jour Spf 30 50ml Tous Types de Peaux
+2025-04-02 14:29:21,494 - INFO - Produit scrapé avec succès: La Roche-Posay Effaclar mat Hydratant sébo-régulateur 40ml
+2025-04-02 14:29:21,494 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-02 14:29:21,494 - INFO - Nombre d'enregistrements: 15
+2025-04-02 14:29:21,494 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 14:29:21,494 - INFO - Répertoire existe: True
+2025-04-02 14:29:21,494 - INFO - Permissions d'écriture: True
+2025-04-02 14:29:21,495 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 3044 octets
+2025-04-02 14:29:23,731 - INFO - Produit scrapé avec succès: La Roche-Posay Hyalu B5 sérum concentré anti-rides réparateur 30ml
+2025-04-02 14:29:24,153 - INFO - 127.0.0.1 - - [02/Apr/2025 14:29:24] "GET /status HTTP/1.1" 200 -
+2025-04-02 14:29:26,000 - INFO - Produit scrapé avec succès: Avène crème apaisante - peaux desséchées et irritées par traitements 40ml
+2025-04-02 14:29:28,289 - INFO - Produit scrapé avec succès: La Roche-Posay Effaclar H Iso-Biome Soin Réparateur Apaisant 40ml
+2025-04-02 14:29:29,264 - INFO - 127.0.0.1 - - [02/Apr/2025 14:29:29] "GET /status HTTP/1.1" 200 -
+2025-04-02 14:29:30,495 - INFO - Produit scrapé avec succès: Cerave sérum rétinol anti-marques 30ml
+2025-04-02 14:29:32,770 - INFO - Produit scrapé avec succès: Lotion purifiante anti-imperfections peaux grasses à tendance acnéique 200ml
+2025-04-02 14:29:32,770 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-02 14:29:32,770 - INFO - Nombre d'enregistrements: 20
+2025-04-02 14:29:32,770 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 14:29:32,770 - INFO - Répertoire existe: True
+2025-04-02 14:29:32,770 - INFO - Permissions d'écriture: True
+2025-04-02 14:29:32,771 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 4174 octets
+2025-04-02 14:29:34,364 - INFO - 127.0.0.1 - - [02/Apr/2025 14:29:34] "GET /status HTTP/1.1" 200 -
+2025-04-02 14:29:35,120 - INFO - Produit scrapé avec succès: Eucerin Hyaluron-Filler + 3x Effect Soin De Nuit 50ml
+2025-04-02 14:29:37,377 - INFO - Produit scrapé avec succès: Ecrinal gel cils & sourcils fortifiant à l'ANP 2+ 9ml
+2025-04-02 14:29:39,458 - INFO - 127.0.0.1 - - [02/Apr/2025 14:29:39] "GET /status HTTP/1.1" 200 -
+2025-04-02 14:29:39,615 - INFO - Produit scrapé avec succès: Avène Cleanance Comedomed 30ml
+2025-04-02 14:29:41,916 - INFO - Produit scrapé avec succès: La Roche-Posay Toleriane Sensitive Soin hydratant apaisant protecteur 40ml
+2025-04-02 14:29:44,226 - INFO - Produit scrapé avec succès: Avène Rosamed Concentré anti-rougeurs 30ml
+2025-04-02 14:29:44,226 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-02 14:29:44,226 - INFO - Nombre d'enregistrements: 25
+2025-04-02 14:29:44,226 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 14:29:44,226 - INFO - Répertoire existe: True
+2025-04-02 14:29:44,226 - INFO - Permissions d'écriture: True
+2025-04-02 14:29:44,228 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 5167 octets
+2025-04-02 14:29:44,603 - INFO - 127.0.0.1 - - [02/Apr/2025 14:29:44] "GET /status HTTP/1.1" 200 -
+2025-04-02 14:29:46,499 - INFO - Produit scrapé avec succès: Eucerin Sérum anti-pigment 30ml
+2025-04-02 14:29:48,729 - INFO - Produit scrapé avec succès: Filorga Time-filler 5xp crème correction rides 50ml
+2025-04-02 14:29:49,744 - INFO - 127.0.0.1 - - [02/Apr/2025 14:29:49] "GET /status HTTP/1.1" 200 -
+2025-04-02 14:29:51,451 - INFO - Produit scrapé avec succès: Bioderma Créaline DS+ Crème 40 ml
+2025-04-02 14:29:53,670 - INFO - Produit scrapé avec succès: Vichy Minéral 89 booster quotidien fortifiant et repulpant 50ml
+2025-04-02 14:29:54,831 - INFO - 127.0.0.1 - - [02/Apr/2025 14:29:54] "GET /status HTTP/1.1" 200 -
+2025-04-02 14:29:56,109 - INFO - Produit scrapé avec succès: Avène Tolérance Hydra 10 Crème Hydratante Peaux sensibles sèches à très sèches 40ml
+2025-04-02 14:29:56,110 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-02 14:29:56,110 - INFO - Nombre d'enregistrements: 30
+2025-04-02 14:29:56,110 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 14:29:56,110 - INFO - Répertoire existe: True
+2025-04-02 14:29:56,110 - INFO - Permissions d'écriture: True
+2025-04-02 14:29:56,111 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 6201 octets
+2025-04-02 14:29:58,445 - INFO - Produit scrapé avec succès: Eucerin Aquaphor Réparateur Lèvres Sos 10ml
+2025-04-02 14:29:59,928 - INFO - 127.0.0.1 - - [02/Apr/2025 14:29:59] "GET /status HTTP/1.1" 200 -
+2025-04-02 14:30:00,712 - INFO - Produit scrapé avec succès: Cerave Soin concentré anti-imperfections 40ml
+2025-04-02 14:30:00,712 - INFO - Export final avec 32 produits
+2025-04-02 14:30:00,712 - INFO - Exportation des données vers: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv
+2025-04-02 14:30:00,712 - INFO - Nombre d'enregistrements: 32
+2025-04-02 14:30:00,712 - INFO - Répertoire du script: /Users/victorpiamias/Desktop/Apothical/extracteur
+2025-04-02 14:30:00,712 - INFO - Répertoire existe: True
+2025-04-02 14:30:00,712 - INFO - Permissions d'écriture: True
+2025-04-02 14:30:00,713 - INFO - ✅ Fichier CSV créé avec succès! Chemin: /Users/victorpiamias/Desktop/Apothical/extracteur/produits_leclerc_soinsvisage.csv, Taille: 6578 octets
+2025-04-02 14:30:05,035 - INFO - 127.0.0.1 - - [02/Apr/2025 14:30:05] "GET /status HTTP/1.1" 200 -
+2025-04-02 14:30:06,923 - INFO - 127.0.0.1 - - [02/Apr/2025 14:30:06] "GET /results HTTP/1.1" 200 -

@@ -3,18 +3,54 @@ from simplified_category_scraper import scrape_category_pages, export_to_csv, sc
 import os
 import csv
 import threading
+import sys
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from datetime import datetime
+import logging
 
 app = Flask(__name__)
+
+# Configuration de base du logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler("scraper_log.txt"),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger(__name__)
 
 # Définir les chemins absolus pour les fichiers de données
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 SPECIFIC_CSV_PATH = os.path.join(BASE_DIR, "produit_leclerc.csv")
 CATEGORY_CSV_PATH = os.path.join(BASE_DIR, "produits_leclerc_soinsvisage.csv")
+
+# Fonction de diagnostic pour les permissions
+def check_file_permissions():
+    """Vérifie et corrige les permissions de fichiers"""
+    try:
+        logger.info(f"Vérification des permissions dans {BASE_DIR}")
+        
+        # Tester l'écriture dans le répertoire
+        test_file_path = os.path.join(BASE_DIR, "test_permission.txt")
+        with open(test_file_path, 'w') as f:
+            f.write("Test de permission")
+        
+        # Si on arrive ici, l'écriture a fonctionné
+        logger.info(f"✅ Test d'écriture réussi dans {BASE_DIR}")
+        
+        # Nettoyage du fichier de test
+        if os.path.exists(test_file_path):
+            os.remove(test_file_path)
+            
+        return True
+    except Exception as e:
+        logger.error(f"❌ Erreur de permission: {str(e)}")
+        return False
 
 # Enregistrement des filtres et fonctions pour les templates
 @app.template_filter('timestamp_to_time')
@@ -31,6 +67,9 @@ def utility_processor():
 
 @app.route("/", methods=["GET", "POST"])
 def index():
+    # Vérifier les permissions au début
+    check_file_permissions()
+    
     results = []
     error = None
     status = None
@@ -187,32 +226,122 @@ def results():
 @app.route("/download")
 def download_csv():
     """Télécharger le fichier CSV des résultats"""
-    if os.path.isfile(CATEGORY_CSV_PATH):
-        try:
-            return send_file(CATEGORY_CSV_PATH, as_attachment=True, download_name="produits_leclerc_soinsvisage.csv")
-        except Exception as e:
-            return f"Erreur lors du téléchargement: {str(e)}", 500
-    else:
-        return "Fichier non disponible", 404
+    try:
+        # Vérifier l'existence du fichier
+        if os.path.isfile(CATEGORY_CSV_PATH):
+            file_size = os.path.getsize(CATEGORY_CSV_PATH)
+            logger.info(f"Fichier trouvé: {CATEGORY_CSV_PATH}, taille: {file_size} octets")
+            
+            # Si le fichier existe mais est vide, renvoyer une erreur
+            if file_size == 0:
+                logger.warning(f"Fichier vide: {CATEGORY_CSV_PATH}")
+                return "Fichier vide, aucune donnée à télécharger", 404
+                
+            # Essayer de renvoyer le fichier
+            try:
+                return send_file(
+                    CATEGORY_CSV_PATH,
+                    as_attachment=True,
+                    download_name="produits_leclerc_soinsvisage.csv",
+                    mimetype='text/csv'
+                )
+            except Exception as e:
+                logger.error(f"Erreur lors de l'envoi du fichier: {str(e)}")
+                # Essayer une approche alternative
+                with open(CATEGORY_CSV_PATH, 'r', encoding='utf-8') as f:
+                    csv_content = f.read()
+                response = app.response_class(
+                    response=csv_content,
+                    status=200,
+                    mimetype='text/csv'
+                )
+                response.headers["Content-Disposition"] = "attachment; filename=produits_leclerc_soinsvisage.csv"
+                return response
+        else:
+            logger.warning(f"Fichier non disponible: {CATEGORY_CSV_PATH}")
+            return "Fichier non disponible. Veuillez d'abord exécuter le scraping.", 404
+    except Exception as e:
+        logger.error(f"Erreur lors du téléchargement: {str(e)}")
+        return f"Erreur lors du téléchargement: {str(e)}", 500
 
 @app.route("/download/<file_type>")
 def download_specific_csv(file_type):
     """Télécharger un fichier CSV spécifique"""
     try:
         if file_type == "specific":
-            if os.path.isfile(SPECIFIC_CSV_PATH):
-                return send_file(SPECIFIC_CSV_PATH, as_attachment=True, download_name="produit_leclerc.csv")
-            else:
-                return "Fichier de produits spécifiques non disponible", 404
+            target_file = SPECIFIC_CSV_PATH
+            filename = "produit_leclerc.csv"
         elif file_type == "category":
-            if os.path.isfile(CATEGORY_CSV_PATH):
-                return send_file(CATEGORY_CSV_PATH, as_attachment=True, download_name="produits_leclerc_soinsvisage.csv")
-            else:
-                return "Fichier de catégorie non disponible", 404
+            target_file = CATEGORY_CSV_PATH
+            filename = "produits_leclerc_soinsvisage.csv"
         else:
             return "Type de fichier non reconnu", 400
+            
+        if os.path.isfile(target_file):
+            file_size = os.path.getsize(target_file)
+            logger.info(f"Fichier trouvé: {target_file}, taille: {file_size} octets")
+            
+            if file_size == 0:
+                return "Fichier vide, aucune donnée à télécharger", 404
+            
+            try:
+                return send_file(
+                    target_file,
+                    as_attachment=True,
+                    download_name=filename,
+                    mimetype='text/csv'
+                )
+            except Exception as e:
+                logger.error(f"Erreur lors de l'envoi du fichier: {str(e)}")
+                # Approche alternative
+                with open(target_file, 'r', encoding='utf-8') as f:
+                    csv_content = f.read()
+                response = app.response_class(
+                    response=csv_content,
+                    status=200,
+                    mimetype='text/csv'
+                )
+                response.headers["Content-Disposition"] = f"attachment; filename={filename}"
+                return response
+        else:
+            return f"Fichier {filename} non disponible", 404
     except Exception as e:
+        logger.error(f"Erreur lors du téléchargement: {str(e)}")
         return f"Erreur lors du téléchargement: {str(e)}", 500
+
+# Code de diagnostic qui s'exécute au démarrage
+@app.before_first_request
+def check_environment():
+    """Vérifier l'environnement au démarrage de l'application"""
+    logger.info("----- DIAGNOSTIC D'ENVIRONNEMENT -----")
+    # Vérifier les chemins
+    logger.info(f"Répertoire de base: {BASE_DIR}")
+    logger.info(f"Chemin du CSV spécifique: {SPECIFIC_CSV_PATH}")
+    logger.info(f"Chemin du CSV de catégorie: {CATEGORY_CSV_PATH}")
+    
+    # Vérifier les permissions
+    try:
+        # Vérifier si on peut écrire dans le répertoire de base
+        test_file = os.path.join(BASE_DIR, "test_write.tmp")
+        with open(test_file, 'w') as f:
+            f.write("Test d'écriture")
+        if os.path.exists(test_file):
+            os.remove(test_file)
+            logger.info(f"✅ Test d'écriture réussi dans {BASE_DIR}")
+        else:
+            logger.error(f"❌ Échec du test d'écriture dans {BASE_DIR}")
+    except Exception as e:
+        logger.error(f"❌ Erreur lors du test d'écriture: {str(e)}")
+    
+    # Vérifier si les fichiers CSV existent déjà
+    logger.info(f"Le fichier spécifique existe: {os.path.exists(SPECIFIC_CSV_PATH)}")
+    logger.info(f"Le fichier de catégorie existe: {os.path.exists(CATEGORY_CSV_PATH)}")
+    
+    # Vérifier l'environnement Python
+    logger.info(f"Version Python: {sys.version}")
+    logger.info(f"Encodage par défaut: {sys.getdefaultencoding()}")
+    logger.info(f"Répertoire de travail actuel: {os.getcwd()}")
+    logger.info("----- FIN DU DIAGNOSTIC -----")
 
 if __name__ == "__main__":
     app.run(debug=True)
