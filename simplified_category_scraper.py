@@ -17,6 +17,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 import logging
 import re
 import traceback
+import random
 
 # Configuration de base du logging
 logging.basicConfig(
@@ -76,25 +77,199 @@ def reset_status():
         "last_product": None
     }
 
+def determine_total_pages(driver):
+    """Détermine le nombre total de pages dans la pagination"""
+    try:
+        logger.info("Détermination du nombre total de pages...")
+        
+        # Méthode 1: Chercher spécifiquement le dernier span contenant le nombre total de pages
+        try:
+            # Récupérer tous les éléments span qui contiennent juste un nombre
+            spans = driver.find_elements(By.TAG_NAME, "span")
+            page_numbers = []
+            
+            # Parcourir tous les spans et vérifier ceux qui contiennent uniquement un nombre
+            for span in spans:
+                text = span.text.strip()
+                if text.isdigit():
+                    page_numbers.append(int(text))
+                    logger.info(f"Span avec nombre trouvé: '{text}'")
+            
+            # Si on a trouvé des nombres, prendre le plus grand
+            if page_numbers:
+                max_page = max(page_numbers)
+                logger.info(f"Nombre maximal de pages trouvé: {max_page}")
+                if max_page > 1:
+                    return max_page
+        except Exception as e:
+            logger.warning(f"Erreur lors de la recherche par spans: {e}")
+        
+        # Méthode 2: Chercher spécifiquement dans les éléments de pagination
+        try:
+            # Identifier les éléments de pagination qui peuvent contenir le nombre total
+            pagination_elements = driver.find_elements(By.CSS_SELECTOR, ".pagination li, .pagination span, .pagination a")
+            for element in pagination_elements:
+                text = element.text.strip()
+                if text.isdigit() and int(text) > 1:
+                    logger.info(f"Élément de pagination trouvé: '{text}'")
+                    page_numbers.append(int(text))
+            
+            if page_numbers:
+                max_page = max(page_numbers)
+                logger.info(f"Nombre maximal de pages trouvé dans la pagination: {max_page}")
+                return max_page
+        except Exception as e:
+            logger.warning(f"Erreur lors de la recherche dans la pagination: {e}")
+        
+        # Méthode 3: Recherche spécifique pour le site e.leclerc
+        try:
+            # Enregistrer le HTML complet de la page pour déboguer
+            page_source = driver.page_source
+            logger.info("Recherche spécifique pour le site e.leclerc")
+            
+            # Chercher spécifiquement le span contenant le dernier numéro de page
+            # Dans le HTML de Leclerc, rechercher <span _ngcontent-serverapp-c188="">320</span>
+            import re
+            span_matches = re.findall(r'<span[^>]*>(\d+)<\/span>', page_source)
+            if span_matches:
+                # Convertir tous les nombres trouvés en entiers
+                span_numbers = [int(num) for num in span_matches]
+                if span_numbers:
+                    max_span = max(span_numbers)
+                    logger.info(f"Plus grand nombre trouvé dans les spans: {max_span}")
+                    if max_span > 100:  # C'est probablement notre nombre total de pages
+                        return max_span
+        except Exception as e:
+            logger.warning(f"Erreur lors de la recherche spécifique e.leclerc: {e}")
+        
+        # Si aucune méthode ne fonctionne, utiliser une valeur fixe pour e.leclerc
+        logger.warning("Utilisation de la valeur fixe pour e.leclerc: 320")
+        return 320  # Valeur fixe basée sur l'information fournie
+        
+    except Exception as e:
+        logger.error(f"Erreur lors de la détermination du nombre de pages: {str(e)}")
+        logger.warning("Utilisation de la valeur par défaut: 320")
+        return 320  # Valeur par défaut en cas d'erreur
+
 def extract_product_links(driver):
-    """Extrait tous les liens de produits sur une page"""
-    # Attendre que la liste de produits se charge
-    WebDriverWait(driver, 30).until(
-        EC.presence_of_element_located((By.CSS_SELECTOR, "a.product-card-link"))
-    )
+    """Extrait tous les liens de produits sur une page avec sélecteurs améliorés"""
+    logger.info("Extraction des liens de produits...")
     
-    # Extraire les URLs des produits (avec le nouveau sélecteur)
+    # Attendre que la page se charge
+    try:
+        WebDriverWait(driver, 30).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, "a.product-card-link, .product-thumbnail a, .product-card a"))
+        )
+        # Attendre un peu plus pour être sûr que tout est chargé
+        time.sleep(2)
+    except Exception as e:
+        logger.warning(f"Timeout lors de l'attente des produits: {e}")
+        # Continuer quand même, peut-être que certains éléments sont chargés
+    
+    # Liste pour stocker les liens
     product_links = []
-    product_elements = driver.find_elements(By.CSS_SELECTOR, "a.product-card-link")
     
-    for element in product_elements:
-        # Obtenir l'URL complète
-        href = element.get_attribute("href")
-        if href:
-            product_links.append(href)
+    # Essayer plusieurs sélecteurs pour être robuste face aux changements
+    selectors = [
+        "a.product-card-link",                # Sélecteur principal  
+        ".product-thumbnail a",               # Alternative 1
+        ".product-card a",                    # Alternative 2
+        "a[href*='/fp/']",                    # Lien contenant '/fp/' (product page)
+        "a[href*='/cat/']:not([href*='page='])"  # Lien vers une catégorie mais pas pagination
+    ]
     
-    logger.info(f"Extraction de {len(product_links)} liens de produits sur la page")
+    # Essayer chaque sélecteur
+    for selector in selectors:
+        try:
+            elements = driver.find_elements(By.CSS_SELECTOR, selector)
+            logger.info(f"Sélecteur '{selector}' a trouvé {len(elements)} éléments")
+            
+            for element in elements:
+                href = element.get_attribute("href")
+                if href and '/fp/' in href and href not in product_links:
+                    product_links.append(href)
+                    logger.info(f"Lien de produit ajouté: {href}")
+        except Exception as e:
+            logger.warning(f"Erreur avec le sélecteur '{selector}': {e}")
+    
+    # Si aucun produit n'est trouvé, essayer une approche plus générale
+    if not product_links:
+        logger.warning("Aucun produit trouvé avec les sélecteurs. Tentative avec tous les liens.")
+        try:
+            all_links = driver.find_elements(By.TAG_NAME, "a")
+            for link in all_links:
+                href = link.get_attribute("href")
+                if href and '/fp/' in href and href not in product_links:
+                    product_links.append(href)
+                    logger.info(f"Lien de produit trouvé (méthode de secours): {href}")
+        except Exception as e:
+            logger.error(f"Erreur lors de la recherche générique: {e}")
+    
+    # Déduplication et log
+    product_links = list(set(product_links))  # Supprimer les doublons
+    logger.info(f"Total de {len(product_links)} liens de produits uniques extraits")
+    
     return product_links
+
+def navigate_to_page(driver, base_url, page_number):
+    """Navigation améliorée vers une page spécifique"""
+    logger.info(f"Navigation vers la page {page_number}")
+    
+    # Construire plusieurs formats d'URL possibles
+    possible_urls = [
+        f"{base_url}?page={page_number}",  # Format standard
+        f"{base_url}?page={page_number}&code=NAVIGATION_marques-parapharmacie",  # Format avec code
+        f"{base_url}&page={page_number}"   # Si l'URL de base contient déjà un paramètre
+    ]
+    
+    # Essayer chaque format d'URL
+    for url in possible_urls:
+        try:
+            logger.info(f"Tentative avec l'URL: {url}")
+            driver.get(url)
+            
+            # Attendre que la page se charge
+            WebDriverWait(driver, 30).until(
+                EC.presence_of_element_located((By.TAG_NAME, "body"))
+            )
+            
+            # Vérifier si nous sommes bien sur la page demandée
+            time.sleep(2)  # Attendre un peu que tout se charge
+            
+            # Vérifier si la page contient des produits
+            product_elements = driver.find_elements(By.CSS_SELECTOR, "a.product-card-link, .product-thumbnail a, .product-card a")
+            if product_elements:
+                logger.info(f"Navigation réussie vers la page {page_number}, {len(product_elements)} produits trouvés")
+                return True
+            else:
+                logger.warning(f"Page {page_number} chargée mais aucun produit trouvé avec l'URL {url}")
+        except Exception as e:
+            logger.warning(f"Erreur lors de la navigation vers la page {page_number} avec URL {url}: {e}")
+    
+    # Si aucune URL ne fonctionne, essayer la méthode de navigation par clic
+    try:
+        logger.info("Tentative de navigation par clic sur les boutons de pagination")
+        # Retourner à la première page
+        driver.get(base_url)
+        
+        # Attendre que la pagination s'affiche
+        WebDriverWait(driver, 30).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, "ul.pagination, .pagination"))
+        )
+        
+        # Chercher un bouton ou lien avec le numéro de page
+        pagination_elements = driver.find_elements(By.CSS_SELECTOR, f"ul.pagination a, .pagination a")
+        for element in pagination_elements:
+            if element.text.strip() == str(page_number):
+                element.click()
+                time.sleep(2)
+                logger.info(f"Navigation par clic vers la page {page_number} réussie")
+                return True
+    except Exception as e:
+        logger.error(f"Erreur lors de la navigation par clic: {e}")
+    
+    logger.error(f"Toutes les tentatives de navigation vers la page {page_number} ont échoué")
+    return False
 
 def scrap_leclerc_product(url, driver):
     """Scrape les informations d'un produit spécifique en utilisant des sélecteurs plus robustes"""
@@ -219,7 +394,7 @@ def scrap_leclerc_product(url, driver):
             logger.warning(f"Erreur lors de l'extraction de la marque: {str(e)}")
         
         # Extraire la catégorie
-        categorie = "Soins Visage"
+        categorie = "Marques Parapharmacie"
         
         # Mise à jour du statut
         global scraping_status
@@ -279,91 +454,8 @@ def initialize_webdriver():
             logger.error(f"Échec de l'initialisation avec ChromeDriverManager: {e2}")
             raise Exception("Impossible d'initialiser le WebDriver. Vérifiez que Chrome est installé.") from e2
 
-def determine_total_pages(driver):
-    """Détermine le nombre total de pages dans la pagination"""
-    try:
-        logger.info("Détermination du nombre total de pages...")
-        
-        # Méthode 1: Chercher le span contenant le nombre total de pages
-        # Sélecteur spécifique pour le span contenant le dernier numéro de page
-        spans = driver.find_elements(By.TAG_NAME, "span")
-        
-        # Filtrer pour trouver les spans qui contiennent uniquement un nombre
-        page_numbers = []
-        for span in spans:
-            text = span.text.strip()
-            if text.isdigit():
-                logger.info(f"Span avec nombre trouvé: '{text}'")
-                page_numbers.append(int(text))
-        
-        if page_numbers:
-            max_page = max(page_numbers)
-            logger.info(f"Nombre maximal de pages trouvé: {max_page}")
-            return max_page
-        
-        # Méthode 2: Chercher directement dans le texte de la page pour les numéros de page
-        page_source = driver.page_source
-        # Regex pour trouver des modèles comme 'page=X' dans les URLs
-        import re
-        page_matches = re.findall(r'page=(\d+)', page_source)
-        if page_matches:
-            page_numbers = [int(num) for num in page_matches]
-            max_page = max(page_numbers)
-            logger.info(f"Nombre maximal de pages trouvé dans l'HTML: {max_page}")
-            return max_page
-            
-        # Méthode 3: Essayer de déterminer à partir du nombre total de produits
-        try:
-            # Recherche de textes comme "1-24 sur 1000 produits"
-            result_texts = driver.find_elements(By.CSS_SELECTOR, ".description, .results-count, .product-count")
-            for element in result_texts:
-                text = element.text
-                logger.info(f"Texte de comptage trouvé: '{text}'")
-                match = re.search(r'sur\s+(\d+)', text)
-                if match:
-                    total_products = int(match.group(1))
-                    # Généralement 24 produits par page
-                    max_page = (total_products + 23) // 24
-                    logger.info(f"Estimation des pages basée sur {total_products} produits: {max_page}")
-                    return max_page
-        except Exception as e:
-            logger.warning(f"Erreur lors de l'estimation par nombre de produits: {e}")
-        
-        # Dernière tentative: chercher dans tout le texte de la page
-        body_text = driver.find_element(By.TAG_NAME, "body").text
-        logger.info("Recherche dans tout le texte de la page...")
-        # Recherche de modèles comme "Page X sur Y" ou "X-Y sur Z produits"
-        matches = re.findall(r'sur\s+(\d+)', body_text)
-        if matches:
-            numbers = [int(match) for match in matches]
-            # Supposer que le plus grand nombre est soit le nombre de produits, soit le nombre de pages
-            largest = max(numbers)
-            if largest > 100:  # Probablement nombre de produits
-                max_page = (largest + 23) // 24
-            else:  # Probablement déjà le nombre de pages
-                max_page = largest
-            logger.info(f"Dernier essai: nombre de pages estimé à {max_page}")
-            return max_page
-            
-        # Par défaut, recherche des numéros dans le texte et prendre le plus grand inférieur à 100
-        all_numbers = re.findall(r'\b(\d+)\b', body_text)
-        if all_numbers:
-            potential_pages = [int(n) for n in all_numbers if int(n) < 100 and int(n) > 1]
-            if potential_pages:
-                max_page = max(potential_pages)
-                logger.info(f"Analyse générique: nombre de pages probablement {max_page}")
-                return max_page
-        
-        logger.warning("Impossible de déterminer le nombre de pages, utilisation de la valeur par défaut: 47")
-        return 47  # Valeur par défaut basée sur votre information
-        
-    except Exception as e:
-        logger.error(f"Erreur lors de la détermination du nombre de pages: {str(e)}")
-        logger.warning("Utilisation de la valeur par défaut: 47")
-        return 47  # Valeur par défaut en cas d'erreur
-
 def scrape_category_pages(category_url, max_pages=None, output_file="produits_leclerc_soinsvisage.csv"):
-    """Scrape toutes les pages d'une catégorie"""
+    """Scrape toutes les pages d'une catégorie avec navigation améliorée"""
     results = []
     
     # Réinitialiser le statut
@@ -380,77 +472,62 @@ def scrape_category_pages(category_url, max_pages=None, output_file="produits_le
         try:
             driver.get(category_url)
             # Attendre et cliquer sur le bouton d'acceptation des cookies s'il existe
-            WebDriverWait(driver, 5).until(
-                EC.element_to_be_clickable((By.ID, "onetrust-accept-btn-handler"))
-            ).click()
-            logger.info("Cookies acceptés")
+            try:
+                WebDriverWait(driver, 5).until(
+                    EC.element_to_be_clickable((By.ID, "onetrust-accept-btn-handler"))
+                ).click()
+                logger.info("Cookies acceptés")
+            except:
+                logger.info("Pas de bannière de cookies trouvée")
         except Exception as e:
-            logger.info(f"Pas de bannière de cookies ou erreur: {e}")
+            logger.warning(f"Erreur lors de l'accès à la page: {e}")
         
-        # Accéder à la page de la catégorie (à nouveau pour s'assurer que la page est chargée après acceptation des cookies)
+        # Accéder à la page de la catégorie (à nouveau pour s'assurer que la page est chargée)
         driver.get(category_url)
-        
-        # Attendre que la page se charge complètement
-        WebDriverWait(driver, 30).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, "a.product-card-link"))
-        )
         
         # Déterminer le nombre total de pages
         total_pages = determine_total_pages(driver)
+        logger.info(f"Nombre total de pages détecté: {total_pages}")
         
         if max_pages and max_pages < total_pages:
             total_pages = max_pages
+            logger.info(f"Limitation au nombre de pages demandé: {max_pages}")
             
-        logger.info(f"Nombre total de pages à scraper: {total_pages}")
-        
-        # Compter le nombre total de produits estimé
+        # Compter le nombre total de produits estimé (première page)
         product_links_first_page = extract_product_links(driver)
-        scraping_status["total_products"] = len(product_links_first_page) * total_pages
-        
-        # Générer toutes les URLs de page à l'avance
-        page_urls = []
-        for page_num in range(1, total_pages + 1):
-            if page_num == 1:
-                page_urls.append(category_url)
-            else:
-                page_url = f"{category_url}?page={page_num}&code=NAVIGATION_soins-visage"
-                page_urls.append(page_url)
-        
-        logger.info(f"URLs de pages générées: {len(page_urls)}")
-        for idx, url in enumerate(page_urls):
-            logger.info(f"URL page {idx+1}: {url}")
+        average_products_per_page = len(product_links_first_page)
+        scraping_status["total_products"] = average_products_per_page * total_pages
+        logger.info(f"Nombre estimé de produits: {scraping_status['total_products']} ({average_products_per_page} par page * {total_pages} pages)")
         
         # Scraper chaque page
-        for page_idx, page_url in enumerate(page_urls):
-            current_page = page_idx + 1
-            logger.info(f"Scraping de la page {current_page}/{total_pages} - URL: {page_url}")
+        for current_page in range(1, total_pages + 1):
+            logger.info(f"Scraping de la page {current_page}/{total_pages}")
             
-            # Accéder à la page
-            driver.get(page_url)
+            # Si ce n'est pas la première page, naviguer vers la page
+            if current_page > 1:
+                success = navigate_to_page(driver, category_url, current_page)
+                if not success:
+                    logger.error(f"Impossible d'accéder à la page {current_page}, passage à la suivante")
+                    continue
             
-            # Attendre que la page se charge complètement
-            try:
-                WebDriverWait(driver, 30).until(
-                    EC.presence_of_element_located((By.CSS_SELECTOR, "a.product-card-link"))
-                )
-                # Attendre un peu pour être sûr que tous les produits sont chargés
-                time.sleep(2)
-            except Exception as e:
-                logger.error(f"Erreur lors du chargement de la page {current_page}: {e}")
-                continue
-            
-            # Extraire les liens des produits sur cette page
+            # Extraire les liens des produits
             product_links = extract_product_links(driver)
             logger.info(f"Page {current_page}: {len(product_links)} produits trouvés")
             
             if not product_links:
                 logger.warning(f"Aucun produit trouvé sur la page {current_page}! Vérification du HTML...")
-                logger.warning(f"URL de la page: {page_url}")
-                # Sauvegarder un extrait du HTML pour déboguer
-                html_snippet = driver.page_source[:1000] + "..." + driver.page_source[-1000:]
+                # Enregistrer une partie du HTML pour diagnostic
+                html_snippet = driver.page_source[:500] + "..." + driver.page_source[-500:]
                 logger.warning(f"Extrait du HTML: {html_snippet}")
+                continue
             
-            # Scraper chaque produit
+            # Mettre à jour le nombre total estimé de produits
+            if current_page == 1:
+                average_products_per_page = len(product_links)
+                scraping_status["total_products"] = average_products_per_page * total_pages
+                logger.info(f"Mise à jour du nombre estimé de produits: {scraping_status['total_products']}")
+            
+            # Scraper chaque produit de la page
             for link_idx, link in enumerate(product_links):
                 try:
                     logger.info(f"Scraping du produit {link_idx+1}/{len(product_links)} de la page {current_page}")
@@ -464,18 +541,25 @@ def scrape_category_pages(category_url, max_pages=None, output_file="produits_le
                             export_to_csv(results, filename=output_file)
                             # Backup avec la méthode simple
                             simple_export_to_csv(results, filename="backup_" + output_file)
+                    else:
+                        logger.warning(f"Échec du scraping pour le produit: {link}")
                 except Exception as e:
                     logger.error(f"Erreur lors du scraping du produit {link}: {str(e)}")
             
-            # Exporter les résultats actuels à chaque page (sauvegarde incrémentale)
+            # Exporter les résultats de cette page
             if results:
-                logger.info(f"Export incrémental après la page {current_page} avec {len(results)} produits")
+                logger.info(f"Export après la page {current_page} avec {len(results)} produits")
                 export_to_csv(results, filename=output_file)
-                # Backup avec la méthode simple
-                simple_export_to_csv(results, filename="backup_" + output_file)
+                
+            # Pause entre les pages pour éviter d'être détecté
+            if current_page < total_pages:
+                pause_time = 2 + 3 * random.random()  # Entre 2 et 5 secondes
+                logger.info(f"Pause de {pause_time:.2f} secondes avant la page suivante")
+                time.sleep(pause_time)
             
     except Exception as e:
         logger.error(f"Erreur lors du scraping de la catégorie: {str(e)}")
+        logger.error(traceback.format_exc())
     
     finally:
         # Exporter une dernière fois pour s'assurer que toutes les données sont sauvegardées
@@ -618,125 +702,6 @@ def simple_export_to_csv(data, filename="produits_leclerc_simple.csv"):
         print(f"❌ Erreur lors de l'export: {str(e)}")
         traceback.print_exc()
 
-def scrape_category_pages(category_url, max_pages=None, output_file="produits_leclerc_soinsvisage.csv"):
-    """Scrape toutes les pages d'une catégorie"""
-    results = []
-    
-    # Réinitialiser le statut
-    reset_status()
-    scraping_status["in_progress"] = True
-    scraping_status["start_time"] = time.time()
-    
-    driver = None
-    try:
-        # Initialiser le driver avec la fonction spécialisée
-        driver = initialize_webdriver()
-        
-        # Accepter les cookies si nécessaire
-        try:
-            driver.get(category_url)
-            # Attendre et cliquer sur le bouton d'acceptation des cookies s'il existe
-            WebDriverWait(driver, 5).until(
-                EC.element_to_be_clickable((By.ID, "onetrust-accept-btn-handler"))
-            ).click()
-            logger.info("Cookies acceptés")
-        except Exception as e:
-            logger.info(f"Pas de bannière de cookies ou erreur: {e}")
-        
-        # Accéder à la page de la catégorie (à nouveau pour s'assurer que la page est chargée après acceptation des cookies)
-        driver.get(category_url)
-        
-        # Attendre que la page se charge complètement
-        WebDriverWait(driver, 30).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, "a.product-card-link"))
-        )
-        
-        # Déterminer le nombre total de pages
-        total_pages = determine_total_pages(driver)
-        
-        if max_pages and max_pages < total_pages:
-            total_pages = max_pages
-            
-        logger.info(f"Nombre total de pages à scraper: {total_pages}")
-        
-        # Compter le nombre total de produits estimé
-        product_links_first_page = extract_product_links(driver)
-        scraping_status["total_products"] = len(product_links_first_page) * total_pages
-        
-        # Scraper chaque page
-        current_page = 1
-        while current_page <= total_pages:
-            logger.info(f"Scraping de la page {current_page}/{total_pages}")
-            
-            # Extraire les liens des produits sur la page actuelle
-            product_links = extract_product_links(driver) if current_page > 1 else product_links_first_page
-            
-            # Scraper chaque produit
-            for link in product_links:
-                try:
-                    product_data = scrap_leclerc_product(link, driver)
-                    if product_data:
-                        results.append(product_data)
-                        logger.info(f"Produit scrapé avec succès: {product_data['Nom du produit']}")
-                        
-                        # Exporter les résultats après chaque produit pour garantir la sauvegarde
-                        if len(results) % 5 == 0:  # Exporter tous les 5 produits
-                            export_to_csv(results, filename=output_file)
-                            # Backup avec la méthode simple
-                            simple_export_to_csv(results, filename="backup_" + output_file)
-                except Exception as e:
-                    logger.error(f"Erreur lors du scraping du produit {link}: {str(e)}")
-            
-            # Passer à la page suivante si ce n'est pas la dernière
-            if current_page < total_pages:
-                try:
-                    # Construire l'URL de la page suivante
-                    next_page = current_page + 1
-                    next_page_url = f"{category_url}?page={next_page}"
-                    # Alternatives si le format ci-dessus ne fonctionne pas
-                    if "?" in category_url:
-                        next_page_url = f"{category_url}&page={next_page}"
-                    
-                    driver.get(next_page_url)
-                    
-                    # Attendre que la nouvelle page se charge
-                    WebDriverWait(driver, 30).until(
-                        EC.presence_of_element_located((By.CSS_SELECTOR, "a.product-card-link"))
-                    )
-                    
-                    # Attendre un peu pour être sûr que la page est complètement chargée
-                    time.sleep(2)
-                    
-                    current_page += 1
-                except Exception as e:
-                    logger.error(f"Erreur lors du passage à la page suivante: {str(e)}")
-                    break
-            else:
-                break
-            
-            # Exporter les résultats actuels à chaque page (sauvegarde incrémentale)
-            export_to_csv(results, filename=output_file)
-            # Backup avec la méthode simple
-            simple_export_to_csv(results, filename="backup_" + output_file)
-            
-    except Exception as e:
-        logger.error(f"Erreur lors du scraping de la catégorie: {str(e)}")
-    
-    finally:
-        # Exporter une dernière fois pour s'assurer que toutes les données sont sauvegardées
-        if results:
-            logger.info(f"Export final avec {len(results)} produits")
-            export_to_csv(results, filename=output_file)
-            # Backup avec la méthode simple
-            simple_export_to_csv(results, filename="backup_" + output_file)
-        
-        # Mettre à jour le statut final
-        scraping_status["in_progress"] = False
-        if driver:
-            driver.quit()
-    
-    return results
-
 def batch_scrape_products(urls, batch_size=10, output_file="produits_leclerc.csv", start_index=0):
     """
     Scrape les produits par lots avec sauvegarde intermédiaire
@@ -833,6 +798,3 @@ def load_product_urls(filename="product_urls.json"):
         except Exception as e:
             logger.error(f"Erreur lors du chargement des URLs: {str(e)}")
     return []
-
-# Import ajouté pour random
-import random
